@@ -84,9 +84,8 @@ public final class SemiproceduralMorphologyGenerator implements MorphologyGenera
             trunkLogTopY = (style == Style.CONIFER || style == Style.PINE || style == Style.JUNGLE)
                     ? Math.max(4, height - 1)
                     : Math.max(4, (int) Math.round(height * 0.72D));
-        } else if (bifurcateUpperTrunk) {
-            trunkLogTopY = Math.min(height - 1, Math.max(4, (int) Math.round(height * (style == Style.ACACIA ? 0.56D : 0.65D))));
         } else {
+            // Keep 1x1 main trunks as full logs all the way to the top so upper limbs sprout laterally from the trunk
             trunkLogTopY = height;
         }
 
@@ -117,9 +116,6 @@ public final class SemiproceduralMorphologyGenerator implements MorphologyGenera
             Point3 point;
             if (y <= trunkLogTopY && style != Style.PALM) {
                 point = new Point3(0.0D, y, 0.0D);
-            } else if (bifurcateUpperTrunk && y == trunkLogTopY + 1) {
-                // Fork collar directly above the full-log bole so both thick stems sit cleanly on top
-                point = new Point3(0.0D, y, 0.0D);
             } else {
                 double curve = effectiveBend * height * Math.pow(t, 1.55D);
                 double ripple = Math.sin(t * Math.PI * 1.25D + bendPhase) * effectiveBend * height * 0.16D;
@@ -129,7 +125,7 @@ public final class SemiproceduralMorphologyGenerator implements MorphologyGenera
                 point = new Point3(x, y, z);
             }
             int segDepth = (style != Style.PALM && y > trunkLogTopY
-                    && (bifurcateUpperTrunk || Math.round(point.x()) != 0 || Math.round(point.z()) != 0)) ? 1 : 0;
+                    && (Math.round(point.x()) != 0 || Math.round(point.z()) != 0)) ? 1 : 0;
             double segStartR = (segDepth == 1) ? Math.max(0.42D, previousRadius) : previousRadius;
             double segEndR = (segDepth == 1) ? Math.max(0.30D, radius) : radius;
             BranchNode node = new BranchNode(point, segEndR, segDepth);
@@ -147,24 +143,25 @@ public final class SemiproceduralMorphologyGenerator implements MorphologyGenera
             addCluster(clusters, new Point3(0.5D, trunkLogTopY + 0.85D, 0.5D), capRad, capHeight, maxLeaves);
         }
 
-        // Emit second thick bifurcating primary stem on crooked/forked canopies
-        if (bifurcateUpperTrunk && trunkLogTopY + 1 < trunk.size() && segments.size() < maxSegments) {
-            Point3 forkCollar = trunk.get(trunkLogTopY + 1);
-            BranchNode collarNode = trunkNodes.get(trunkLogTopY + 1);
+        // Emit a strong lateral upper bough directly from the top of the main trunk on crooked/forked canopies
+        if (bifurcateUpperTrunk && !trunk.isEmpty() && segments.size() < maxSegments) {
+            int forkAttachY = Math.max(4, Math.min(trunk.size() - 1, height - 1));
+            Point3 forkOrigin = trunk.get(forkAttachY);
+            BranchNode collarNode = trunkNodes.get(forkAttachY);
             double forkBaseAngle = Math.atan2(-lean[1], -lean[0]) + (random.nextDouble() - 0.5D) * 0.60D;
             double forkReach = Math.max(1.8D, Math.min(3.4D, height * (style == Style.ACACIA ? 0.34D : 0.25D)));
-            double forkRise = Math.max(1.2D, Math.min(3.0D, (height - (trunkLogTopY + 1)) + random.nextDouble() * 0.8D));
-            Point3 forkMid = forkCollar.add(
+            double forkRise = Math.max(0.8D, Math.min(1.8D, 0.9D + random.nextDouble() * 0.7D));
+            Point3 forkMid = forkOrigin.add(
                     Math.cos(forkBaseAngle) * (forkReach * 0.52D),
-                    forkRise * 0.48D,
+                    forkRise * 0.35D,
                     Math.sin(forkBaseAngle) * (forkReach * 0.52D));
-            Point3 forkTip = forkCollar.add(
+            Point3 forkTip = forkOrigin.add(
                     Math.cos(forkBaseAngle) * forkReach,
                     forkRise,
                     Math.sin(forkBaseAngle) * forkReach);
             BranchNode midNode = new BranchNode(forkMid, 0.38D, 1);
             collarNode.addChild(midNode);
-            segments.add(new Segment(forkCollar, forkMid, 0.46D, 0.38D, 1));
+            segments.add(new Segment(forkOrigin, forkMid, 0.46D, 0.38D, 1));
             midNode.addChild(new BranchNode(forkTip, 0.32D, 1));
             segments.add(new Segment(forkMid, forkTip, 0.38D, 0.32D, 1));
             double tipCrownRad = style == Style.ACACIA ? 2.15D : 1.75D;

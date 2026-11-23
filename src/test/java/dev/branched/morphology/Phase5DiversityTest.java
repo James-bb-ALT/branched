@@ -187,6 +187,7 @@ class Phase5DiversityTest {
             for (int i = 0; i < 12; i++) {
                 RasterizedTree tree = rasterize(profile, i, PerformancePreset.BALANCED);
                 Set<Long> trunks = new HashSet<>();
+                Set<Long> branches = new HashSet<>();
                 Set<Long> occupiedAll = new HashSet<>();
                 int maxTrunkY = Integer.MIN_VALUE;
                 int topTrunkX = 0;
@@ -200,10 +201,16 @@ class Phase5DiversityTest {
                             topTrunkX = b.x();
                             topTrunkZ = b.z();
                         }
+                    } else if (b.role() == PlacementRole.BRANCH) {
+                        branches.add(pack(b.x(), b.y(), b.z()));
                     }
                 }
                 assertTrue(occupiedAll.contains(pack(topTrunkX, maxTrunkY + 1, topTrunkZ)),
                         profile.id() + " trunk apex exposed bare at y=" + maxTrunkY);
+                if (profile.trunkRadius().max() < 1.15D) {
+                    assertFalse(branches.contains(pack(topTrunkX, maxTrunkY + 1, topTrunkZ)),
+                            profile.id() + " seed=" + i + " placed a vertical branch directly atop the 1x1 trunk apex");
+                }
                 for (BlockPlacement b : tree.blocks()) {
                     if (b.role() != PlacementRole.BRANCH) {
                         continue;

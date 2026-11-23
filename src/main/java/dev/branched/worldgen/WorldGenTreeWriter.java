@@ -318,14 +318,11 @@ public final class WorldGenTreeWriter {
             int thickness;
             if (directlyAboveTrunk
                     || nearTrunkTopFork
-                    || (bp.y() >= maxTrunkY && dist == 1 && outward >= 1)
-                    || (dist == 1 && outward >= 1 && relY <= 0.68D && treeHeight >= 7)
-                    || (dist == 2 && outward >= 2 && relY <= 0.60D && treeHeight >= 10)
-                    || (dist == 1 && outward >= 2 && relY <= 0.82D && treeHeight >= 10)) {
+                    || (dist == 1 && outward >= 1)
+                    || (dist == 2 && outward >= 2 && treeHeight >= 10)) {
                 thickness = 3;
             } else if ((outward == 0 && dist >= 2)
-                    || (relY >= 0.80D && (outward == 0 || dist >= 2))
-                    || (dist == 1 && outward == 0 && relY >= 0.45D)) {
+                    || (relY >= 0.85D && outward == 0 && dist >= 2)) {
                 thickness = 1;
             } else {
                 thickness = 2;

@@ -157,31 +157,6 @@ public final class ReferenceBlockRasterizer implements BlockRasterizer {
             }
         }
 
-        // Ensure a 6-connected branch collar directly atop a 1x1 trunk when upper branches extend above it
-        if (!isPalm && !twoByTwoTrunk && !branchKeys.isEmpty()) {
-            long collarKey = key(trunkApex[0], trunkApex[1] + 1, trunkApex[2]);
-            boolean hasUpperBranch = false;
-            for (Long bk : branchKeys) {
-                int by = (int) ((bk >> 21) & 0x1FFFFFL);
-                if ((by & 0x100000) != 0) {
-                    by |= ~0x1FFFFF;
-                }
-                if (by > trunkApex[1]) {
-                    hasUpperBranch = true;
-                    break;
-                }
-            }
-            if (hasUpperBranch && !occupiedWood.contains(collarKey)
-                    && countNeighbors(occupiedWood, trunkApex[0], trunkApex[1] + 1, trunkApex[2]) == 1
-                    && placed.size() < blockBudget) {
-                occupiedWood.add(collarKey);
-                branchKeys.add(collarKey);
-                placed.put(collarKey, new BlockPlacement(
-                        trunkApex[0], trunkApex[1] + 1, trunkApex[2],
-                        palette.branch(), PlacementRole.BRANCH));
-            }
-        }
-
         List<int[]> terminalTips = new ArrayList<>();
         for (int[] tip : rawBranchEnds) {
             long tk = key(tip[0], tip[1], tip[2]);
@@ -341,6 +316,9 @@ public final class ReferenceBlockRasterizer implements BlockRasterizer {
                 int nx = cand[0];
                 int ny = cand[1];
                 int nz = cand[2];
+                if (fromTrunk && ny > curY) {
+                    continue; // Branches must originate laterally from the trunk, never vertically off its top
+                }
                 long nk = key(nx, ny, nz);
                 if (ny <= originY || occupiedWood.contains(nk)) {
                     continue;

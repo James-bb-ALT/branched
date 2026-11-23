@@ -143,25 +143,7 @@ public final class NativeTreeBranchConverter {
         }
         boolean hasOffColumnLogs = verticalUnion.size() < rawTrunkLogs.size();
 
-        Set<BlockPos> keptTrunkLogs = new LinkedHashSet<>();
-        if (baseColumns.size() == 1 && hasOffColumnLogs && columnTopY > baseY + 2) {
-            int proportionalCap = baseY + (int) Math.round((maxY - baseY + 1) * 0.68D);
-            int maxCoreY = Math.max(baseY + 2, Math.min(columnTopY - 1, proportionalCap));
-            for (List<BlockPos> list : columnLogs.values()) {
-                for (BlockPos p : list) {
-                    if (p.getY() <= maxCoreY) {
-                        keptTrunkLogs.add(p);
-                    }
-                }
-            }
-            for (BlockPos pos : rawTrunkLogs) {
-                if (isLowerRootLog(pos, baseY, origin.getY(), height, rawLeaves)) {
-                    keptTrunkLogs.add(pos.immutable());
-                }
-            }
-        } else {
-            keptTrunkLogs.addAll(verticalUnion);
-        }
+        Set<BlockPos> keptTrunkLogs = new LinkedHashSet<>(verticalUnion);
         if (keptTrunkLogs.isEmpty()) {
             return emptyPlan(rawTrunkLogs);
         }
@@ -863,7 +845,7 @@ public final class NativeTreeBranchConverter {
         if (dz != 0) candidates.add(from.offset(0, 0, dz));
         if (dy != 0) candidates.add(from.offset(0, dy, 0));
 
-        boolean forkAtTrunkTop = keptTrunkLogs.contains(from) && !keptTrunkLogs.contains(from.above()) && dy > 0;
+        boolean fromTrunk = keptTrunkLogs.contains(from);
         BlockPos best = candidates.get(0);
         int bestScore = Integer.MIN_VALUE;
         for (BlockPos cand : candidates) {
@@ -874,10 +856,10 @@ public final class NativeTreeBranchConverter {
             if (!keptTrunkLogs.contains(cand)) score += 100;
             if (branchPositions.contains(cand)) score += 50;
             if (rawLeaves.contains(cand)) score += 20;
-            if (forkAtTrunkTop && cand.equals(from.above())) {
-                score += 15;
-            } else if (!forkAtTrunkTop && cand.getY() == from.getY()) {
-                score += 10; // Horizontal elbow first from trunk side/parent limb
+            if (fromTrunk && cand.getY() == from.getY()) {
+                score += 25; // Always branch horizontally out of the main trunk, never vertically off its top
+            } else if (!fromTrunk && cand.getY() == from.getY()) {
+                score += 10;
             }
             if (score > bestScore) {
                 bestScore = score;

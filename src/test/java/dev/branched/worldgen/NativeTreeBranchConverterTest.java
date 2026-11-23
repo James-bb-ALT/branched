@@ -70,8 +70,9 @@ class NativeTreeBranchConverterTest {
         assertTrue(plan.branchPositions().contains(new BlockPos(2, 70, 1)));
         assertTrue(plan.branchPositions().contains(new BlockPos(3, 71, 1)));
         assertTrue(plan.keptTrunkLogs().contains(new BlockPos(0, 64, 0)));
-        // Upper leader inside crown (y=71..73) also converted to thick branch
-        assertTrue(plan.branchPositions().contains(new BlockPos(0, 73, 0)));
+        // Main trunk continues as full log all the way to the top (y=71..73), never replaced by a vertical branch
+        assertTrue(plan.keptTrunkLogs().contains(new BlockPos(0, 73, 0)));
+        assertFalse(plan.branchPositions().contains(new BlockPos(0, 73, 0)));
         assertEquals(3, plan.branchThicknesses().get(new BlockPos(1, 69, 0)));
         assertSixConnected(plan.keptTrunkLogs(), plan.branchPositions());
     }
@@ -101,11 +102,16 @@ class NativeTreeBranchConverterTest {
         assertTrue(plan.keptTrunkLogs().contains(new BlockPos(10, 64, -10)));
         assertTrue(plan.keptTrunkLogs().contains(new BlockPos(10, 65, -10)));
         assertTrue(plan.keptTrunkLogs().contains(new BlockPos(10, 66, -10)));
+        assertFalse(plan.branchPositions().contains(new BlockPos(10, 67, -10)),
+                "forked limbs must step horizontally off the main trunk top, never vertically onto (10,67,-10)");
+        assertTrue(plan.branchPositions().contains(new BlockPos(11, 66, -10)));
         assertTrue(plan.branchPositions().contains(new BlockPos(11, 67, -10)));
         assertTrue(plan.branchPositions().contains(new BlockPos(12, 68, -10)));
         assertTrue(plan.branchPositions().contains(new BlockPos(9, 67, -11)));
         assertTrue(plan.branchPositions().contains(new BlockPos(8, 68, -11)));
-        assertEquals(3, plan.branchThicknesses().get(new BlockPos(10, 67, -10)));
+        assertEquals(3, plan.branchThicknesses().get(new BlockPos(11, 66, -10)));
+        assertTrue(plan.branchThicknesses().get(new BlockPos(11, 67, -10)) >= 2,
+                "middle branch segments should taper gradually instead of dropping straight to thin");
         assertSixConnected(plan.keptTrunkLogs(), plan.branchPositions());
     }
 
