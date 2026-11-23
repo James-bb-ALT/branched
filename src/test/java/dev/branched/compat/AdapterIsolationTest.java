@@ -22,7 +22,7 @@ class AdapterIsolationTest {
     void vanillaOnlyEnvironmentDoesNotTouchOptionalMods() {
         ModPresence presence = new StaticModPresence(Set.of("minecraft", "forge"));
         Map<String, AdapterState> states = registry.states(presence);
-        assertEquals(18, states.size());
+        assertEquals(24, states.size());
         assertEquals(AdapterState.READY, states.get("minecraft"));
         assertEquals(AdapterState.ABSENT, states.get("regions_unexplored"));
         assertEquals(AdapterState.ABSENT, states.get("terralith"));
@@ -41,6 +41,12 @@ class AdapterIsolationTest {
         assertEquals(AdapterState.ABSENT, states.get("betterend"));
         assertEquals(AdapterState.ABSENT, states.get("betternether"));
         assertEquals(AdapterState.ABSENT, states.get("twilightdelight"));
+        assertEquals(AdapterState.ABSENT, states.get("biomesoplenty"));
+        assertEquals(AdapterState.ABSENT, states.get("biomeswevegone"));
+        assertEquals(AdapterState.ABSENT, states.get("natures_spirit"));
+        assertEquals(AdapterState.ABSENT, states.get("atmospheric"));
+        assertEquals(AdapterState.ABSENT, states.get("environmental"));
+        assertEquals(AdapterState.ABSENT, states.get("autumnity"));
         assertFalse(registry.replaceableFeatures(presence).isEmpty());
     }
 
@@ -48,7 +54,9 @@ class AdapterIsolationTest {
     void allIntegrationsPresentResolveIndependently() {
         ModPresence presence = new StaticModPresence(Set.of("minecraft", "regions_unexplored",
                 "terralith", "aether", "twilightforest", "quark", "fishofthieves",
-                "biomemakeover", "baobabtree", "betterend", "betternether", "twilightdelight"), Map.ofEntries(
+                "biomemakeover", "baobabtree", "betterend", "betternether", "twilightdelight",
+                "biomesoplenty", "biomeswevegone", "natures_spirit",
+                "atmospheric", "environmental", "autumnity"), Map.ofEntries(
                 Map.entry("regions_unexplored", "0.5.6"),
                 Map.entry("terralith", "2.5.4"),
                 Map.entry("aether", "1.20.1-1.5.2-neoforge"),
@@ -59,13 +67,21 @@ class AdapterIsolationTest {
                 Map.entry("baobabtree", "1.2.3"),
                 Map.entry("betterend", "20.0.13"),
                 Map.entry("betternether", "20.0.13"),
-                Map.entry("twilightdelight", "2.2.9")));
+                Map.entry("twilightdelight", "2.2.9"),
+                Map.entry("biomesoplenty", "19.0.0.96"),
+                Map.entry("biomeswevegone", "1.8.2"),
+                Map.entry("natures_spirit", "2.2.5"),
+                Map.entry("atmospheric", "6.1.1"),
+                Map.entry("environmental", "4.1.2"),
+                Map.entry("autumnity", "5.0.2")));
         Map<String, AdapterState> states = registry.states(presence);
         for (String mod : Set.of("regions_unexplored", "terralith", "aether", "twilightforest",
-                "quark", "fishofthieves", "biomemakeover", "baobabtree", "betterend", "betternether", "twilightdelight")) {
+                "quark", "fishofthieves", "biomemakeover", "baobabtree", "betterend", "betternether",
+                "twilightdelight", "biomesoplenty", "biomeswevegone", "natures_spirit",
+                "atmospheric", "environmental", "autumnity")) {
             assertEquals(AdapterState.READY, states.get(mod), mod);
         }
-        assertTrue(registry.ready(presence).size() >= 12);
+        assertTrue(registry.ready(presence).size() >= 18);
     }
 
     @Test

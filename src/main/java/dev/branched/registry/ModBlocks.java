@@ -126,6 +126,85 @@ public final class ModBlocks {
     public static final RegistryObject<StaticBranchBlock> BN_WILLOW_BRANCH = branch("bn_willow_branch");
     public static final RegistryObject<StaticBranchBlock> BN_WART_BRANCH = branch("bn_wart_branch");
 
+    // Biomes O' Plenty
+    public static final RegistryObject<StaticBranchBlock> BOP_DEAD_BRANCH = branch("bop_dead_branch");
+    public static final RegistryObject<StaticBranchBlock> BOP_EMPYREAL_BRANCH = branch("bop_empyreal_branch");
+    public static final RegistryObject<StaticBranchBlock> BOP_FIR_BRANCH = branch("bop_fir_branch");
+    public static final RegistryObject<StaticBranchBlock> BOP_HELLBARK_BRANCH = branch("bop_hellbark_branch");
+    public static final RegistryObject<StaticBranchBlock> BOP_JACARANDA_BRANCH = branch("bop_jacaranda_branch");
+    public static final RegistryObject<StaticBranchBlock> BOP_MAGIC_BRANCH = branch("bop_magic_branch");
+    public static final RegistryObject<StaticBranchBlock> BOP_MAHOGANY_BRANCH = branch("bop_mahogany_branch");
+    public static final RegistryObject<StaticBranchBlock> BOP_MAPLE_BRANCH = branch("bop_maple_branch");
+    public static final RegistryObject<StaticBranchBlock> BOP_PALM_BRANCH = branch("bop_palm_branch");
+    public static final RegistryObject<StaticBranchBlock> BOP_PINE_BRANCH = branch("bop_pine_branch");
+    public static final RegistryObject<StaticBranchBlock> BOP_REDWOOD_BRANCH = branch("bop_redwood_branch");
+    public static final RegistryObject<StaticBranchBlock> BOP_UMBRAN_BRANCH = branch("bop_umbran_branch");
+    public static final RegistryObject<StaticBranchBlock> BOP_WILLOW_BRANCH = branch("bop_willow_branch");
+
+    // Oh The Biomes We've Gone
+    public static final RegistryObject<StaticBranchBlock> BWG_ASPEN_BRANCH = branch("bwg_aspen_branch");
+    public static final RegistryObject<StaticBranchBlock> BWG_BAOBAB_BRANCH = branch("bwg_baobab_branch");
+    public static final RegistryObject<StaticBranchBlock> BWG_BLUE_ENCHANTED_BRANCH = branch("bwg_blue_enchanted_branch");
+    public static final RegistryObject<StaticBranchBlock> BWG_CIKA_BRANCH = branch("bwg_cika_branch");
+    public static final RegistryObject<StaticBranchBlock> BWG_CYPRESS_BRANCH = branch("bwg_cypress_branch");
+    public static final RegistryObject<StaticBranchBlock> BWG_EBONY_BRANCH = branch("bwg_ebony_branch");
+    public static final RegistryObject<StaticBranchBlock> BWG_FIR_BRANCH = branch("bwg_fir_branch");
+    public static final RegistryObject<StaticBranchBlock> BWG_GREEN_ENCHANTED_BRANCH = branch("bwg_green_enchanted_branch");
+    public static final RegistryObject<StaticBranchBlock> BWG_HOLLY_BRANCH = branch("bwg_holly_branch");
+    public static final RegistryObject<StaticBranchBlock> BWG_IRONWOOD_BRANCH = branch("bwg_ironwood_branch");
+    public static final RegistryObject<StaticBranchBlock> BWG_JACARANDA_BRANCH = branch("bwg_jacaranda_branch");
+    public static final RegistryObject<StaticBranchBlock> BWG_MAHOGANY_BRANCH = branch("bwg_mahogany_branch");
+    public static final RegistryObject<StaticBranchBlock> BWG_MAPLE_BRANCH = branch("bwg_maple_branch");
+    public static final RegistryObject<StaticBranchBlock> BWG_PALM_BRANCH = branch("bwg_palm_branch");
+    public static final RegistryObject<StaticBranchBlock> BWG_PALO_VERDE_BRANCH = branch("bwg_palo_verde_branch");
+    public static final RegistryObject<StaticBranchBlock> BWG_PINE_BRANCH = branch("bwg_pine_branch");
+    public static final RegistryObject<StaticBranchBlock> BWG_RAINBOW_EUCALYPTUS_BRANCH = branch("bwg_rainbow_eucalyptus_branch");
+    public static final RegistryObject<StaticBranchBlock> BWG_REDWOOD_BRANCH = branch("bwg_redwood_branch");
+    public static final RegistryObject<StaticBranchBlock> BWG_SAKURA_BRANCH = branch("bwg_sakura_branch");
+    public static final RegistryObject<StaticBranchBlock> BWG_SKYRIS_BRANCH = branch("bwg_skyris_branch");
+    public static final RegistryObject<StaticBranchBlock> BWG_WHITE_MANGROVE_BRANCH = branch("bwg_white_mangrove_branch");
+    public static final RegistryObject<StaticBranchBlock> BWG_WILLOW_BRANCH = branch("bwg_willow_branch");
+    public static final RegistryObject<StaticBranchBlock> BWG_WITCH_HAZEL_BRANCH = branch("bwg_witch_hazel_branch");
+    public static final RegistryObject<StaticBranchBlock> BWG_ZELKOVA_BRANCH = branch("bwg_zelkova_branch");
+
+    // Nature's Spirit
+    public static final RegistryObject<StaticBranchBlock> NS_ASPEN_BRANCH = branch("ns_aspen_branch");
+    public static final RegistryObject<StaticBranchBlock> NS_CEDAR_BRANCH = branch("ns_cedar_branch");
+    public static final RegistryObject<StaticBranchBlock> NS_COCONUT_BRANCH = branch("ns_coconut_branch");
+    public static final RegistryObject<StaticBranchBlock> NS_CYPRESS_BRANCH = branch("ns_cypress_branch");
+    public static final RegistryObject<StaticBranchBlock> NS_FIR_BRANCH = branch("ns_fir_branch");
+    public static final RegistryObject<StaticBranchBlock> NS_GHAF_BRANCH = branch("ns_ghaf_branch");
+    public static final RegistryObject<StaticBranchBlock> NS_JOSHUA_BRANCH = branch("ns_joshua_branch");
+    public static final RegistryObject<StaticBranchBlock> NS_LARCH_BRANCH = branch("ns_larch_branch");
+    public static final RegistryObject<StaticBranchBlock> NS_MAHOGANY_BRANCH = branch("ns_mahogany_branch");
+    public static final RegistryObject<StaticBranchBlock> NS_MAPLE_BRANCH = branch("ns_maple_branch");
+    public static final RegistryObject<StaticBranchBlock> NS_OLIVE_BRANCH = branch("ns_olive_branch");
+    public static final RegistryObject<StaticBranchBlock> NS_PALO_VERDE_BRANCH = branch("ns_palo_verde_branch");
+    public static final RegistryObject<StaticBranchBlock> NS_REDWOOD_BRANCH = branch("ns_redwood_branch");
+    public static final RegistryObject<StaticBranchBlock> NS_SAXAUL_BRANCH = branch("ns_saxaul_branch");
+    public static final RegistryObject<StaticBranchBlock> NS_SUGI_BRANCH = branch("ns_sugi_branch");
+    public static final RegistryObject<StaticBranchBlock> NS_WILLOW_BRANCH = branch("ns_willow_branch");
+    public static final RegistryObject<StaticBranchBlock> NS_WISTERIA_BRANCH = branch("ns_wisteria_branch");
+
+    // Atmospheric
+    public static final RegistryObject<StaticBranchBlock> ATM_ASPEN_BRANCH = branch("atm_aspen_branch");
+    public static final RegistryObject<StaticBranchBlock> ATM_CRUSTOSE_BRANCH = branch("atm_crustose_branch");
+    public static final RegistryObject<StaticBranchBlock> ATM_GRIMWOOD_BRANCH = branch("atm_grimwood_branch");
+    public static final RegistryObject<StaticBranchBlock> ATM_KOUSA_BRANCH = branch("atm_kousa_branch");
+    public static final RegistryObject<StaticBranchBlock> ATM_LAUREL_BRANCH = branch("atm_laurel_branch");
+    public static final RegistryObject<StaticBranchBlock> ATM_MORADO_BRANCH = branch("atm_morado_branch");
+    public static final RegistryObject<StaticBranchBlock> ATM_ROSEWOOD_BRANCH = branch("atm_rosewood_branch");
+    public static final RegistryObject<StaticBranchBlock> ATM_YUCCA_BRANCH = branch("atm_yucca_branch");
+
+    // Environmental
+    public static final RegistryObject<StaticBranchBlock> ENV_PINE_BRANCH = branch("env_pine_branch");
+    public static final RegistryObject<StaticBranchBlock> ENV_PLUM_BRANCH = branch("env_plum_branch");
+    public static final RegistryObject<StaticBranchBlock> ENV_WILLOW_BRANCH = branch("env_willow_branch");
+    public static final RegistryObject<StaticBranchBlock> ENV_WISTERIA_BRANCH = branch("env_wisteria_branch");
+
+    // Autumnity
+    public static final RegistryObject<StaticBranchBlock> AUT_MAPLE_BRANCH = branch("aut_maple_branch");
+
     private ModBlocks() {
     }
 

@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_sleeve_north_template",
+  "textures": {
+    "particle": "environmental:block/plum_log",
+    "side": "environmental:block/plum_log",
+    "end": "environmental:block/plum_log_top"
+  }
+}

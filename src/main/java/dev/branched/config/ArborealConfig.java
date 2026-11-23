@@ -74,6 +74,10 @@ public final class ArborealConfig {
     public static final ForgeConfigSpec.BooleanValue WARN_IF_DYNAMICTREES_LOADED = BUILDER
             .define("compatibility.warn_if_dynamictrees_loaded", true);
 
+    public static final ForgeConfigSpec.BooleanValue AUTO_COMPAT_UNKNOWN_MODS = BUILDER
+            .comment("Automatically detect and add 3D branches to unknown modded trees using wood/foliage heuristics and MapColor matching.")
+            .define("compatibility.auto_compat_unknown_mods", true);
+
     public static final ForgeConfigSpec.BooleanValue METRICS_ENABLED = BUILDER
             .define("diagnostics.metrics_enabled", true);
 
@@ -83,5 +87,14 @@ public final class ArborealConfig {
     public static final ForgeConfigSpec SPEC = BUILDER.build();
 
     private ArborealConfig() {
+    }
+
+    /** Safe check usable even in unit tests before Forge's config spec is loaded. */
+    public static boolean autoCompatEnabled() {
+        try {
+            return SPEC.isLoaded() ? AUTO_COMPAT_UNKNOWN_MODS.get() : AUTO_COMPAT_UNKNOWN_MODS.getDefault();
+        } catch (IllegalStateException ignored) {
+            return true;
+        }
     }
 }

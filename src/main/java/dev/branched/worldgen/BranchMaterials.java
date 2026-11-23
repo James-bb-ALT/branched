@@ -109,6 +109,85 @@ public final class BranchMaterials {
     public static final ResourceId BN_WILLOW_BRANCH = ResourceId.parse("branched:bn_willow_branch");
     public static final ResourceId BN_WART_BRANCH = ResourceId.parse("branched:bn_wart_branch");
 
+    // Biomes O' Plenty
+    public static final ResourceId BOP_DEAD_BRANCH = ResourceId.parse("branched:bop_dead_branch");
+    public static final ResourceId BOP_EMPYREAL_BRANCH = ResourceId.parse("branched:bop_empyreal_branch");
+    public static final ResourceId BOP_FIR_BRANCH = ResourceId.parse("branched:bop_fir_branch");
+    public static final ResourceId BOP_HELLBARK_BRANCH = ResourceId.parse("branched:bop_hellbark_branch");
+    public static final ResourceId BOP_JACARANDA_BRANCH = ResourceId.parse("branched:bop_jacaranda_branch");
+    public static final ResourceId BOP_MAGIC_BRANCH = ResourceId.parse("branched:bop_magic_branch");
+    public static final ResourceId BOP_MAHOGANY_BRANCH = ResourceId.parse("branched:bop_mahogany_branch");
+    public static final ResourceId BOP_MAPLE_BRANCH = ResourceId.parse("branched:bop_maple_branch");
+    public static final ResourceId BOP_PALM_BRANCH = ResourceId.parse("branched:bop_palm_branch");
+    public static final ResourceId BOP_PINE_BRANCH = ResourceId.parse("branched:bop_pine_branch");
+    public static final ResourceId BOP_REDWOOD_BRANCH = ResourceId.parse("branched:bop_redwood_branch");
+    public static final ResourceId BOP_UMBRAN_BRANCH = ResourceId.parse("branched:bop_umbran_branch");
+    public static final ResourceId BOP_WILLOW_BRANCH = ResourceId.parse("branched:bop_willow_branch");
+
+    // Oh The Biomes We've Gone
+    public static final ResourceId BWG_ASPEN_BRANCH = ResourceId.parse("branched:bwg_aspen_branch");
+    public static final ResourceId BWG_BAOBAB_BRANCH = ResourceId.parse("branched:bwg_baobab_branch");
+    public static final ResourceId BWG_BLUE_ENCHANTED_BRANCH = ResourceId.parse("branched:bwg_blue_enchanted_branch");
+    public static final ResourceId BWG_CIKA_BRANCH = ResourceId.parse("branched:bwg_cika_branch");
+    public static final ResourceId BWG_CYPRESS_BRANCH = ResourceId.parse("branched:bwg_cypress_branch");
+    public static final ResourceId BWG_EBONY_BRANCH = ResourceId.parse("branched:bwg_ebony_branch");
+    public static final ResourceId BWG_FIR_BRANCH = ResourceId.parse("branched:bwg_fir_branch");
+    public static final ResourceId BWG_GREEN_ENCHANTED_BRANCH = ResourceId.parse("branched:bwg_green_enchanted_branch");
+    public static final ResourceId BWG_HOLLY_BRANCH = ResourceId.parse("branched:bwg_holly_branch");
+    public static final ResourceId BWG_IRONWOOD_BRANCH = ResourceId.parse("branched:bwg_ironwood_branch");
+    public static final ResourceId BWG_JACARANDA_BRANCH = ResourceId.parse("branched:bwg_jacaranda_branch");
+    public static final ResourceId BWG_MAHOGANY_BRANCH = ResourceId.parse("branched:bwg_mahogany_branch");
+    public static final ResourceId BWG_MAPLE_BRANCH = ResourceId.parse("branched:bwg_maple_branch");
+    public static final ResourceId BWG_PALM_BRANCH = ResourceId.parse("branched:bwg_palm_branch");
+    public static final ResourceId BWG_PALO_VERDE_BRANCH = ResourceId.parse("branched:bwg_palo_verde_branch");
+    public static final ResourceId BWG_PINE_BRANCH = ResourceId.parse("branched:bwg_pine_branch");
+    public static final ResourceId BWG_RAINBOW_EUCALYPTUS_BRANCH = ResourceId.parse("branched:bwg_rainbow_eucalyptus_branch");
+    public static final ResourceId BWG_REDWOOD_BRANCH = ResourceId.parse("branched:bwg_redwood_branch");
+    public static final ResourceId BWG_SAKURA_BRANCH = ResourceId.parse("branched:bwg_sakura_branch");
+    public static final ResourceId BWG_SKYRIS_BRANCH = ResourceId.parse("branched:bwg_skyris_branch");
+    public static final ResourceId BWG_WHITE_MANGROVE_BRANCH = ResourceId.parse("branched:bwg_white_mangrove_branch");
+    public static final ResourceId BWG_WILLOW_BRANCH = ResourceId.parse("branched:bwg_willow_branch");
+    public static final ResourceId BWG_WITCH_HAZEL_BRANCH = ResourceId.parse("branched:bwg_witch_hazel_branch");
+    public static final ResourceId BWG_ZELKOVA_BRANCH = ResourceId.parse("branched:bwg_zelkova_branch");
+
+    // Nature's Spirit
+    public static final ResourceId NS_ASPEN_BRANCH = ResourceId.parse("branched:ns_aspen_branch");
+    public static final ResourceId NS_CEDAR_BRANCH = ResourceId.parse("branched:ns_cedar_branch");
+    public static final ResourceId NS_COCONUT_BRANCH = ResourceId.parse("branched:ns_coconut_branch");
+    public static final ResourceId NS_CYPRESS_BRANCH = ResourceId.parse("branched:ns_cypress_branch");
+    public static final ResourceId NS_FIR_BRANCH = ResourceId.parse("branched:ns_fir_branch");
+    public static final ResourceId NS_GHAF_BRANCH = ResourceId.parse("branched:ns_ghaf_branch");
+    public static final ResourceId NS_JOSHUA_BRANCH = ResourceId.parse("branched:ns_joshua_branch");
+    public static final ResourceId NS_LARCH_BRANCH = ResourceId.parse("branched:ns_larch_branch");
+    public static final ResourceId NS_MAHOGANY_BRANCH = ResourceId.parse("branched:ns_mahogany_branch");
+    public static final ResourceId NS_MAPLE_BRANCH = ResourceId.parse("branched:ns_maple_branch");
+    public static final ResourceId NS_OLIVE_BRANCH = ResourceId.parse("branched:ns_olive_branch");
+    public static final ResourceId NS_PALO_VERDE_BRANCH = ResourceId.parse("branched:ns_palo_verde_branch");
+    public static final ResourceId NS_REDWOOD_BRANCH = ResourceId.parse("branched:ns_redwood_branch");
+    public static final ResourceId NS_SAXAUL_BRANCH = ResourceId.parse("branched:ns_saxaul_branch");
+    public static final ResourceId NS_SUGI_BRANCH = ResourceId.parse("branched:ns_sugi_branch");
+    public static final ResourceId NS_WILLOW_BRANCH = ResourceId.parse("branched:ns_willow_branch");
+    public static final ResourceId NS_WISTERIA_BRANCH = ResourceId.parse("branched:ns_wisteria_branch");
+
+    // Atmospheric
+    public static final ResourceId ATM_ASPEN_BRANCH = ResourceId.parse("branched:atm_aspen_branch");
+    public static final ResourceId ATM_CRUSTOSE_BRANCH = ResourceId.parse("branched:atm_crustose_branch");
+    public static final ResourceId ATM_GRIMWOOD_BRANCH = ResourceId.parse("branched:atm_grimwood_branch");
+    public static final ResourceId ATM_KOUSA_BRANCH = ResourceId.parse("branched:atm_kousa_branch");
+    public static final ResourceId ATM_LAUREL_BRANCH = ResourceId.parse("branched:atm_laurel_branch");
+    public static final ResourceId ATM_MORADO_BRANCH = ResourceId.parse("branched:atm_morado_branch");
+    public static final ResourceId ATM_ROSEWOOD_BRANCH = ResourceId.parse("branched:atm_rosewood_branch");
+    public static final ResourceId ATM_YUCCA_BRANCH = ResourceId.parse("branched:atm_yucca_branch");
+
+    // Environmental
+    public static final ResourceId ENV_PINE_BRANCH = ResourceId.parse("branched:env_pine_branch");
+    public static final ResourceId ENV_PLUM_BRANCH = ResourceId.parse("branched:env_plum_branch");
+    public static final ResourceId ENV_WILLOW_BRANCH = ResourceId.parse("branched:env_willow_branch");
+    public static final ResourceId ENV_WISTERIA_BRANCH = ResourceId.parse("branched:env_wisteria_branch");
+
+    // Autumnity
+    public static final ResourceId AUT_MAPLE_BRANCH = ResourceId.parse("branched:aut_maple_branch");
+
     private static final Map<String, ResourceId> EXACT = buildExactMap();
 
     private BranchMaterials() {
@@ -335,6 +414,156 @@ public final class BranchMaterials {
         m.put("betternether:wart_bark", BN_WART_BRANCH);
         m.put("betternether:wart_stripped_log", BN_WART_BRANCH);
         m.put("betternether:wart_stripped_bark", BN_WART_BRANCH);
+
+        // Biomes O' Plenty
+        m.put("biomesoplenty:dead_log", BOP_DEAD_BRANCH);
+        m.put("biomesoplenty:dead_wood", BOP_DEAD_BRANCH);
+        m.put("biomesoplenty:empyreal_log", BOP_EMPYREAL_BRANCH);
+        m.put("biomesoplenty:empyreal_wood", BOP_EMPYREAL_BRANCH);
+        m.put("biomesoplenty:fir_log", BOP_FIR_BRANCH);
+        m.put("biomesoplenty:fir_wood", BOP_FIR_BRANCH);
+        m.put("biomesoplenty:hellbark_log", BOP_HELLBARK_BRANCH);
+        m.put("biomesoplenty:hellbark_wood", BOP_HELLBARK_BRANCH);
+        m.put("biomesoplenty:jacaranda_log", BOP_JACARANDA_BRANCH);
+        m.put("biomesoplenty:jacaranda_wood", BOP_JACARANDA_BRANCH);
+        m.put("biomesoplenty:magic_log", BOP_MAGIC_BRANCH);
+        m.put("biomesoplenty:magic_wood", BOP_MAGIC_BRANCH);
+        m.put("biomesoplenty:mahogany_log", BOP_MAHOGANY_BRANCH);
+        m.put("biomesoplenty:mahogany_wood", BOP_MAHOGANY_BRANCH);
+        m.put("biomesoplenty:maple_log", BOP_MAPLE_BRANCH);
+        m.put("biomesoplenty:maple_wood", BOP_MAPLE_BRANCH);
+        m.put("biomesoplenty:palm_log", BOP_PALM_BRANCH);
+        m.put("biomesoplenty:palm_wood", BOP_PALM_BRANCH);
+        m.put("biomesoplenty:pine_log", BOP_PINE_BRANCH);
+        m.put("biomesoplenty:pine_wood", BOP_PINE_BRANCH);
+        m.put("biomesoplenty:redwood_log", BOP_REDWOOD_BRANCH);
+        m.put("biomesoplenty:redwood_wood", BOP_REDWOOD_BRANCH);
+        m.put("biomesoplenty:umbran_log", BOP_UMBRAN_BRANCH);
+        m.put("biomesoplenty:umbran_wood", BOP_UMBRAN_BRANCH);
+        m.put("biomesoplenty:willow_log", BOP_WILLOW_BRANCH);
+        m.put("biomesoplenty:willow_wood", BOP_WILLOW_BRANCH);
+
+        // Oh The Biomes We've Gone
+        m.put("biomeswevegone:aspen_log", BWG_ASPEN_BRANCH);
+        m.put("biomeswevegone:aspen_wood", BWG_ASPEN_BRANCH);
+        m.put("biomeswevegone:baobab_log", BWG_BAOBAB_BRANCH);
+        m.put("biomeswevegone:baobab_wood", BWG_BAOBAB_BRANCH);
+        m.put("biomeswevegone:blue_enchanted_log", BWG_BLUE_ENCHANTED_BRANCH);
+        m.put("biomeswevegone:blue_enchanted_wood", BWG_BLUE_ENCHANTED_BRANCH);
+        m.put("biomeswevegone:cika_log", BWG_CIKA_BRANCH);
+        m.put("biomeswevegone:cika_wood", BWG_CIKA_BRANCH);
+        m.put("biomeswevegone:cypress_log", BWG_CYPRESS_BRANCH);
+        m.put("biomeswevegone:cypress_wood", BWG_CYPRESS_BRANCH);
+        m.put("biomeswevegone:ebony_log", BWG_EBONY_BRANCH);
+        m.put("biomeswevegone:ebony_wood", BWG_EBONY_BRANCH);
+        m.put("biomeswevegone:fir_log", BWG_FIR_BRANCH);
+        m.put("biomeswevegone:fir_wood", BWG_FIR_BRANCH);
+        m.put("biomeswevegone:green_enchanted_log", BWG_GREEN_ENCHANTED_BRANCH);
+        m.put("biomeswevegone:green_enchanted_wood", BWG_GREEN_ENCHANTED_BRANCH);
+        m.put("biomeswevegone:holly_log", BWG_HOLLY_BRANCH);
+        m.put("biomeswevegone:holly_wood", BWG_HOLLY_BRANCH);
+        m.put("biomeswevegone:ironwood_log", BWG_IRONWOOD_BRANCH);
+        m.put("biomeswevegone:ironwood_wood", BWG_IRONWOOD_BRANCH);
+        m.put("biomeswevegone:jacaranda_log", BWG_JACARANDA_BRANCH);
+        m.put("biomeswevegone:jacaranda_wood", BWG_JACARANDA_BRANCH);
+        m.put("biomeswevegone:mahogany_log", BWG_MAHOGANY_BRANCH);
+        m.put("biomeswevegone:mahogany_wood", BWG_MAHOGANY_BRANCH);
+        m.put("biomeswevegone:maple_log", BWG_MAPLE_BRANCH);
+        m.put("biomeswevegone:maple_wood", BWG_MAPLE_BRANCH);
+        m.put("biomeswevegone:palm_log", BWG_PALM_BRANCH);
+        m.put("biomeswevegone:palm_wood", BWG_PALM_BRANCH);
+        m.put("biomeswevegone:palo_verde_log", BWG_PALO_VERDE_BRANCH);
+        m.put("biomeswevegone:palo_verde_wood", BWG_PALO_VERDE_BRANCH);
+        m.put("biomeswevegone:pine_log", BWG_PINE_BRANCH);
+        m.put("biomeswevegone:pine_wood", BWG_PINE_BRANCH);
+        m.put("biomeswevegone:rainbow_eucalyptus_log", BWG_RAINBOW_EUCALYPTUS_BRANCH);
+        m.put("biomeswevegone:rainbow_eucalyptus_wood", BWG_RAINBOW_EUCALYPTUS_BRANCH);
+        m.put("biomeswevegone:redwood_log", BWG_REDWOOD_BRANCH);
+        m.put("biomeswevegone:redwood_wood", BWG_REDWOOD_BRANCH);
+        m.put("biomeswevegone:sakura_log", BWG_SAKURA_BRANCH);
+        m.put("biomeswevegone:sakura_wood", BWG_SAKURA_BRANCH);
+        m.put("biomeswevegone:skyris_log", BWG_SKYRIS_BRANCH);
+        m.put("biomeswevegone:skyris_wood", BWG_SKYRIS_BRANCH);
+        m.put("biomeswevegone:white_mangrove_log", BWG_WHITE_MANGROVE_BRANCH);
+        m.put("biomeswevegone:white_mangrove_wood", BWG_WHITE_MANGROVE_BRANCH);
+        m.put("biomeswevegone:willow_log", BWG_WILLOW_BRANCH);
+        m.put("biomeswevegone:willow_wood", BWG_WILLOW_BRANCH);
+        m.put("biomeswevegone:witch_hazel_log", BWG_WITCH_HAZEL_BRANCH);
+        m.put("biomeswevegone:witch_hazel_wood", BWG_WITCH_HAZEL_BRANCH);
+        m.put("biomeswevegone:zelkova_log", BWG_ZELKOVA_BRANCH);
+        m.put("biomeswevegone:zelkova_wood", BWG_ZELKOVA_BRANCH);
+
+        // Nature's Spirit
+        m.put("natures_spirit:aspen_log", NS_ASPEN_BRANCH);
+        m.put("natures_spirit:aspen_wood", NS_ASPEN_BRANCH);
+        m.put("natures_spirit:cedar_log", NS_CEDAR_BRANCH);
+        m.put("natures_spirit:cedar_wood", NS_CEDAR_BRANCH);
+        m.put("natures_spirit:coconut_log", NS_COCONUT_BRANCH);
+        m.put("natures_spirit:coconut_wood", NS_COCONUT_BRANCH);
+        m.put("natures_spirit:cypress_log", NS_CYPRESS_BRANCH);
+        m.put("natures_spirit:cypress_wood", NS_CYPRESS_BRANCH);
+        m.put("natures_spirit:fir_log", NS_FIR_BRANCH);
+        m.put("natures_spirit:fir_wood", NS_FIR_BRANCH);
+        m.put("natures_spirit:ghaf_log", NS_GHAF_BRANCH);
+        m.put("natures_spirit:ghaf_wood", NS_GHAF_BRANCH);
+        m.put("natures_spirit:joshua_log", NS_JOSHUA_BRANCH);
+        m.put("natures_spirit:joshua_wood", NS_JOSHUA_BRANCH);
+        m.put("natures_spirit:larch_log", NS_LARCH_BRANCH);
+        m.put("natures_spirit:larch_wood", NS_LARCH_BRANCH);
+        m.put("natures_spirit:mahogany_log", NS_MAHOGANY_BRANCH);
+        m.put("natures_spirit:mahogany_wood", NS_MAHOGANY_BRANCH);
+        m.put("natures_spirit:maple_log", NS_MAPLE_BRANCH);
+        m.put("natures_spirit:maple_wood", NS_MAPLE_BRANCH);
+        m.put("natures_spirit:olive_log", NS_OLIVE_BRANCH);
+        m.put("natures_spirit:olive_wood", NS_OLIVE_BRANCH);
+        m.put("natures_spirit:palo_verde_log", NS_PALO_VERDE_BRANCH);
+        m.put("natures_spirit:palo_verde_wood", NS_PALO_VERDE_BRANCH);
+        m.put("natures_spirit:redwood_log", NS_REDWOOD_BRANCH);
+        m.put("natures_spirit:redwood_wood", NS_REDWOOD_BRANCH);
+        m.put("natures_spirit:saxaul_log", NS_SAXAUL_BRANCH);
+        m.put("natures_spirit:saxaul_wood", NS_SAXAUL_BRANCH);
+        m.put("natures_spirit:sugi_log", NS_SUGI_BRANCH);
+        m.put("natures_spirit:sugi_wood", NS_SUGI_BRANCH);
+        m.put("natures_spirit:willow_log", NS_WILLOW_BRANCH);
+        m.put("natures_spirit:willow_wood", NS_WILLOW_BRANCH);
+        m.put("natures_spirit:wisteria_log", NS_WISTERIA_BRANCH);
+        m.put("natures_spirit:wisteria_wood", NS_WISTERIA_BRANCH);
+
+        // Atmospheric
+        m.put("atmospheric:aspen_log", ATM_ASPEN_BRANCH);
+        m.put("atmospheric:aspen_wood", ATM_ASPEN_BRANCH);
+        m.put("atmospheric:watchful_aspen_log", ATM_ASPEN_BRANCH);
+        m.put("atmospheric:watchful_aspen_wood", ATM_ASPEN_BRANCH);
+        m.put("atmospheric:crustose_log", ATM_CRUSTOSE_BRANCH);
+        m.put("atmospheric:crustose_wood", ATM_CRUSTOSE_BRANCH);
+        m.put("atmospheric:grimwood_log", ATM_GRIMWOOD_BRANCH);
+        m.put("atmospheric:grimwood_wood", ATM_GRIMWOOD_BRANCH);
+        m.put("atmospheric:kousa_log", ATM_KOUSA_BRANCH);
+        m.put("atmospheric:kousa_wood", ATM_KOUSA_BRANCH);
+        m.put("atmospheric:laurel_log", ATM_LAUREL_BRANCH);
+        m.put("atmospheric:laurel_wood", ATM_LAUREL_BRANCH);
+        m.put("atmospheric:morado_log", ATM_MORADO_BRANCH);
+        m.put("atmospheric:morado_wood", ATM_MORADO_BRANCH);
+        m.put("atmospheric:rosewood_log", ATM_ROSEWOOD_BRANCH);
+        m.put("atmospheric:rosewood_wood", ATM_ROSEWOOD_BRANCH);
+        m.put("atmospheric:yucca_log", ATM_YUCCA_BRANCH);
+        m.put("atmospheric:yucca_wood", ATM_YUCCA_BRANCH);
+
+        // Environmental
+        m.put("environmental:pine_log", ENV_PINE_BRANCH);
+        m.put("environmental:pine_wood", ENV_PINE_BRANCH);
+        m.put("environmental:plum_log", ENV_PLUM_BRANCH);
+        m.put("environmental:plum_wood", ENV_PLUM_BRANCH);
+        m.put("environmental:willow_log", ENV_WILLOW_BRANCH);
+        m.put("environmental:willow_wood", ENV_WILLOW_BRANCH);
+        m.put("environmental:wisteria_log", ENV_WISTERIA_BRANCH);
+        m.put("environmental:wisteria_wood", ENV_WISTERIA_BRANCH);
+
+        // Autumnity
+        m.put("autumnity:maple_log", AUT_MAPLE_BRANCH);
+        m.put("autumnity:maple_wood", AUT_MAPLE_BRANCH);
+        m.put("autumnity:sappy_maple_log", AUT_MAPLE_BRANCH);
+        m.put("autumnity:sappy_maple_wood", AUT_MAPLE_BRANCH);
         return Map.copyOf(m);
     }
 
@@ -377,18 +606,38 @@ public final class BranchMaterials {
         if (mapped != null) {
             return mapped;
         }
+        ResourceId byKeyword = resolveKeywordOrNull(log);
+        return byKeyword != null ? byKeyword : OAK_BRANCH;
+    }
+
+    /**
+     * Resolves an unknown log id using wood-family keyword matching, or returns
+     * {@code null} when no keyword matches so auto-compat can fall back to MapColor RGB.
+     */
+    public static ResourceId resolveKeywordOrNull(ResourceId log) {
+        if (log == null) {
+            return null;
+        }
         String path = log.path().toLowerCase(Locale.ROOT);
         if (path.contains("warped")) return WARPED_BRANCH;
         if (path.contains("crimson")) return CRIMSON_BRANCH;
         if (path.contains("pale_oak")) return PALE_OAK_BRANCH;
+        if (path.contains("cedar")) return NS_CEDAR_BRANCH;
+        if (path.contains("fir")) return BOP_FIR_BRANCH;
         if (path.contains("pine")) return PINE_BRANCH;
         if (path.contains("larch")) return LARCH_BRANCH;
-        if (path.contains("spruce") || path.contains("fir")) return SPRUCE_BRANCH;
+        if (path.contains("spruce")) return SPRUCE_BRANCH;
         if (path.contains("birch") || path.contains("aspen") || path.contains("poplar")) return BIRCH_BRANCH;
-        if (path.contains("jungle") || path.contains("mahogany")) return JUNGLE_BRANCH;
+        if (path.contains("mahogany")) return BOP_MAHOGANY_BRANCH;
+        if (path.contains("jungle")) return JUNGLE_BRANCH;
         if (path.contains("acacia") || path.contains("savanna")) return ACACIA_BRANCH;
-        if (path.contains("dark") || path.contains("black") || path.contains("ebony")) return DARK_OAK_BRANCH;
+        if (path.contains("ebony") || path.contains("dark") || path.contains("black")) return DARK_OAK_BRANCH;
+        if (path.contains("sakura")) return BWG_SAKURA_BRANCH;
         if (path.contains("cherry") || path.contains("blossom") || path.contains("pink")) return CHERRY_BRANCH;
+        if (path.contains("jacaranda")) return BOP_JACARANDA_BRANCH;
+        if (path.contains("magic")) return BOP_MAGIC_BRANCH;
+        if (path.contains("umbran")) return BOP_UMBRAN_BRANCH;
+        if (path.contains("hellbark")) return BOP_HELLBARK_BRANCH;
         if (path.contains("willow")) return WILLOW_BRANCH;
         if (path.contains("cypress")) return CYPRESS_BRANCH;
         if (path.contains("balsa")) return BM_BLIGHTED_BALSA_BRANCH;
@@ -397,7 +646,35 @@ public final class BranchMaterials {
         if (path.contains("redwood")) return REDWOOD_BRANCH;
         if (path.contains("baobab")) return BAOBAB_BRANCH;
         if (path.contains("palm") || path.contains("coconut")) return PALM_BRANCH;
-        return OAK_BRANCH;
+        if (path.contains("olive")) return NS_OLIVE_BRANCH;
+        if (path.contains("wisteria")) return NS_WISTERIA_BRANCH;
+        if (path.contains("plum")) return ENV_PLUM_BRANCH;
+        if (path.contains("laurel")) return ATM_LAUREL_BRANCH;
+        if (path.contains("rosewood")) return ATM_ROSEWOOD_BRANCH;
+        if (path.contains("holly")) return BWG_HOLLY_BRANCH;
+        if (path.contains("zelkova")) return BWG_ZELKOVA_BRANCH;
+        if (path.contains("ironwood")) return IRONWOOD_BRANCH;
+        if (path.contains("yucca")) return ATM_YUCCA_BRANCH;
+        if (path.contains("sugi")) return NS_SUGI_BRANCH;
+        if (path.contains("ghaf")) return NS_GHAF_BRANCH;
+        if (path.contains("saxaul")) return NS_SAXAUL_BRANCH;
+        if (path.contains("palo_verde")) return BWG_PALO_VERDE_BRANCH;
+        if (path.contains("cika")) return BWG_CIKA_BRANCH;
+        if (path.contains("skyris")) return BWG_SKYRIS_BRANCH;
+        if (path.contains("witch_hazel")) return BWG_WITCH_HAZEL_BRANCH;
+        if (path.contains("kousa")) return ATM_KOUSA_BRANCH;
+        if (path.contains("morado")) return ATM_MORADO_BRANCH;
+        if (path.contains("grimwood")) return ATM_GRIMWOOD_BRANCH;
+        if (path.contains("joshua")) return JOSHUA_BRANCH;
+        if (path.contains("socotra")) return SOCOTRA_BRANCH;
+        if (path.contains("ashen")) return ASHEN_BRANCH;
+        if (path.contains("dead")) return DEAD_BRANCH;
+        if (path.contains("mauve")) return MAUVE_BRANCH;
+        if (path.contains("magnolia")) return MAGNOLIA_BRANCH;
+        if (path.contains("echo")) return ECHO_BRANCH;
+        if (path.contains("cobalt")) return COBALT_BRANCH;
+        if (path.contains("brimwood")) return BRIMWOOD_BRANCH;
+        return null;
     }
 
     public static boolean hasBranchMaterial(ResourceId log) {

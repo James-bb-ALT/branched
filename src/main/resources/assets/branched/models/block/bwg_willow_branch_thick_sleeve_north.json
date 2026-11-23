@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_thick_sleeve_north_template",
+  "textures": {
+    "particle": "biomeswevegone:block/willow/log",
+    "side": "biomeswevegone:block/willow/log",
+    "end": "biomeswevegone:block/willow/log_top"
+  }
+}

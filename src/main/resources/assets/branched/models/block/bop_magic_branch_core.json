@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_core_template",
+  "textures": {
+    "particle": "biomesoplenty:block/magic_log",
+    "side": "biomesoplenty:block/magic_log",
+    "end": "biomesoplenty:block/magic_log_top"
+  }
+}

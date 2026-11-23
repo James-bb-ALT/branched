@@ -58,7 +58,26 @@ class CustomTreeFeatureConverterTest {
                 "com.github.alexmodguy.alexscaves.server.level.feature.GiantAncientTreeFeature",
                 "com.github.alexmodguy.alexscaves.server.level.feature.LicorootTreeFeature",
                 "com.github.alexmodguy.alexscaves.server.level.feature.LicorootTreeWithSproutsFeature",
-                "com.teamabnormals.upgrade_aquatic.common.levelgen.feature.RiverTreeFeature"
+                "com.teamabnormals.upgrade_aquatic.common.levelgen.feature.RiverTreeFeature",
+
+                // Top biome mods: Oh The Trees You'll Grow (BWG), Nature's Spirit, Atmospheric, Environmental, Autumnity
+                "dev.corgitaco.ohthetreesyoullgrow.world.level.levelgen.feature.TreeFromStructureNBTFeature",
+                "dev.corgitaco.ohthetreesyoullgrow.world.level.levelgen.feature.TreeFromStructureNBTFeatureV2",
+                "net.hibiscus.naturespirit.world.feature.JoshuaTreeFeature",
+                "com.teamabnormals.atmospheric.common.levelgen.feature.AspenTreeFeature",
+                "com.teamabnormals.atmospheric.common.levelgen.feature.GiantLaurelTreeFeature",
+                "com.teamabnormals.atmospheric.common.levelgen.feature.GrimwoodTreeFeature",
+                "com.teamabnormals.atmospheric.common.levelgen.feature.KousaTreeFeature",
+                "com.teamabnormals.atmospheric.common.levelgen.feature.YuccaTreeFeature",
+                "com.teamabnormals.environmental.common.levelgen.feature.PineTreeFeature",
+                "com.teamabnormals.environmental.common.levelgen.feature.WillowTreePlacerFeature",
+                "com.teamabnormals.environmental.common.levelgen.feature.WisteriaTreeFeature",
+                "com.teamabnormals.environmental.common.levelgen.feature.WeepingWillowTreeFeature",
+                "com.teamabnormals.autumnity.common.levelgen.feature.MapleTreeFeature",
+                "com.teamabnormals.autumnity.common.levelgen.feature.FallenLeavesMapleTreeFeature",
+
+                // Auto-compat heuristic custom tree feature from unknown mod
+                "com.examplemod.worldgen.MysticOakTreeFeature"
         );
 
         for (String fqcn : expectedClasses) {
@@ -93,7 +112,11 @@ class CustomTreeFeatureConverterTest {
                 "com.github.alexmodguy.alexscaves.server.level.feature.PewenTreeFeature",
                 "com.github.alexmodguy.alexscaves.server.level.feature.ThornwoodTreeFeature",
                 "net.minecraft.world.level.levelgen.feature.OreFeature",
-                "net.minecraft.world.level.levelgen.feature.SimpleRandomSelectorFeature"
+                "net.minecraft.world.level.levelgen.feature.SimpleRandomSelectorFeature",
+                "com.teamabnormals.environmental.common.levelgen.feature.FallenPineTreeFeature",
+                "com.examplemod.worldgen.FallenOakTreeFeature",
+                "com.examplemod.worldgen.MushroomTreeFeature",
+                "com.examplemod.worldgen.PalmTreeFeature"
         );
 
         for (String fqcn : excludedClasses) {

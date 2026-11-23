@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_sleeve_north_template",
+  "textures": {
+    "particle": "natures_spirit:block/palo_verde_log",
+    "side": "natures_spirit:block/palo_verde_log",
+    "end": "natures_spirit:block/palo_verde_log_top"
+  }
+}

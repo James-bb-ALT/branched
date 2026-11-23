@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_thin_sleeve_north_template",
+  "textures": {
+    "particle": "atmospheric:block/laurel_log",
+    "side": "atmospheric:block/laurel_log",
+    "end": "atmospheric:block/laurel_log_top"
+  }
+}

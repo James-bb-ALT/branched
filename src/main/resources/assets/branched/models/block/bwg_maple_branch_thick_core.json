@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_thick_core_template",
+  "textures": {
+    "particle": "biomeswevegone:block/maple/log",
+    "side": "biomeswevegone:block/maple/log",
+    "end": "biomeswevegone:block/maple/log_top"
+  }
+}

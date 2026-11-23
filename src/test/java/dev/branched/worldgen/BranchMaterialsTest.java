@@ -119,6 +119,46 @@ class BranchMaterialsTest {
                 BranchMaterials.resolve(ResourceId.parse("betternether:wart_log")));
         assertEquals(BranchMaterials.BN_WART_BRANCH,
                 BranchMaterials.resolve(ResourceId.parse("betternether:wart_bark")));
+
+        // Biomes O' Plenty
+        assertEquals(BranchMaterials.BOP_FIR_BRANCH,
+                BranchMaterials.resolve(ResourceId.parse("biomesoplenty:fir_log")));
+        assertEquals(BranchMaterials.BOP_WILLOW_BRANCH,
+                BranchMaterials.resolve(ResourceId.parse("biomesoplenty:willow_log")));
+        assertEquals(BranchMaterials.BOP_REDWOOD_BRANCH,
+                BranchMaterials.resolve(ResourceId.parse("biomesoplenty:redwood_wood")));
+
+        // Oh The Biomes We've Gone
+        assertEquals(BranchMaterials.BWG_ASPEN_BRANCH,
+                BranchMaterials.resolve(ResourceId.parse("biomeswevegone:aspen_log")));
+        assertEquals(BranchMaterials.BWG_RAINBOW_EUCALYPTUS_BRANCH,
+                BranchMaterials.resolve(ResourceId.parse("biomeswevegone:rainbow_eucalyptus_log")));
+        assertEquals(BranchMaterials.BWG_WHITE_MANGROVE_BRANCH,
+                BranchMaterials.resolve(ResourceId.parse("biomeswevegone:white_mangrove_wood")));
+
+        // Nature's Spirit
+        assertEquals(BranchMaterials.NS_JOSHUA_BRANCH,
+                BranchMaterials.resolve(ResourceId.parse("natures_spirit:joshua_log")));
+        assertEquals(BranchMaterials.NS_WISTERIA_BRANCH,
+                BranchMaterials.resolve(ResourceId.parse("natures_spirit:wisteria_log")));
+        assertEquals(BranchMaterials.NS_SUGI_BRANCH,
+                BranchMaterials.resolve(ResourceId.parse("natures_spirit:sugi_wood")));
+
+        // Atmospheric
+        assertEquals(BranchMaterials.ATM_LAUREL_BRANCH,
+                BranchMaterials.resolve(ResourceId.parse("atmospheric:laurel_log")));
+        assertEquals(BranchMaterials.ATM_YUCCA_BRANCH,
+                BranchMaterials.resolve(ResourceId.parse("atmospheric:yucca_log")));
+
+        // Environmental
+        assertEquals(BranchMaterials.ENV_PINE_BRANCH,
+                BranchMaterials.resolve(ResourceId.parse("environmental:pine_log")));
+        assertEquals(BranchMaterials.ENV_WILLOW_BRANCH,
+                BranchMaterials.resolve(ResourceId.parse("environmental:willow_wood")));
+
+        // Autumnity
+        assertEquals(BranchMaterials.AUT_MAPLE_BRANCH,
+                BranchMaterials.resolve(ResourceId.parse("autumnity:maple_log")));
     }
 
     @Test

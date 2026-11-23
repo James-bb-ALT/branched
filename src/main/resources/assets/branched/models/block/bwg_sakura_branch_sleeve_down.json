@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_sleeve_down_template",
+  "textures": {
+    "particle": "biomeswevegone:block/sakura/log",
+    "side": "biomeswevegone:block/sakura/log",
+    "end": "biomeswevegone:block/sakura/log_top"
+  }
+}

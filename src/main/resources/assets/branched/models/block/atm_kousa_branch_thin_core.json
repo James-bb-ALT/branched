@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_thin_core_template",
+  "textures": {
+    "particle": "atmospheric:block/kousa_log",
+    "side": "atmospheric:block/kousa_log",
+    "end": "atmospheric:block/kousa_log_top"
+  }
+}

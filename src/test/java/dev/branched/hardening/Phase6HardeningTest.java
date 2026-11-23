@@ -236,7 +236,7 @@ class Phase6HardeningTest {
         assertTrue(json.getAsJsonObject("invariants").get("zeroBlockEntities").getAsBoolean());
         assertTrue(json.getAsJsonObject("invariants").get("dynamicTreesLoaded").getAsBoolean());
         assertEquals(70, json.getAsJsonObject("profiles").get("total").getAsInt());
-        assertEquals(18, json.getAsJsonObject("adapters").get("total").getAsInt());
+        assertEquals(24, json.getAsJsonObject("adapters").get("total").getAsInt());
         assertEquals(7, json.getAsJsonObject("adapters").get("readyCount").getAsInt());
         assertEquals(42L, json.getAsJsonObject("metrics").get("PlacedCount").getAsLong());
         assertEquals(AdapterState.READY.name(), adapters.states(fullPresence).get("fishofthieves").name());

@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_sleeve_up_template",
+  "textures": {
+    "particle": "environmental:block/pine_log",
+    "side": "environmental:block/pine_log",
+    "end": "environmental:block/pine_log_top"
+  }
+}

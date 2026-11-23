@@ -1,6 +1,7 @@
 package dev.branched.worldgen;
 
 import dev.branched.block.StaticBranchBlock;
+import dev.branched.config.ArborealConfig;
 import dev.branched.core.ResourceId;
 import dev.branched.morphology.SeedMixer;
 import net.minecraft.core.BlockPos;
@@ -133,6 +134,42 @@ public final class CustomTreeFeatureConverter {
         // Upgrade Aquatic (1 BlueprintTreeFeature subclass)
         map.put("com.teamabnormals.upgrade_aquatic.common.levelgen.feature.RiverTreeFeature", NORMAL_TREE);
 
+        // Oh The Trees You'll Grow (used by Oh The Biomes We've Gone / NBT structure trees)
+        String tyg = "dev.corgitaco.ohthetreesyoullgrow.world.level.levelgen.feature.";
+        map.put(tyg + "TreeFromStructureNBTFeature", GIANT_TREE);
+        map.put(tyg + "TreeFromStructureNBTFeatureV2", GIANT_TREE);
+
+        // Nature's Spirit custom tree feature
+        map.put("net.hibiscus.naturespirit.world.feature.JoshuaTreeFeature", NORMAL_TREE);
+
+        // Atmospheric (11 living BlueprintTreeFeature/Feature subclasses)
+        String atm = "com.teamabnormals.atmospheric.common.levelgen.feature.";
+        map.put(atm + "AspenTreeFeature", NORMAL_TREE);
+        map.put(atm + "BabyKousaTreeFeature", NORMAL_TREE);
+        map.put(atm + "BabyYuccaTreeFeature", NORMAL_TREE);
+        map.put(atm + "CurrantTreeFeature", NORMAL_TREE);
+        map.put(atm + "GiantLaurelTreeFeature", GIANT_TREE);
+        map.put(atm + "GrimwoodTreeFeature", NORMAL_TREE);
+        map.put(atm + "KousaTreeFeature", NORMAL_TREE);
+        map.put(atm + "LargeLaurelTreeFeature", GIANT_TREE);
+        map.put(atm + "LaurelTreeFeature", NORMAL_TREE);
+        map.put(atm + "RainforestTreeFeature", GIANT_TREE);
+        map.put(atm + "YuccaTreeFeature", NORMAL_TREE);
+
+        // Environmental (6 living tree features; excludes FallenPineTreeFeature & FallenTallPineTreeFeature)
+        String env = "com.teamabnormals.environmental.common.levelgen.feature.";
+        map.put(env + "PineTreeFeature", NORMAL_TREE);
+        map.put(env + "PineTreeOnStoneFeature", NORMAL_TREE);
+        map.put(env + "PlumTreeFeature", NORMAL_TREE);
+        map.put(env + "WeepingWillowTreeFeature", NORMAL_TREE);
+        map.put(env + "WillowTreePlacerFeature", NORMAL_TREE);
+        map.put(env + "WisteriaTreeFeature", NORMAL_TREE);
+
+        // Autumnity (2 maple tree features)
+        String aut = "com.teamabnormals.autumnity.common.levelgen.feature.";
+        map.put(aut + "FallenLeavesMapleTreeFeature", NORMAL_TREE);
+        map.put(aut + "MapleTreeFeature", NORMAL_TREE);
+
         return Map.copyOf(map);
     }
 
@@ -144,12 +181,20 @@ public final class CustomTreeFeatureConverter {
         return PROFILE_CACHE.get(featureClass).orElse(null);
     }
 
-    /** Pure-Java allowlist lookup by FQCN for offline tests and diagnostics. */
+    /** Pure-Java allowlist + auto-compat lookup by FQCN for offline tests and diagnostics. */
     public static TreeScanProfile profileForClassName(String className) {
         if (className == null || className.isEmpty()) {
             return null;
         }
-        return ALLOWLIST.get(className);
+        TreeScanProfile explicit = ALLOWLIST.get(className);
+        if (explicit != null) {
+            return explicit;
+        }
+        if (ArborealConfig.autoCompatEnabled()
+                && AutoCompatResolver.isAutoCompatCustomTreeFeatureClassName(className)) {
+            return NORMAL_TREE;
+        }
+        return null;
     }
 
     public static void convertPostPlacedFeature(WorldGenLevel level, BlockPos origin, TreeScanProfile profile) {
@@ -182,10 +227,11 @@ public final class CustomTreeFeatureConverter {
         BlockState seedState = level.getBlockState(seedPos);
         ResourceId seedLogId = MinecraftResourceIds.fromLocationOrNull(
                 BuiltInRegistries.BLOCK.getKey(seedState.getBlock()));
-        if (seedLogId == null || !BranchMaterials.hasExactMapping(seedLogId)) {
+        ResourceId targetBranchId = NativeTreeBranchConverter.resolveBranchForLog(
+                level, seedPos, seedState, seedLogId);
+        if (targetBranchId == null) {
             return;
         }
-        ResourceId targetBranchId = BranchMaterials.resolve(seedLogId);
 
         Set<BlockPos> placedLogs = new LinkedHashSet<>();
         Map<Block, Integer> logCounts = new LinkedHashMap<>();
@@ -238,9 +284,8 @@ public final class CustomTreeFeatureConverter {
                         }
                         ResourceId neighborLogId = MinecraftResourceIds.fromLocationOrNull(
                                 BuiltInRegistries.BLOCK.getKey(neighborState.getBlock()));
-                        if (neighborLogId == null
-                                || !BranchMaterials.hasExactMapping(neighborLogId)
-                                || !targetBranchId.equals(BranchMaterials.resolve(neighborLogId))) {
+                        if (!targetBranchId.equals(NativeTreeBranchConverter.resolveBranchForLog(
+                                level, cursor, neighborState, neighborLogId))) {
                             continue;
                         }
                         BlockPos next = cursor.immutable();
@@ -348,12 +393,19 @@ public final class CustomTreeFeatureConverter {
                 : rawLeafState;
         ResourceId leafId = MinecraftResourceIds.fromLocationOrNull(
                 BuiltInRegistries.BLOCK.getKey(sampleLeafBlock));
-        if (NativeTreeBranchConverter.isNonBranchingSpecies(logId, leafId)
-                || !BranchMaterials.hasExactMapping(logId)) {
+        if (NativeTreeBranchConverter.isNonBranchingSpecies(logId, leafId)) {
             return;
         }
 
-        ResourceId branchId = BranchMaterials.resolve(logId);
+        BlockPos sampleLogPos = NativeTreeBranchConverter.findSamplePosForBlock(level, placedLogs, sampleLogBlock);
+        ResourceId branchId = NativeTreeBranchConverter.resolveBranchForLog(
+                level,
+                sampleLogPos,
+                sampleLogPos != null ? level.getBlockState(sampleLogPos) : sampleLogBlock.defaultBlockState(),
+                logId);
+        if (branchId == null) {
+            return;
+        }
         Block resolvedBranch = BuiltInRegistries.BLOCK.get(MinecraftResourceIds.toLocation(branchId));
         if (!(resolvedBranch instanceof StaticBranchBlock branchBlock)) {
             return;
@@ -419,12 +471,15 @@ public final class CustomTreeFeatureConverter {
         if (state.getBlock() instanceof LeavesBlock || state.is(BlockTags.LEAVES)) {
             return true;
         }
-        if (!allowNonTagFoliage) {
-            return false;
-        }
         ResourceId id = MinecraftResourceIds.fromLocationOrNull(
                 BuiltInRegistries.BLOCK.getKey(state.getBlock()));
         if (id == null) {
+            return false;
+        }
+        if (ArborealConfig.autoCompatEnabled() && AutoCompatResolver.isHeuristicFoliageId(id)) {
+            return true;
+        }
+        if (!allowNonTagFoliage) {
             return false;
         }
         String path = id.path().toLowerCase(Locale.ROOT);

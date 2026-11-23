@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_thin_core_template",
+  "textures": {
+    "particle": "natures_spirit:block/cedar_log",
+    "side": "natures_spirit:block/cedar_log",
+    "end": "natures_spirit:block/cedar_log_top"
+  }
+}

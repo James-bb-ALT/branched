@@ -1,6 +1,7 @@
 package dev.branched.worldgen;
 
 import dev.branched.block.StaticBranchBlock;
+import dev.branched.config.ArborealConfig;
 import dev.branched.core.ResourceId;
 import dev.branched.morphology.BlockPlacement;
 import dev.branched.morphology.DeterministicRandom;
@@ -337,11 +338,19 @@ public final class NativeTreeBranchConverter {
 
         ResourceId logId = MinecraftResourceIds.fromLocationOrNull(BuiltInRegistries.BLOCK.getKey(sampleLogBlock));
         ResourceId leafId = MinecraftResourceIds.fromLocationOrNull(BuiltInRegistries.BLOCK.getKey(sampleLeafBlock));
-        if (isNonBranchingSpecies(logId, leafId) || !BranchMaterials.hasExactMapping(logId)) {
+        if (isNonBranchingSpecies(logId, leafId)) {
             return;
         }
 
-        ResourceId branchId = BranchMaterials.resolve(logId);
+        BlockPos sampleLogPos = findSamplePosForBlock(level, realLogPositions, sampleLogBlock);
+        ResourceId branchId = resolveBranchForLog(
+                level,
+                sampleLogPos,
+                sampleLogPos != null ? level.getBlockState(sampleLogPos) : sampleLogBlock.defaultBlockState(),
+                logId);
+        if (branchId == null) {
+            return;
+        }
         Block resolvedBranch = BuiltInRegistries.BLOCK.get(MinecraftResourceIds.toLocation(branchId));
         if (!(resolvedBranch instanceof StaticBranchBlock branchBlock)) {
             return;
@@ -418,7 +427,7 @@ public final class NativeTreeBranchConverter {
             return;
         }
         ResourceId logId = MinecraftResourceIds.fromLocationOrNull(BuiltInRegistries.BLOCK.getKey(sampleLogBlock));
-        if (logId == null || !BranchMaterials.hasExactMapping(logId)) {
+        if (logId == null) {
             return;
         }
 
@@ -435,7 +444,15 @@ public final class NativeTreeBranchConverter {
             return;
         }
 
-        ResourceId branchId = BranchMaterials.resolve(logId);
+        BlockPos sampleLogPos = findSamplePosForBlock(level, realTrunk, sampleLogBlock);
+        ResourceId branchId = resolveBranchForLog(
+                level,
+                sampleLogPos,
+                sampleLogPos != null ? level.getBlockState(sampleLogPos) : sampleLogBlock.defaultBlockState(),
+                logId);
+        if (branchId == null) {
+            return;
+        }
         Block resolvedBranch = BuiltInRegistries.BLOCK.get(MinecraftResourceIds.toLocation(branchId));
         if (!(resolvedBranch instanceof StaticBranchBlock branchBlock)) {
             return;
@@ -547,6 +564,35 @@ public final class NativeTreeBranchConverter {
         }
     }
 
+    static ResourceId resolveBranchForLog(WorldGenLevel level,
+                                            BlockPos samplePos,
+                                            BlockState sampleState,
+                                            ResourceId logId) {
+        if (logId == null) {
+            return null;
+        }
+        if (BranchMaterials.hasExactMapping(logId)) {
+            return BranchMaterials.resolve(logId);
+        }
+        if (ArborealConfig.autoCompatEnabled() && AutoCompatResolver.isHeuristicLogId(logId)) {
+            int mapColorRgb = 0;
+            if (sampleState != null && level != null && samplePos != null) {
+                mapColorRgb = sampleState.getMapColor(level, samplePos).col;
+            }
+            return AutoCompatResolver.resolveBranchForUnknownLog(logId, mapColorRgb);
+        }
+        return null;
+    }
+
+    static BlockPos findSamplePosForBlock(WorldGenLevel level, Iterable<BlockPos> positions, Block targetBlock) {
+        for (BlockPos pos : positions) {
+            if (level.getBlockState(pos).getBlock() == targetBlock) {
+                return pos;
+            }
+        }
+        return null;
+    }
+
     static boolean isRecognizedTreeLog(BlockState state) {
         if (state == null || state.getBlock() instanceof StaticBranchBlock) {
             return false;
@@ -556,7 +602,8 @@ public final class NativeTreeBranchConverter {
         }
         ResourceId id = MinecraftResourceIds.fromLocationOrNull(
                 BuiltInRegistries.BLOCK.getKey(state.getBlock()));
-        return id != null && BranchMaterials.hasExactMapping(id);
+        return id != null && (BranchMaterials.hasExactMapping(id)
+                || (ArborealConfig.autoCompatEnabled() && AutoCompatResolver.isHeuristicLogId(id)));
     }
 
     static boolean canReplaceForBranch(BlockState state) {

@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_sleeve_up_template",
+  "textures": {
+    "particle": "natures_spirit:block/sugi_log",
+    "side": "natures_spirit:block/sugi_log",
+    "end": "natures_spirit:block/sugi_log_top"
+  }
+}

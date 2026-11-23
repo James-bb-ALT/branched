@@ -2,15 +2,21 @@ package dev.branched.compat;
 
 import dev.branched.compat.adapter.AetherAdapter;
 import dev.branched.compat.adapter.AlexsCavesAdapter;
+import dev.branched.compat.adapter.AtmosphericAdapter;
+import dev.branched.compat.adapter.AutumnityAdapter;
 import dev.branched.compat.adapter.BaobabAdapter;
 import dev.branched.compat.adapter.BaobabTreeAdapter;
 import dev.branched.compat.adapter.BetterEndAdapter;
 import dev.branched.compat.adapter.BetterNetherAdapter;
 import dev.branched.compat.adapter.BiomeMakeoverAdapter;
+import dev.branched.compat.adapter.BiomesOPlentyAdapter;
+import dev.branched.compat.adapter.BiomesWeveGoneAdapter;
 import dev.branched.compat.adapter.DeepAetherAdapter;
 import dev.branched.compat.adapter.DeeperDarkerAdapter;
 import dev.branched.compat.adapter.EcologicsAdapter;
+import dev.branched.compat.adapter.EnvironmentalAdapter;
 import dev.branched.compat.adapter.FishOfThievesAdapter;
+import dev.branched.compat.adapter.NaturesSpiritAdapter;
 import dev.branched.compat.adapter.QuarkAdapter;
 import dev.branched.compat.adapter.RegionsUnexploredAdapter;
 import dev.branched.compat.adapter.TerralithAdapter;
@@ -45,6 +51,12 @@ public final class DefaultAdapters {
                 new BaobabAdapter(),
                 new BetterEndAdapter(),
                 new BetterNetherAdapter(),
-                new TwilightDelightAdapter());
+                new TwilightDelightAdapter(),
+                new BiomesOPlentyAdapter(),
+                new BiomesWeveGoneAdapter(),
+                new NaturesSpiritAdapter(),
+                new AtmosphericAdapter(),
+                new EnvironmentalAdapter(),
+                new AutumnityAdapter());
     }
 }
