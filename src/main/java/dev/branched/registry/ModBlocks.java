@@ -102,6 +102,29 @@ public final class ModBlocks {
     public static final RegistryObject<StaticBranchBlock> ECHO_BRANCH = branch("echo_branch");
     public static final RegistryObject<StaticBranchBlock> PEWEN_BRANCH = branch("pewen_branch");
     public static final RegistryObject<StaticBranchBlock> THORNWOOD_BRANCH = branch("thornwood_branch");
+    public static final RegistryObject<StaticBranchBlock> LICOROOT_BRANCH = branch("licoroot_branch");
+
+    // Deep Aether & Twilight Delight additions
+    public static final RegistryObject<StaticBranchBlock> ROTTEN_ROSEROOT_BRANCH = branch("rotten_roseroot_branch");
+    public static final RegistryObject<StaticBranchBlock> IRONWOOD_BRANCH = branch("ironwood_branch");
+
+    // BetterEnd
+    public static final RegistryObject<StaticBranchBlock> DRAGON_TREE_BRANCH = branch("dragon_tree_branch");
+    public static final RegistryObject<StaticBranchBlock> HELIX_TREE_BRANCH = branch("helix_tree_branch");
+    public static final RegistryObject<StaticBranchBlock> LACUGROVE_BRANCH = branch("lacugrove_branch");
+    public static final RegistryObject<StaticBranchBlock> LUCERNIA_BRANCH = branch("lucernia_branch");
+    public static final RegistryObject<StaticBranchBlock> PYTHADENDRON_BRANCH = branch("pythadendron_branch");
+    public static final RegistryObject<StaticBranchBlock> TENANEA_BRANCH = branch("tenanea_branch");
+    public static final RegistryObject<StaticBranchBlock> UMBRELLA_TREE_BRANCH = branch("umbrella_tree_branch");
+
+    // BetterNether
+    public static final RegistryObject<StaticBranchBlock> ANCHOR_TREE_BRANCH = branch("anchor_tree_branch");
+    public static final RegistryObject<StaticBranchBlock> GLOOMWOOD_BRANCH = branch("gloomwood_branch");
+    public static final RegistryObject<StaticBranchBlock> GLOOMWOOD_DARK_BRANCH = branch("gloomwood_dark_branch");
+    public static final RegistryObject<StaticBranchBlock> NETHER_SAKURA_BRANCH = branch("nether_sakura_branch");
+    public static final RegistryObject<StaticBranchBlock> RUBEUS_BRANCH = branch("rubeus_branch");
+    public static final RegistryObject<StaticBranchBlock> BN_WILLOW_BRANCH = branch("bn_willow_branch");
+    public static final RegistryObject<StaticBranchBlock> BN_WART_BRANCH = branch("bn_wart_branch");
 
     private ModBlocks() {
     }

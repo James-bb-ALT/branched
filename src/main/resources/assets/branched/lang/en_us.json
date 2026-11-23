@@ -64,5 +64,22 @@
   "block.branched.baobabtree_branch": "Savanna Baobab Branch",
   "block.branched.echo_branch": "Echo Branch",
   "block.branched.pewen_branch": "Pewen Branch",
-  "block.branched.thornwood_branch": "Thornwood Branch"
+  "block.branched.thornwood_branch": "Thornwood Branch",
+  "block.branched.licoroot_branch": "Licoroot Branch",
+  "block.branched.rotten_roseroot_branch": "Rotten Roseroot Branch",
+  "block.branched.ironwood_branch": "Ironwood Branch",
+  "block.branched.dragon_tree_branch": "Dragon Tree Branch",
+  "block.branched.helix_tree_branch": "Helix Tree Branch",
+  "block.branched.lacugrove_branch": "Lacugrove Branch",
+  "block.branched.lucernia_branch": "Lucernia Branch",
+  "block.branched.pythadendron_branch": "Pythadendron Branch",
+  "block.branched.tenanea_branch": "Tenanea Branch",
+  "block.branched.umbrella_tree_branch": "Umbrella Tree Branch",
+  "block.branched.anchor_tree_branch": "Anchor Tree Branch",
+  "block.branched.gloomwood_branch": "Gloomwood Branch",
+  "block.branched.gloomwood_dark_branch": "Dark Gloomwood Branch",
+  "block.branched.nether_sakura_branch": "Nether Sakura Branch",
+  "block.branched.rubeus_branch": "Rubeus Branch",
+  "block.branched.bn_willow_branch": "Nether Willow Branch",
+  "block.branched.bn_wart_branch": "Nether Wart Branch"
 }

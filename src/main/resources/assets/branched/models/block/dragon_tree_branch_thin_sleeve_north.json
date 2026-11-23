@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_thin_sleeve_north_template",
+  "textures": {
+    "particle": "betterend:block/dragon_tree_log_side",
+    "side": "betterend:block/dragon_tree_log_side",
+    "end": "betterend:block/dragon_tree_log_top"
+  }
+}

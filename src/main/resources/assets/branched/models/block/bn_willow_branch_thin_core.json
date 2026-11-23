@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_thin_core_template",
+  "textures": {
+    "particle": "betternether:block/willow_bark",
+    "side": "betternether:block/willow_bark",
+    "end": "betternether:block/willow_log_top"
+  }
+}

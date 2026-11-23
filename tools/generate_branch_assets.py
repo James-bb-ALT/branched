@@ -94,6 +94,29 @@ BRANCHES = [
     ("echo_branch", "deeperdarker:block/echo_log", "deeperdarker:block/echo_log_top", "Echo Branch"),
     ("pewen_branch", "alexscaves:block/pewen/pewen_log", "alexscaves:block/pewen/pewen_log_top", "Pewen Branch"),
     ("thornwood_branch", "alexscaves:block/thornwood/thornwood_log", "alexscaves:block/thornwood/thornwood_log_top", "Thornwood Branch"),
+    ("licoroot_branch", "alexscaves:block/licoroot/licoroot", "alexscaves:block/licoroot/licoroot_top", "Licoroot Branch"),
+
+    # Deep Aether & Twilight Delight additions
+    ("rotten_roseroot_branch", "deep_aether:block/rotten_roseroot_log", "deep_aether:block/roseroot_log_top", "Rotten Roseroot Branch"),
+    ("ironwood_branch", "twilightdelight:block/ironwood_log", "twilightdelight:block/ironwood_log_top", "Ironwood Branch"),
+
+    # BetterEnd
+    ("dragon_tree_branch", "betterend:block/dragon_tree_log_side", "betterend:block/dragon_tree_log_top", "Dragon Tree Branch"),
+    ("helix_tree_branch", "betterend:block/helix_tree_log_side", "betterend:block/helix_tree_log_top", "Helix Tree Branch"),
+    ("lacugrove_branch", "betterend:block/lacugrove_log_side", "betterend:block/lacugrove_log_top", "Lacugrove Branch"),
+    ("lucernia_branch", "betterend:block/lucernia_log_side", "betterend:block/lucernia_log_top", "Lucernia Branch"),
+    ("pythadendron_branch", "betterend:block/pythadendron_log_side", "betterend:block/pythadendron_log_top", "Pythadendron Branch"),
+    ("tenanea_branch", "betterend:block/tenanea_log_side", "betterend:block/tenanea_log_top", "Tenanea Branch"),
+    ("umbrella_tree_branch", "betterend:block/umbrella_tree_log_side", "betterend:block/umbrella_tree_log_top", "Umbrella Tree Branch"),
+
+    # BetterNether
+    ("anchor_tree_branch", "betternether:block/anchor_tree_log_side", "betternether:block/anchor_tree_log_top", "Anchor Tree Branch"),
+    ("gloomwood_branch", "betternether:block/gloomwood_log_side", "betternether:block/gloomwood_log_top", "Gloomwood Branch"),
+    ("gloomwood_dark_branch", "betternether:block/gloomwood_dark_log_side", "betternether:block/gloomwood_dark_log_top", "Dark Gloomwood Branch"),
+    ("nether_sakura_branch", "betternether:block/nether_sakura_log_side", "betternether:block/nether_sakura_log_top", "Nether Sakura Branch"),
+    ("rubeus_branch", "betternether:block/rubeus_log_side", "betternether:block/rubeus_log_top", "Rubeus Branch"),
+    ("bn_willow_branch", "betternether:block/willow_bark", "betternether:block/willow_log_top", "Nether Willow Branch"),
+    ("bn_wart_branch", "betternether:block/wart_bark", "betternether:block/wart_log_top", "Nether Wart Branch"),
 ]
 
 

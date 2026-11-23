@@ -84,7 +84,7 @@ class TreePhysicsCompatTest {
                     .sorted()
                     .toList();
         }
-        assertEquals(66, allBranchNames.size());
+        assertEquals(83, allBranchNames.size());
 
         Map<String, String> trunkToBranch = new HashMap<>();
         trunkToBranch.put("minecraft:oak_log", "oak_branch");
@@ -153,7 +153,24 @@ class TreePhysicsCompatTest {
         trunkToBranch.put("deeperdarker:echo_log", "echo_branch");
         trunkToBranch.put("alexscaves:pewen_log", "pewen_branch");
         trunkToBranch.put("alexscaves:thornwood_log", "thornwood_branch");
-        assertEquals(allBranchNames.size(), trunkToBranch.size(), "every one of the 66 branches must be covered");
+        trunkToBranch.put("alexscaves:licoroot", "licoroot_branch");
+        trunkToBranch.put("deep_aether:rotten_roseroot_log", "rotten_roseroot_branch");
+        trunkToBranch.put("twilightdelight:ironwood_log", "ironwood_branch");
+        trunkToBranch.put("betterend:dragon_tree_log", "dragon_tree_branch");
+        trunkToBranch.put("betterend:helix_tree_log", "helix_tree_branch");
+        trunkToBranch.put("betterend:lacugrove_log", "lacugrove_branch");
+        trunkToBranch.put("betterend:lucernia_log", "lucernia_branch");
+        trunkToBranch.put("betterend:pythadendron_log", "pythadendron_branch");
+        trunkToBranch.put("betterend:tenanea_log", "tenanea_branch");
+        trunkToBranch.put("betterend:umbrella_tree_log", "umbrella_tree_branch");
+        trunkToBranch.put("betternether:anchor_tree_log", "anchor_tree_branch");
+        trunkToBranch.put("betternether:gloomwood_log", "gloomwood_branch");
+        trunkToBranch.put("betternether:gloomwood_dark_log", "gloomwood_dark_branch");
+        trunkToBranch.put("betternether:nether_sakura_log", "nether_sakura_branch");
+        trunkToBranch.put("betternether:rubeus_log", "rubeus_branch");
+        trunkToBranch.put("betternether:willow_log", "bn_willow_branch");
+        trunkToBranch.put("betternether:wart_log", "bn_wart_branch");
+        assertEquals(allBranchNames.size(), trunkToBranch.size(), "every one of the 83 branches must be covered");
 
         for (Map.Entry<String, String> entry : trunkToBranch.entrySet()) {
             ResourceId trunkId = ResourceId.parse(entry.getKey());

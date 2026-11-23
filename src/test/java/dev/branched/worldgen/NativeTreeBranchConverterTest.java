@@ -201,9 +201,197 @@ class NativeTreeBranchConverterTest {
         assertEquals(BranchMaterials.BM_WILLOW_BRANCH, willowBranch);
 
         ResourceId alien = NativeTreeBranchConverter.selectDominantBranch(
-                List.of(ResourceId.parse("betterend:dragon_tree_log"), ResourceId.parse("betterend:dragon_tree_log")),
+                List.of(ResourceId.parse("unknownmod:alien_timber_log"), ResourceId.parse("unknownmod:alien_timber_log")),
                 id -> id.path().endsWith("_log"));
         assertNull(alien, "unmapped alien tree logs must not fall back to mismatched oak branches");
+    }
+
+    @Test
+    void joshuaAndBetternetherWartAreBranchingWhileCrimsonWartStaysExcluded() {
+        assertFalse(NativeTreeBranchConverter.isNonBranchingSpecies(
+                ResourceId.parse("regions_unexplored:joshua_log"),
+                ResourceId.parse("regions_unexplored:joshua_leaves")));
+        assertFalse(NativeTreeBranchConverter.isNonBranchingSpecies(
+                ResourceId.parse("betternether:wart_log"),
+                ResourceId.parse("minecraft:nether_wart_block")));
+        assertTrue(NativeTreeBranchConverter.isNonBranchingSpecies(
+                ResourceId.parse("minecraft:crimson_stem"),
+                ResourceId.parse("minecraft:nether_wart_block")));
+
+        BlockPos origin = new BlockPos(0, 64, 0);
+        Set<BlockPos> rawLogs = new LinkedHashSet<>();
+        for (int y = 64; y <= 68; y++) {
+            rawLogs.add(new BlockPos(0, y, 0));
+        }
+        // Forked Joshua desert limbs ascending outward
+        rawLogs.add(new BlockPos(1, 68, 0));
+        rawLogs.add(new BlockPos(2, 69, 0));
+        rawLogs.add(new BlockPos(2, 70, 0));
+        rawLogs.add(new BlockPos(-1, 68, 0));
+        rawLogs.add(new BlockPos(-2, 69, 1));
+
+        Set<BlockPos> leaves = new LinkedHashSet<>();
+        leaves.add(new BlockPos(2, 71, 0));
+        leaves.add(new BlockPos(-2, 70, 1));
+
+        NativeTreeBranchConverter.ConversionPlan plan = NativeTreeBranchConverter.planConversion(
+                origin, rawLogs, leaves, Set.of(), 2026L);
+
+        assertEquals(BranchMaterials.JOSHUA_BRANCH,
+                BranchMaterials.resolve(ResourceId.parse("regions_unexplored:joshua_log")));
+        assertTrue(plan.branchPositions().contains(new BlockPos(1, 68, 0)));
+        assertTrue(plan.branchPositions().contains(new BlockPos(2, 70, 0)));
+        assertTrue(plan.branchPositions().contains(new BlockPos(-2, 69, 1)));
+        assertSixConnected(plan.keptTrunkLogs(), plan.branchPositions());
+    }
+
+    @Test
+    void socotraUmbrellaLimbsConvertToSixConnectedTaperedBranches() {
+        BlockPos origin = new BlockPos(0, 64, 0);
+        Set<BlockPos> rawLogs = new LinkedHashSet<>();
+        for (int y = 64; y <= 71; y++) {
+            rawLogs.add(new BlockPos(0, y, 0));
+        }
+        rawLogs.add(new BlockPos(1, 70, 0));
+        rawLogs.add(new BlockPos(2, 71, 0));
+        rawLogs.add(new BlockPos(-1, 70, 0));
+        rawLogs.add(new BlockPos(-2, 71, 0));
+        rawLogs.add(new BlockPos(0, 70, 1));
+        rawLogs.add(new BlockPos(0, 71, 2));
+        rawLogs.add(new BlockPos(0, 70, -1));
+        rawLogs.add(new BlockPos(0, 71, -2));
+
+        Set<BlockPos> leaves = new LinkedHashSet<>();
+        for (int dx = -3; dx <= 3; dx++) {
+            for (int dz = -3; dz <= 3; dz++) {
+                leaves.add(new BlockPos(dx, 72, dz));
+            }
+        }
+        leaves.removeAll(rawLogs);
+
+        NativeTreeBranchConverter.ConversionPlan plan = NativeTreeBranchConverter.planConversion(
+                origin, rawLogs, leaves, Set.of(), 77L);
+
+        assertEquals(BranchMaterials.SOCOTRA_BRANCH,
+                BranchMaterials.resolve(ResourceId.parse("regions_unexplored:socotra_log")));
+        assertTrue(plan.branchPositions().contains(new BlockPos(2, 71, 0)));
+        assertTrue(plan.branchPositions().contains(new BlockPos(-2, 71, 0)));
+        assertTrue(plan.branchPositions().contains(new BlockPos(0, 71, 2)));
+        assertTrue(plan.branchPositions().contains(new BlockPos(0, 71, -2)));
+        assertSixConnected(plan.keptTrunkLogs(), plan.branchPositions());
+    }
+
+    @Test
+    void compactStraightMauveTreesSproutBalancedCanopyCoveredBranches() {
+        for (int height : List.of(4, 5, 6)) {
+            BlockPos origin = new BlockPos(0, 64, 0);
+            Set<BlockPos> rawLogs = new LinkedHashSet<>();
+            for (int i = 0; i < height; i++) {
+                rawLogs.add(new BlockPos(0, 64 + i, 0));
+            }
+            Set<BlockPos> leaves = new LinkedHashSet<>();
+            int topY = 64 + height - 1;
+            for (int y = topY - 2; y <= topY; y++) {
+                for (int dx = -2; dx <= 2; dx++) {
+                    for (int dz = -2; dz <= 2; dz++) {
+                        if (Math.abs(dx) + Math.abs(dz) <= 3) {
+                            leaves.add(new BlockPos(dx, y, dz));
+                        }
+                    }
+                }
+            }
+            for (int dx = -1; dx <= 1; dx++) {
+                for (int dz = -1; dz <= 1; dz++) {
+                    leaves.add(new BlockPos(dx, topY + 1, dz));
+                }
+            }
+            leaves.removeAll(rawLogs);
+
+            NativeTreeBranchConverter.ConversionPlan plan = NativeTreeBranchConverter.planConversion(
+                    origin, rawLogs, leaves, Set.of(), 300L + height);
+
+            int minExpected = height <= 4 ? 2 : 3;
+            assertTrue(plan.branchPositions().size() >= minExpected,
+                    "height " + height + " compact tree should sprout at least " + minExpected
+                            + " branch blocks, got " + plan.branchPositions().size());
+            Set<Direction> dirs = new LinkedHashSet<>();
+            for (BlockPos b : plan.branchPositions()) {
+                assertTrue(leaves.contains(b.above()),
+                        "sprouted branch must stay covered by canopy leaves at " + b);
+                int sx = Integer.compare(b.getX(), 0);
+                int sz = Integer.compare(b.getZ(), 0);
+                if (sx > 0) dirs.add(Direction.EAST);
+                if (sx < 0) dirs.add(Direction.WEST);
+                if (sz > 0) dirs.add(Direction.SOUTH);
+                if (sz < 0) dirs.add(Direction.NORTH);
+            }
+            assertTrue(dirs.size() >= 2, "sprouted branches should radiate in multiple directions: " + dirs);
+            assertSixConnected(plan.keptTrunkLogs(), plan.branchPositions());
+        }
+    }
+
+    @Test
+    void wideHollowGiantTrunkPreservesGroundedRingWhileConvertingLimbs() {
+        BlockPos origin = new BlockPos(0, 64, 0);
+        Set<BlockPos> rawLogs = new LinkedHashSet<>();
+        for (int y = 64; y <= 78; y++) {
+            for (int dx = -2; dx <= 2; dx++) {
+                for (int dz = -2; dz <= 2; dz++) {
+                    if (Math.abs(dx) == 2 || Math.abs(dz) == 2) {
+                        rawLogs.add(new BlockPos(dx, y, dz));
+                    }
+                }
+            }
+        }
+        // Boughs extending outward from the hollow ring
+        rawLogs.add(new BlockPos(3, 75, 0));
+        rawLogs.add(new BlockPos(4, 76, 1));
+        rawLogs.add(new BlockPos(-3, 75, 0));
+        rawLogs.add(new BlockPos(-4, 76, -1));
+
+        Set<BlockPos> leaves = new LinkedHashSet<>();
+        leaves.addAll(fillSphereLeaves(4, 77, 1, 2));
+        leaves.addAll(fillSphereLeaves(-4, 77, -1, 2));
+        leaves.removeAll(rawLogs);
+
+        NativeTreeBranchConverter.ConversionPlan plan = NativeTreeBranchConverter.planConversion(
+                origin, rawLogs, leaves, Set.of(), 808L);
+
+        assertTrue(plan.keptTrunkLogs().contains(new BlockPos(2, 64, 2)));
+        assertTrue(plan.keptTrunkLogs().contains(new BlockPos(-2, 64, -2)));
+        assertTrue(plan.keptTrunkLogs().contains(new BlockPos(2, 78, -2)));
+        assertTrue(plan.branchPositions().contains(new BlockPos(3, 75, 0)));
+        assertTrue(plan.branchPositions().contains(new BlockPos(4, 76, 1)));
+        assertTrue(plan.branchPositions().contains(new BlockPos(-3, 75, 0)));
+        assertTrue(plan.branchPositions().contains(new BlockPos(-4, 76, -1)));
+        assertSixConnected(plan.keptTrunkLogs(), plan.branchPositions());
+    }
+
+    @Test
+    void ceilingAnchoredTreeKeepsUpperTrunkAndConvertsDownwardLimbs() {
+        BlockPos origin = new BlockPos(0, 90, 0);
+        Set<BlockPos> rawLogs = new LinkedHashSet<>();
+        for (int y = 90; y >= 81; y--) {
+            rawLogs.add(new BlockPos(0, y, 0));
+        }
+        rawLogs.add(new BlockPos(1, 83, 0));
+        rawLogs.add(new BlockPos(2, 82, 1));
+        rawLogs.add(new BlockPos(-1, 82, 0));
+        rawLogs.add(new BlockPos(-2, 81, -1));
+
+        Set<BlockPos> leaves = fillSphereLeaves(0, 81, 0, 3);
+        leaves.removeAll(rawLogs);
+
+        NativeTreeBranchConverter.ConversionPlan plan = NativeTreeBranchConverter.planCeilingConversion(
+                origin, rawLogs, leaves, Set.of(), 909L);
+
+        assertTrue(plan.keptTrunkLogs().contains(new BlockPos(0, 90, 0)));
+        assertTrue(plan.keptTrunkLogs().contains(new BlockPos(0, 89, 0)));
+        assertTrue(plan.branchPositions().contains(new BlockPos(1, 83, 0)));
+        assertTrue(plan.branchPositions().contains(new BlockPos(2, 82, 1)));
+        assertTrue(plan.branchPositions().contains(new BlockPos(-1, 82, 0)));
+        assertTrue(plan.branchPositions().contains(new BlockPos(-2, 81, -1)));
+        assertSixConnected(plan.keptTrunkLogs(), plan.branchPositions());
     }
 
     @Test

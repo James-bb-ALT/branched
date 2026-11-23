@@ -27,7 +27,7 @@ class BranchResourceTest {
     private static final Path RESOURCES = Path.of("src/main/resources");
     private static final Path ASSETS = RESOURCES.resolve("assets/branched");
     private static final Path DATA = RESOURCES.resolve("data/branched");
-    private static final int EXPECTED_BRANCH_COUNT = 66;
+    private static final int EXPECTED_BRANCH_COUNT = 83;
 
     private static List<String> allBranchIds() throws IOException {
         try (Stream<Path> stream = Files.list(ASSETS.resolve("blockstates"))) {

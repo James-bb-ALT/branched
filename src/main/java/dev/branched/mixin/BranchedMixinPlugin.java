@@ -26,6 +26,9 @@ public final class BranchedMixinPlugin implements IMixinConfigPlugin {
         if (targetClassName == null || targetClassName.isEmpty()) {
             return false;
         }
+        if (targetClassName.startsWith("net.minecraft.")) {
+            return true;
+        }
         String resource = targetClassName.replace('.', '/') + ".class";
         ClassLoader primary = BranchedMixinPlugin.class.getClassLoader();
         if (primary != null && primary.getResource(resource) != null) {

@@ -66,6 +66,23 @@
     "branched:baobabtree_branch",
     "branched:echo_branch",
     "branched:pewen_branch",
-    "branched:thornwood_branch"
+    "branched:thornwood_branch",
+    "branched:licoroot_branch",
+    "branched:rotten_roseroot_branch",
+    "branched:ironwood_branch",
+    "branched:dragon_tree_branch",
+    "branched:helix_tree_branch",
+    "branched:lacugrove_branch",
+    "branched:lucernia_branch",
+    "branched:pythadendron_branch",
+    "branched:tenanea_branch",
+    "branched:umbrella_tree_branch",
+    "branched:anchor_tree_branch",
+    "branched:gloomwood_branch",
+    "branched:gloomwood_dark_branch",
+    "branched:nether_sakura_branch",
+    "branched:rubeus_branch",
+    "branched:bn_willow_branch",
+    "branched:bn_wart_branch"
   ]
 }

@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_thin_core_template",
+  "textures": {
+    "particle": "alexscaves:block/licoroot/licoroot",
+    "side": "alexscaves:block/licoroot/licoroot",
+    "end": "alexscaves:block/licoroot/licoroot_top"
+  }
+}

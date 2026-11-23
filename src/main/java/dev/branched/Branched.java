@@ -48,7 +48,7 @@ import java.util.Map;
 @Mod(Branched.MOD_ID)
 public final class Branched {
     public static final String MOD_ID = "branched";
-    public static final String DEFAULT_VERSION = "0.7.0";
+    public static final String DEFAULT_VERSION = "0.8.0";
     public static final Logger LOGGER = LogUtils.getLogger();
 
     private static final SpeciesRegistry PROFILES = new SpeciesRegistry();

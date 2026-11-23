@@ -50,7 +50,7 @@ public final class NativeTreeBranchConverter {
                                  Set<BlockPos> prunedClutterLogs) {
     }
 
-    /** Returns {@code true} for palms, coconuts, bananas, cacti, fungi, bamboos and chorus/joshua trunks. */
+    /** Returns {@code true} for palms, coconuts, bananas, cacti, fungi, bamboos and chorus trunks. */
     public static boolean isNonBranchingSpecies(ResourceId logId, ResourceId leafId) {
         if (logId == null) {
             return true;
@@ -58,13 +58,16 @@ public final class NativeTreeBranchConverter {
         String logPath = logId.path().toLowerCase(Locale.ROOT);
         if (containsAnyToken(logPath,
                 "coconut", "palm", "banana", "bamboo", "mushroom", "fungus", "shroom",
-                "cactus", "chorus", "joshua")) {
+                "cactus", "chorus")) {
             return true;
         }
         if (leafId != null) {
             String leafPath = leafId.path().toLowerCase(Locale.ROOT);
             if (containsAnyToken(leafPath,
-                    "coconut", "palm", "banana", "frond", "mushroom", "shroom", "wart")) {
+                    "coconut", "palm", "banana", "frond", "mushroom", "shroom")) {
+                return true;
+            }
+            if (leafPath.contains("wart") && !"betternether".equals(logId.namespace())) {
                 return true;
             }
             if (logPath.contains("jungle") && leafPath.contains("azalea")) {
@@ -172,9 +175,11 @@ public final class NativeTreeBranchConverter {
 
         Set<BlockPos> branchPositions = new LinkedHashSet<>();
         Set<BlockPos> prunedClutterLogs = new LinkedHashSet<>();
+        boolean allowMultiTrunkSocket = baseColumns.size() >= 4;
         if (!branchCandidates.isEmpty()) {
-            bridgeAndAbsorbCandidates(rawLeaves, keptTrunkLogs, branchCandidates, branchPositions, prunedClutterLogs, false);
-        } else if (height >= 5 && rawLeaves.size() >= 10) {
+            bridgeAndAbsorbCandidates(rawLeaves, keptTrunkLogs, branchCandidates, branchPositions,
+                    prunedClutterLogs, allowMultiTrunkSocket);
+        } else if (height >= 4 && rawLeaves.size() >= 8) {
             sproutInnerCanopyBranches(minY, maxY, height, keptTrunkLogs, rawLeaves,
                     deterministicSeed, branchPositions);
         }
@@ -193,6 +198,37 @@ public final class NativeTreeBranchConverter {
                 Collections.unmodifiableSet(branchPositions),
                 Collections.unmodifiableMap(branchThicknesses),
                 Collections.unmodifiableSet(prunedClutterLogs));
+    }
+
+    /**
+     * Y-mirrored branch planner for ceiling-anchored trees (such as BetterNether's
+     * Anchor Tree) that grow downward from cavern ceilings instead of upward from soil.
+     */
+    public static ConversionPlan planCeilingConversion(BlockPos origin,
+                                                       Set<BlockPos> rawTrunkLogs,
+                                                       Set<BlockPos> rawLeaves,
+                                                       Set<BlockPos> horizontalAxisLogs,
+                                                       long deterministicSeed) {
+        if (origin == null || rawTrunkLogs == null || rawTrunkLogs.size() < 4
+                || rawLeaves == null || rawLeaves.isEmpty()) {
+            return emptyPlan(rawTrunkLogs);
+        }
+        BlockPos mirroredOrigin = mirrorY(origin);
+        Set<BlockPos> mirroredLogs = mirrorYSet(rawTrunkLogs);
+        Set<BlockPos> mirroredLeaves = mirrorYSet(rawLeaves);
+        Set<BlockPos> mirroredHoriz = horizontalAxisLogs == null ? Set.of() : mirrorYSet(horizontalAxisLogs);
+        ConversionPlan mirroredPlan = planConversion(
+                mirroredOrigin, mirroredLogs, mirroredLeaves, mirroredHoriz, deterministicSeed);
+
+        Map<BlockPos, Integer> thicknesses = new HashMap<>(mirroredPlan.branchThicknesses().size() * 2);
+        for (Map.Entry<BlockPos, Integer> entry : mirroredPlan.branchThicknesses().entrySet()) {
+            thicknesses.put(mirrorY(entry.getKey()), entry.getValue());
+        }
+        return new ConversionPlan(
+                Collections.unmodifiableSet(mirrorYSet(mirroredPlan.keptTrunkLogs())),
+                Collections.unmodifiableSet(mirrorYSet(mirroredPlan.branchPositions())),
+                Collections.unmodifiableMap(thicknesses),
+                Collections.unmodifiableSet(mirrorYSet(mirroredPlan.prunedClutterLogs())));
     }
 
     /**
@@ -297,7 +333,7 @@ public final class NativeTreeBranchConverter {
             if (block instanceof StaticBranchBlock) {
                 return;
             }
-            if (!state.is(BlockTags.LOGS)) {
+            if (!isRecognizedTreeLog(state)) {
                 continue;
             }
             realLogPositions.add(pos.immutable());
@@ -370,7 +406,7 @@ public final class NativeTreeBranchConverter {
             if (block instanceof StaticBranchBlock) {
                 return;
             }
-            if (state.is(BlockTags.LOGS)) {
+            if (isRecognizedTreeLog(state)) {
                 realTrunk.add(pos.immutable());
                 logCounts.merge(block, 1, Integer::sum);
             }
@@ -386,7 +422,7 @@ public final class NativeTreeBranchConverter {
             if (block instanceof StaticBranchBlock) {
                 return;
             }
-            if (state.is(BlockTags.LOGS)) {
+            if (isRecognizedTreeLog(state)) {
                 candidateBranches.add(pos.immutable());
                 logCounts.merge(block, 1, Integer::sum);
             }
@@ -427,24 +463,26 @@ public final class NativeTreeBranchConverter {
         applyConversionPlan(level, branchId, branchBlock, sampleLeafState, plan, allLogs, leaves);
     }
 
-    private static void applyConversionPlan(WorldGenLevel level,
-                                            ResourceId branchId,
-                                            StaticBranchBlock branchBlock,
-                                            BlockState sampleLeafState,
-                                            ConversionPlan plan,
-                                            Set<BlockPos> mutableLogs,
-                                            Set<BlockPos> mutableLeaves) {
+    static void applyConversionPlan(WorldGenLevel level,
+                                    ResourceId branchId,
+                                    StaticBranchBlock branchBlock,
+                                    BlockState sampleLeafState,
+                                    ConversionPlan plan,
+                                    Set<BlockPos> mutableLogs,
+                                    Set<BlockPos> mutableLeaves) {
         if (plan.branchPositions().isEmpty() && plan.prunedClutterLogs().isEmpty()) {
             return;
         }
 
         for (BlockPos clutterPos : plan.prunedClutterLogs()) {
-            if (!level.ensureCanWrite(clutterPos)) {
+            if (!level.ensureCanWrite(clutterPos) || !isRecognizedTreeLog(level.getBlockState(clutterPos))) {
                 continue;
             }
             BlockPos immutable = clutterPos.immutable();
             mutableLogs.remove(immutable);
-            if (hasNeighborIn(immutable, mutableLeaves)) {
+            if (sampleLeafState != null
+                    && sampleLeafState.getBlock() instanceof LeavesBlock
+                    && hasNeighborIn(immutable, mutableLeaves)) {
                 level.setBlock(immutable, sampleLeafState, UPDATE_FLAGS_KNOWN_SHAPE);
                 mutableLeaves.add(immutable);
             } else {
@@ -476,7 +514,7 @@ public final class NativeTreeBranchConverter {
         }
 
         for (BlockPos pos : plan.branchPositions()) {
-            if (!level.ensureCanWrite(pos)) {
+            if (!level.ensureCanWrite(pos) || !canReplaceForBranch(level.getBlockState(pos))) {
                 continue;
             }
             BlockPlacement placement = branchMap.get(LeafDistance.key(pos.getX(), pos.getY(), pos.getZ()));
@@ -490,7 +528,77 @@ public final class NativeTreeBranchConverter {
         }
     }
 
-    private static Block dominantBlock(Map<Block, Integer> logCounts) {
+    static void recomputeLeafDistances(WorldGenLevel level,
+                                       Set<BlockPos> woodPositions,
+                                       Set<BlockPos> leafPositions) {
+        if (level == null || woodPositions == null || woodPositions.isEmpty()
+                || leafPositions == null || leafPositions.isEmpty()) {
+            return;
+        }
+        List<BlockPlacement> placements = new ArrayList<>(woodPositions.size() + leafPositions.size());
+        for (BlockPos pos : woodPositions) {
+            placements.add(new BlockPlacement(
+                    pos.getX(), pos.getY(), pos.getZ(), PLACEHOLDER_LOG, PlacementRole.LOG));
+        }
+        for (BlockPos pos : leafPositions) {
+            placements.add(new BlockPlacement(
+                    pos.getX(), pos.getY(), pos.getZ(), PLACEHOLDER_BRANCH, PlacementRole.LEAVES));
+        }
+        Map<Long, Integer> distances = LeafDistance.distances(placements);
+        int decayDistance = LeafDistance.MAX_SUPPORTED_DISTANCE + 1;
+        for (BlockPos pos : leafPositions) {
+            if (!level.ensureCanWrite(pos)) {
+                continue;
+            }
+            BlockState state = level.getBlockState(pos);
+            if (!state.hasProperty(LeavesBlock.DISTANCE)) {
+                continue;
+            }
+            if (state.hasProperty(LeavesBlock.PERSISTENT) && state.getValue(LeavesBlock.PERSISTENT)) {
+                continue;
+            }
+            Integer computed = distances.get(LeafDistance.key(pos.getX(), pos.getY(), pos.getZ()));
+            int targetDist = computed == null ? decayDistance : Math.max(1, Math.min(decayDistance, computed));
+            if (state.getValue(LeavesBlock.DISTANCE) != targetDist) {
+                level.setBlock(pos, state.setValue(LeavesBlock.DISTANCE, targetDist), UPDATE_FLAGS_KNOWN_SHAPE);
+            }
+        }
+    }
+
+    static boolean isRecognizedTreeLog(BlockState state) {
+        if (state == null || state.getBlock() instanceof StaticBranchBlock) {
+            return false;
+        }
+        if (state.is(BlockTags.LOGS)) {
+            return true;
+        }
+        ResourceId id = MinecraftResourceIds.fromLocationOrNull(
+                BuiltInRegistries.BLOCK.getKey(state.getBlock()));
+        return id != null && BranchMaterials.hasExactMapping(id);
+    }
+
+    static boolean canReplaceForBranch(BlockState state) {
+        if (state == null) {
+            return false;
+        }
+        if (state.getBlock() instanceof LeavesBlock
+                || state.is(BlockTags.LEAVES)
+                || isRecognizedTreeLog(state)) {
+            return true;
+        }
+        ResourceId id = MinecraftResourceIds.fromLocationOrNull(
+                BuiltInRegistries.BLOCK.getKey(state.getBlock()));
+        if (id != null && "regions_unexplored".equals(id.namespace())
+                && (id.path().endsWith("_branch") || id.path().endsWith("_beard"))) {
+            return true;
+        }
+        if (!state.getFluidState().isEmpty()) {
+            return false;
+        }
+        return state.isAir() || state.canBeReplaced() || state.is(BlockTags.REPLACEABLE);
+    }
+
+    static Block dominantBlock(Map<Block, Integer> logCounts) {
         Block best = null;
         int bestCount = 0;
         for (Map.Entry<Block, Integer> entry : logCounts.entrySet()) {
@@ -578,10 +686,32 @@ public final class NativeTreeBranchConverter {
                 .min(Comparator.comparingInt(p -> distSq2D(p, origin)))
                 .orElse(seedGroup.get(0));
 
-        List<BlockPos> footprint = new ArrayList<>();
+        Set<BlockPos> minLayerSet = new LinkedHashSet<>(minLayer.size() * 2);
         for (BlockPos pos : minLayer) {
-            if (Math.abs(pos.getX() - anchor.getX()) <= 1 && Math.abs(pos.getZ() - anchor.getZ()) <= 1) {
-                footprint.add(pos);
+            minLayerSet.add(pos.immutable());
+        }
+        BlockPos anchorImmutable = anchor.immutable();
+        List<BlockPos> footprint = new ArrayList<>();
+        Set<BlockPos> visited = new LinkedHashSet<>();
+        ArrayDeque<BlockPos> queue = new ArrayDeque<>();
+        visited.add(anchorImmutable);
+        queue.add(anchorImmutable);
+        while (!queue.isEmpty()) {
+            BlockPos cur = queue.poll();
+            footprint.add(cur);
+            for (int dx = -1; dx <= 1; dx++) {
+                for (int dz = -1; dz <= 1; dz++) {
+                    if (dx == 0 && dz == 0) {
+                        continue;
+                    }
+                    BlockPos next = cur.offset(dx, 0, dz);
+                    if (Math.abs(next.getX() - anchorImmutable.getX()) <= 4
+                            && Math.abs(next.getZ() - anchorImmutable.getZ()) <= 4
+                            && minLayerSet.contains(next)
+                            && visited.add(next)) {
+                        queue.add(next);
+                    }
+                }
             }
         }
         if (footprint.size() > 1) {
@@ -596,7 +726,13 @@ public final class NativeTreeBranchConverter {
             if (!tallColumns.isEmpty()) {
                 footprint = tallColumns;
             } else {
-                footprint = List.of(anchor);
+                List<BlockPos> twoTallColumns = new ArrayList<>();
+                for (BlockPos base : footprint) {
+                    if (rawTrunkLogs.contains(base.above())) {
+                        twoTallColumns.add(base);
+                    }
+                }
+                footprint = twoTallColumns.isEmpty() ? List.of(anchorImmutable) : twoTallColumns;
             }
         }
 
@@ -758,13 +894,16 @@ public final class NativeTreeBranchConverter {
                                                   Set<BlockPos> rawLeaves,
                                                   long seed,
                                                   Set<BlockPos> branchPositions) {
-        int lowBound = minY + Math.max(2, (int) Math.round(height * 0.42D));
+        int lowBound = Math.min(maxY - 1, minY + Math.max(2, (int) Math.round(height * 0.38D)));
         int highBound = maxY - 1;
         if (highBound < lowBound) {
             return;
         }
 
-        List<BlockPos[]> validSites = new ArrayList<>();
+        record SproutSite(int y, Direction dir, BlockPos[] positions) {
+        }
+
+        List<SproutSite> validSites = new ArrayList<>();
         Direction[] cardinals = {Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST};
         for (BlockPos trunkPos : keptTrunkLogs) {
             int y = trunkPos.getY();
@@ -774,14 +913,15 @@ public final class NativeTreeBranchConverter {
             for (Direction dir : cardinals) {
                 BlockPos arm1 = trunkPos.relative(dir);
                 if (!keptTrunkLogs.contains(arm1)
-                        && rawLeaves.contains(arm1)
-                        && rawLeaves.contains(arm1.above())) {
+                        && rawLeaves.contains(arm1.above())
+                        && (rawLeaves.contains(arm1)
+                        || (height >= 5 && y >= minY + 2 && hasHorizontalNeighborIn(arm1, rawLeaves)))) {
                     BlockPos arm2 = arm1.relative(dir);
                     if (y <= maxY - 2 && !keptTrunkLogs.contains(arm2)
                             && rawLeaves.contains(arm2) && rawLeaves.contains(arm2.above())) {
-                        validSites.add(new BlockPos[]{arm1.immutable(), arm2.immutable()});
+                        validSites.add(new SproutSite(y, dir, new BlockPos[]{arm1.immutable(), arm2.immutable()}));
                     } else {
-                        validSites.add(new BlockPos[]{arm1.immutable()});
+                        validSites.add(new SproutSite(y, dir, new BlockPos[]{arm1.immutable()}));
                     }
                 }
             }
@@ -793,34 +933,55 @@ public final class NativeTreeBranchConverter {
         DeterministicRandom rng = new DeterministicRandom(seed);
         for (int i = validSites.size() - 1; i > 0; i--) {
             int j = rng.nextInt(i + 1);
-            BlockPos[] tmp = validSites.get(i);
+            SproutSite tmp = validSites.get(i);
             validSites.set(i, validSites.get(j));
             validSites.set(j, tmp);
         }
 
-        int desired = Math.min(validSites.size(), 2 + rng.nextInt(3));
-        Set<Integer> usedHeights = new LinkedHashSet<>();
-        for (BlockPos[] site : validSites) {
-            if (usedHeights.size() >= desired) {
+        int desired = height <= 4 ? 2 : Math.min(4, 3 + rng.nextInt(2));
+        int placedSites = 0;
+        Set<Direction> usedDirs = new LinkedHashSet<>();
+        Map<Integer, Integer> perHeightCount = new HashMap<>();
+
+        // Pass 1: distinct horizontal compass directions (up to 2 opposite arms per Y level)
+        for (SproutSite site : validSites) {
+            if (placedSites >= desired) {
                 break;
             }
-            int sy = site[0].getY();
-            if (usedHeights.contains(sy)) {
+            if (usedDirs.contains(site.dir()) || perHeightCount.getOrDefault(site.y(), 0) >= 2) {
                 continue;
             }
-            if (tryAddSproutSite(site, keptTrunkLogs, branchPositions)) {
-                usedHeights.add(sy);
+            if (tryAddSproutSite(site.positions(), keptTrunkLogs, branchPositions)) {
+                usedDirs.add(site.dir());
+                perHeightCount.merge(site.y(), 1, Integer::sum);
+                placedSites++;
             }
         }
-        // Fallback if all valid sites shared one Y layer
-        if (branchPositions.isEmpty()) {
-            int addedCount = 0;
-            for (BlockPos[] site : validSites) {
-                if (addedCount >= desired) {
+
+        // Pass 2: fill up to desired across different heights / remaining cardinal slots
+        if (placedSites < Math.min(validSites.size(), desired)) {
+            for (SproutSite site : validSites) {
+                if (placedSites >= desired) {
                     break;
                 }
-                if (tryAddSproutSite(site, keptTrunkLogs, branchPositions)) {
-                    addedCount++;
+                if (perHeightCount.getOrDefault(site.y(), 0) >= 2) {
+                    continue;
+                }
+                if (tryAddSproutSite(site.positions(), keptTrunkLogs, branchPositions)) {
+                    perHeightCount.merge(site.y(), 1, Integer::sum);
+                    placedSites++;
+                }
+            }
+        }
+
+        // Fallback if height-cap prevented any placement
+        if (branchPositions.isEmpty()) {
+            for (SproutSite site : validSites) {
+                if (placedSites >= desired) {
+                    break;
+                }
+                if (tryAddSproutSite(site.positions(), keptTrunkLogs, branchPositions)) {
+                    placedSites++;
                 }
             }
         }
@@ -848,6 +1009,27 @@ public final class NativeTreeBranchConverter {
             }
         }
         return false;
+    }
+
+    private static boolean hasHorizontalNeighborIn(BlockPos pos, Set<BlockPos> set) {
+        for (Direction dir : Direction.Plane.HORIZONTAL) {
+            if (set.contains(pos.relative(dir))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static BlockPos mirrorY(BlockPos pos) {
+        return new BlockPos(pos.getX(), -pos.getY(), pos.getZ());
+    }
+
+    private static Set<BlockPos> mirrorYSet(Set<BlockPos> positions) {
+        Set<BlockPos> mirrored = new LinkedHashSet<>(positions.size() * 2);
+        for (BlockPos pos : positions) {
+            mirrored.add(mirrorY(pos));
+        }
+        return mirrored;
     }
 
     private static boolean isWood(BlockPos pos, Set<BlockPos> keptTrunkLogs, Set<BlockPos> branchPositions) {

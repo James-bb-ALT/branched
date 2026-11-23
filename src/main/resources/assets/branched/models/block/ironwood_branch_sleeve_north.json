@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_sleeve_north_template",
+  "textures": {
+    "particle": "twilightdelight:block/ironwood_log",
+    "side": "twilightdelight:block/ironwood_log",
+    "end": "twilightdelight:block/ironwood_log_top"
+  }
+}

@@ -88,6 +88,26 @@ public final class BranchMaterials {
     public static final ResourceId ECHO_BRANCH = ResourceId.parse("branched:echo_branch");
     public static final ResourceId PEWEN_BRANCH = ResourceId.parse("branched:pewen_branch");
     public static final ResourceId THORNWOOD_BRANCH = ResourceId.parse("branched:thornwood_branch");
+    public static final ResourceId LICOROOT_BRANCH = ResourceId.parse("branched:licoroot_branch");
+
+    public static final ResourceId ROTTEN_ROSEROOT_BRANCH = ResourceId.parse("branched:rotten_roseroot_branch");
+    public static final ResourceId IRONWOOD_BRANCH = ResourceId.parse("branched:ironwood_branch");
+
+    public static final ResourceId DRAGON_TREE_BRANCH = ResourceId.parse("branched:dragon_tree_branch");
+    public static final ResourceId HELIX_TREE_BRANCH = ResourceId.parse("branched:helix_tree_branch");
+    public static final ResourceId LACUGROVE_BRANCH = ResourceId.parse("branched:lacugrove_branch");
+    public static final ResourceId LUCERNIA_BRANCH = ResourceId.parse("branched:lucernia_branch");
+    public static final ResourceId PYTHADENDRON_BRANCH = ResourceId.parse("branched:pythadendron_branch");
+    public static final ResourceId TENANEA_BRANCH = ResourceId.parse("branched:tenanea_branch");
+    public static final ResourceId UMBRELLA_TREE_BRANCH = ResourceId.parse("branched:umbrella_tree_branch");
+
+    public static final ResourceId ANCHOR_TREE_BRANCH = ResourceId.parse("branched:anchor_tree_branch");
+    public static final ResourceId GLOOMWOOD_BRANCH = ResourceId.parse("branched:gloomwood_branch");
+    public static final ResourceId GLOOMWOOD_DARK_BRANCH = ResourceId.parse("branched:gloomwood_dark_branch");
+    public static final ResourceId NETHER_SAKURA_BRANCH = ResourceId.parse("branched:nether_sakura_branch");
+    public static final ResourceId RUBEUS_BRANCH = ResourceId.parse("branched:rubeus_branch");
+    public static final ResourceId BN_WILLOW_BRANCH = ResourceId.parse("branched:bn_willow_branch");
+    public static final ResourceId BN_WART_BRANCH = ResourceId.parse("branched:bn_wart_branch");
 
     private static final Map<String, ResourceId> EXACT = buildExactMap();
 
@@ -161,6 +181,7 @@ public final class BranchMaterials {
         m.put("regions_unexplored:joshua_wood", JOSHUA_BRANCH);
         m.put("regions_unexplored:brimwood_log", BRIMWOOD_BRANCH);
         m.put("regions_unexplored:brimwood_wood", BRIMWOOD_BRANCH);
+        m.put("regions_unexplored:brimwood_log_magma", BRIMWOOD_BRANCH);
         m.put("regions_unexplored:cobalt_log", COBALT_BRANCH);
         m.put("regions_unexplored:cobalt_wood", COBALT_BRANCH);
         m.put("regions_unexplored:alpha_log", ALPHA_OAK_BRANCH);
@@ -176,6 +197,8 @@ public final class BranchMaterials {
         m.put("aether:golden_oak_wood", GOLDEN_OAK_BRANCH);
         m.put("deep_aether:roseroot_log", ROSEROOT_BRANCH);
         m.put("deep_aether:roseroot_wood", ROSEROOT_BRANCH);
+        m.put("deep_aether:rotten_roseroot_log", ROTTEN_ROSEROOT_BRANCH);
+        m.put("deep_aether:rotten_roseroot_wood", ROTTEN_ROSEROOT_BRANCH);
         m.put("deep_aether:yagroot_log", YAGROOT_BRANCH);
         m.put("deep_aether:yagroot_wood", YAGROOT_BRANCH);
         m.put("deep_aether:cruderoot_log", CRUDEROOT_BRANCH);
@@ -216,6 +239,10 @@ public final class BranchMaterials {
         m.put("twilightforest:sorting_log", SORTING_BRANCH);
         m.put("twilightforest:sorting_wood", SORTING_BRANCH);
 
+        // Twilight Delight
+        m.put("twilightdelight:ironwood_log", IRONWOOD_BRANCH);
+        m.put("twilightdelight:ironwood_wood", IRONWOOD_BRANCH);
+
         // Biome Makeover
         m.put("biomemakeover:ancient_oak_log", BM_ANCIENT_OAK_BRANCH);
         m.put("biomemakeover:ancient_oak_wood", BM_ANCIENT_OAK_BRANCH);
@@ -243,6 +270,71 @@ public final class BranchMaterials {
         m.put("alexscaves:pewen_wood", PEWEN_BRANCH);
         m.put("alexscaves:thornwood_log", THORNWOOD_BRANCH);
         m.put("alexscaves:thornwood_wood", THORNWOOD_BRANCH);
+        m.put("alexscaves:licoroot", LICOROOT_BRANCH);
+
+        // BetterEnd
+        m.put("betterend:dragon_tree_log", DRAGON_TREE_BRANCH);
+        m.put("betterend:dragon_tree_bark", DRAGON_TREE_BRANCH);
+        m.put("betterend:dragon_tree_stripped_log", DRAGON_TREE_BRANCH);
+        m.put("betterend:dragon_tree_stripped_bark", DRAGON_TREE_BRANCH);
+        m.put("betterend:helix_tree_log", HELIX_TREE_BRANCH);
+        m.put("betterend:helix_tree_bark", HELIX_TREE_BRANCH);
+        m.put("betterend:helix_tree_stripped_log", HELIX_TREE_BRANCH);
+        m.put("betterend:helix_tree_stripped_bark", HELIX_TREE_BRANCH);
+        m.put("betterend:lacugrove_log", LACUGROVE_BRANCH);
+        m.put("betterend:lacugrove_bark", LACUGROVE_BRANCH);
+        m.put("betterend:lacugrove_stripped_log", LACUGROVE_BRANCH);
+        m.put("betterend:lacugrove_stripped_bark", LACUGROVE_BRANCH);
+        m.put("betterend:lucernia_log", LUCERNIA_BRANCH);
+        m.put("betterend:lucernia_bark", LUCERNIA_BRANCH);
+        m.put("betterend:lucernia_stripped_log", LUCERNIA_BRANCH);
+        m.put("betterend:lucernia_stripped_bark", LUCERNIA_BRANCH);
+        m.put("betterend:pythadendron_log", PYTHADENDRON_BRANCH);
+        m.put("betterend:pythadendron_bark", PYTHADENDRON_BRANCH);
+        m.put("betterend:pythadendron_stripped_log", PYTHADENDRON_BRANCH);
+        m.put("betterend:pythadendron_stripped_bark", PYTHADENDRON_BRANCH);
+        m.put("betterend:tenanea_log", TENANEA_BRANCH);
+        m.put("betterend:tenanea_bark", TENANEA_BRANCH);
+        m.put("betterend:tenanea_stripped_log", TENANEA_BRANCH);
+        m.put("betterend:tenanea_stripped_bark", TENANEA_BRANCH);
+        m.put("betterend:umbrella_tree_log", UMBRELLA_TREE_BRANCH);
+        m.put("betterend:umbrella_tree_bark", UMBRELLA_TREE_BRANCH);
+        m.put("betterend:umbrella_tree_stripped_log", UMBRELLA_TREE_BRANCH);
+        m.put("betterend:umbrella_tree_stripped_bark", UMBRELLA_TREE_BRANCH);
+
+        // BetterNether
+        m.put("betternether:anchor_tree_log", ANCHOR_TREE_BRANCH);
+        m.put("betternether:anchor_tree_bark", ANCHOR_TREE_BRANCH);
+        m.put("betternether:anchor_tree_stripped_log", ANCHOR_TREE_BRANCH);
+        m.put("betternether:anchor_tree_stripped_bark", ANCHOR_TREE_BRANCH);
+        m.put("betternether:gloomwood_log", GLOOMWOOD_BRANCH);
+        m.put("betternether:gloomwood_bark", GLOOMWOOD_BRANCH);
+        m.put("betternether:gloomwood_stripped_log", GLOOMWOOD_BRANCH);
+        m.put("betternether:gloomwood_stripped_bark", GLOOMWOOD_BRANCH);
+        m.put("betternether:gloomwood_transition_log", GLOOMWOOD_BRANCH);
+        m.put("betternether:gloomwood_transition_stripped_log", GLOOMWOOD_BRANCH);
+        m.put("betternether:gloomwood_dark_log", GLOOMWOOD_DARK_BRANCH);
+        m.put("betternether:gloomwood_dark_bark", GLOOMWOOD_DARK_BRANCH);
+        m.put("betternether:gloomwood_dark_molten_log", GLOOMWOOD_DARK_BRANCH);
+        m.put("betternether:gloomwood_dark_stripped_log", GLOOMWOOD_DARK_BRANCH);
+        m.put("betternether:gloomwood_dark_stripped_bark", GLOOMWOOD_DARK_BRANCH);
+        m.put("betternether:nether_sakura_log", NETHER_SAKURA_BRANCH);
+        m.put("betternether:nether_sakura_bark", NETHER_SAKURA_BRANCH);
+        m.put("betternether:nether_sakura_stripped_log", NETHER_SAKURA_BRANCH);
+        m.put("betternether:nether_sakura_stripped_bark", NETHER_SAKURA_BRANCH);
+        m.put("betternether:rubeus_log", RUBEUS_BRANCH);
+        m.put("betternether:rubeus_bark", RUBEUS_BRANCH);
+        m.put("betternether:rubeus_stripped_log", RUBEUS_BRANCH);
+        m.put("betternether:rubeus_stripped_bark", RUBEUS_BRANCH);
+        m.put("betternether:willow_log", BN_WILLOW_BRANCH);
+        m.put("betternether:willow_bark", BN_WILLOW_BRANCH);
+        m.put("betternether:willow_trunk", BN_WILLOW_BRANCH);
+        m.put("betternether:willow_stripped_log", BN_WILLOW_BRANCH);
+        m.put("betternether:willow_stripped_bark", BN_WILLOW_BRANCH);
+        m.put("betternether:wart_log", BN_WART_BRANCH);
+        m.put("betternether:wart_bark", BN_WART_BRANCH);
+        m.put("betternether:wart_stripped_log", BN_WART_BRANCH);
+        m.put("betternether:wart_stripped_bark", BN_WART_BRANCH);
         return Map.copyOf(m);
     }
 

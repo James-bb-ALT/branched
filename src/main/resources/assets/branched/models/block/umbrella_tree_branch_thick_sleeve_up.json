@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_thick_sleeve_up_template",
+  "textures": {
+    "particle": "betterend:block/umbrella_tree_log_side",
+    "side": "betterend:block/umbrella_tree_log_side",
+    "end": "betterend:block/umbrella_tree_log_top"
+  }
+}
