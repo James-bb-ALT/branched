@@ -1,0 +1,15 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": [
+    "minecraft:windswept_savanna"
+  ],
+  "add": "branched:static_trees_windswept_savanna",
+  "replace": [
+    "minecraft:trees_windswept_savanna"
+  ],
+  "species": [
+    "minecraft:oak",
+    "minecraft:acacia"
+  ],
+  "step": "vegetal_decoration"
+}

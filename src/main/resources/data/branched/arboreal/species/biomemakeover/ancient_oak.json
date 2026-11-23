@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "species": "biomemakeover:ancient_oak",
+  "archetype": "broadleaf_round",
+  "logs": "biomemakeover:ancient_oak_log",
+  "leaves": "biomemakeover:ancient_oak_leaves",
+  "wood": "biomemakeover:ancient_oak_wood",
+  "sapling": "biomemakeover:ancient_oak_sapling",
+  "trunk": {
+    "height": [
+      10,
+      16
+    ],
+    "radius": [
+      1.0,
+      1.45
+    ],
+    "bend": [
+      0.02,
+      0.12
+    ]
+  },
+  "branches": {
+    "primaryCount": [
+      5,
+      9
+    ],
+    "depth": [
+      2,
+      3
+    ],
+    "angleDegrees": [
+      35,
+      68
+    ],
+    "lengthRatio": [
+      0.3,
+      0.5
+    ],
+    "asymmetry": [
+      0.2,
+      0.5
+    ],
+    "pattern": "alternate"
+  },
+  "crown": {
+    "widthRatio": [
+      1.4,
+      2.1
+    ],
+    "density": [
+      0.55,
+      0.85
+    ],
+    "clusterCount": [
+      8,
+      18
+    ]
+  },
+  "generation": {
+    "mode": "semiprocedural_once",
+    "attempts": 3,
+    "version": 2
+  },
+  "budget": {
+    "maxSegments": 192,
+    "maxLeaves": 600,
+    "maxQuads": 14000
+  },
+  "compatibility": "STATIC_NORMAL",
+  "source": {
+    "feature": "biomemakeover:dark_forest/ancient_oak"
+  },
+  "biomes": [
+    "#biomemakeover:dark_forest"
+  ],
+  "fruitBearing": false
+}

@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/regions_unexplored/oak_tree_with_branch",
+  "add": "branched:phase3/regions_unexplored/oak_tree_with_branch",
+  "replace": "#branched:phase3/regions_unexplored/oak_tree_with_branch",
+  "species": [
+    "minecraft:oak"
+  ],
+  "step": "vegetal_decoration"
+}

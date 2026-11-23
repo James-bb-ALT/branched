@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "species": "regions_unexplored:eucalyptus",
+  "archetype": "broadleaf_irregular",
+  "logs": "regions_unexplored:eucalyptus_log",
+  "leaves": "regions_unexplored:eucalyptus_leaves",
+  "wood": "regions_unexplored:eucalyptus_wood",
+  "sapling": "regions_unexplored:eucalyptus_sapling",
+  "trunk": {
+    "height": [
+      12,
+      23
+    ],
+    "radius": [
+      0.9,
+      1.4
+    ],
+    "bend": [
+      0.05,
+      0.2
+    ]
+  },
+  "branches": {
+    "primaryCount": [
+      5,
+      9
+    ],
+    "depth": [
+      2,
+      3
+    ],
+    "angleDegrees": [
+      25,
+      50
+    ],
+    "lengthRatio": [
+      0.2,
+      0.4
+    ],
+    "asymmetry": [
+      0.15,
+      0.45
+    ],
+    "pattern": "alternate"
+  },
+  "crown": {
+    "widthRatio": [
+      0.9,
+      1.5
+    ],
+    "density": [
+      0.35,
+      0.65
+    ],
+    "clusterCount": [
+      7,
+      16
+    ]
+  },
+  "generation": {
+    "mode": "semiprocedural_once",
+    "attempts": 3,
+    "version": 2
+  },
+  "budget": {
+    "maxSegments": 192,
+    "maxLeaves": 520,
+    "maxQuads": 12000
+  },
+  "compatibility": "STATIC_NORMAL",
+  "source": {
+    "feature": "regions_unexplored:eucalyptus_tree"
+  },
+  "biomes": [
+    "#minecraft:is_forest",
+    "#minecraft:is_savanna"
+  ],
+  "fruitBearing": false
+}

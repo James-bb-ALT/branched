@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "branched:static_cherry_checked",
+    "features": []
+  }
+}

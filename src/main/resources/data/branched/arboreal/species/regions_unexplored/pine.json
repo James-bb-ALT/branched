@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "species": "regions_unexplored:pine",
+  "archetype": "columnar",
+  "logs": "regions_unexplored:pine_log",
+  "leaves": "regions_unexplored:pine_leaves",
+  "wood": "regions_unexplored:pine_wood",
+  "sapling": "regions_unexplored:pine_sapling",
+  "trunk": {
+    "height": [
+      8,
+      17
+    ],
+    "radius": [
+      0.55,
+      0.9
+    ],
+    "bend": [
+      0.0,
+      0.06
+    ]
+  },
+  "branches": {
+    "primaryCount": [
+      6,
+      11
+    ],
+    "depth": [
+      1,
+      2
+    ],
+    "angleDegrees": [
+      8,
+      28
+    ],
+    "lengthRatio": [
+      0.2,
+      0.38
+    ],
+    "asymmetry": [
+      0.05,
+      0.2
+    ],
+    "pattern": "whorled"
+  },
+  "crown": {
+    "widthRatio": [
+      0.45,
+      0.78
+    ],
+    "density": [
+      0.5,
+      0.88
+    ],
+    "clusterCount": [
+      7,
+      16
+    ]
+  },
+  "generation": {
+    "mode": "semiprocedural_once",
+    "attempts": 3,
+    "version": 2
+  },
+  "budget": {
+    "maxSegments": 152,
+    "maxLeaves": 440,
+    "maxQuads": 9500
+  },
+  "compatibility": "STATIC_NORMAL",
+  "source": {
+    "feature": "regions_unexplored:pine_tree"
+  },
+  "biomes": [
+    "#minecraft:is_taiga",
+    "#forge:is_coniferous"
+  ],
+  "fruitBearing": false
+}

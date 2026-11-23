@@ -1,0 +1,98 @@
+{
+  "phase": 4,
+  "mods": {
+    "aether": {
+      "jar": "aether-1.20.1-1.5.2-neoforge.jar",
+      "forge_runtime": false,
+      "placed_features": 26,
+      "owned_placed_features": 26,
+      "tree_placed_features": 6,
+      "verdicts": {
+        "not_tree": 20,
+        "preserved": 6
+      },
+      "replaced": 0,
+      "preserved": 6,
+      "preserved_reason_counts": {
+        "decorators": 1,
+        "modded_placement": 9,
+        "platform_unsupported": 6,
+        "unlinked_feature": 1,
+        "unresolved_foliage": 1,
+        "unsupported_type": 1
+      }
+    },
+    "fishofthieves": {
+      "jar": "fish_of_thieves-mc1.20.1-v3.1.7-forge.jar",
+      "forge_runtime": true,
+      "placed_features": 22,
+      "owned_placed_features": 22,
+      "tree_placed_features": 7,
+      "verdicts": {
+        "not_tree": 15,
+        "preserved": 7
+      },
+      "replaced": 0,
+      "preserved": 7,
+      "preserved_reason_counts": {
+        "decorators": 9,
+        "foreign_biome": 5,
+        "foreign_reference": 2,
+        "modded_placement": 2
+      }
+    },
+    "quark": {
+      "jar": "Quark-4.0-462.jar",
+      "forge_runtime": true,
+      "placed_features": 8,
+      "owned_placed_features": 8,
+      "tree_placed_features": 5,
+      "verdicts": {
+        "not_tree": 3,
+        "preserved": 5
+      },
+      "replaced": 0,
+      "preserved": 5,
+      "preserved_reason_counts": {
+        "missing_profile": 5,
+        "unlinked_feature": 5
+      }
+    },
+    "twilightforest": {
+      "jar": "twilightforest-1.20.1-4.3.2508-universal.jar",
+      "forge_runtime": true,
+      "placed_features": 77,
+      "owned_placed_features": 77,
+      "tree_placed_features": 19,
+      "verdicts": {
+        "not_tree": 58,
+        "preserved": 19
+      },
+      "replaced": 0,
+      "preserved": 19,
+      "preserved_reason_counts": {
+        "custom_canopy_feature": 5,
+        "decorators": 18,
+        "foreign_reference": 2,
+        "hollow_tree_feature": 1,
+        "landmark_scale_feature": 1,
+        "missing_profile": 1,
+        "modded_placement": 20,
+        "special_feature_type": 6,
+        "unresolved_foliage": 1,
+        "unsupported_type": 2
+      }
+    }
+  },
+  "unavailable_mods": {
+    "dynamictrees_baobab": "no_reference_jar",
+    "dynamictrees_addon_lib": "no_reference_jar",
+    "dynamictrees_plus": "no_reference_jar"
+  },
+  "totals": {
+    "tree_placed_features": 37,
+    "replaced": 0,
+    "preserved": 37,
+    "unavailable_mods": 3
+  }
+}

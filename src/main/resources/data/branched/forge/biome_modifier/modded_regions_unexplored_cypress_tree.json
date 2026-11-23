@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/regions_unexplored/cypress_tree",
+  "add": "branched:phase3/regions_unexplored/cypress_tree",
+  "replace": "#branched:phase3/regions_unexplored/cypress_tree",
+  "species": [
+    "regions_unexplored:cypress"
+  ],
+  "step": "vegetal_decoration"
+}

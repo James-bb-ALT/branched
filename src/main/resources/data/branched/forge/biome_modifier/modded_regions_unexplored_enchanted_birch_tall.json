@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/regions_unexplored/enchanted_birch_tall",
+  "add": "branched:phase3/regions_unexplored/enchanted_birch_tall",
+  "replace": "#branched:phase3/regions_unexplored/enchanted_birch_tall",
+  "species": [
+    "regions_unexplored:enchanted_birch"
+  ],
+  "step": "vegetal_decoration"
+}

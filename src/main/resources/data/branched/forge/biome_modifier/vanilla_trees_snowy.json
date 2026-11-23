@@ -1,0 +1,15 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": [
+    "minecraft:ice_spikes",
+    "minecraft:snowy_plains"
+  ],
+  "add": "branched:static_trees_snowy",
+  "replace": [
+    "minecraft:trees_snowy"
+  ],
+  "species": [
+    "minecraft:spruce"
+  ],
+  "step": "vegetal_decoration"
+}

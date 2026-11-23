@@ -1,0 +1,199 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "thickness": "1"
+      },
+      "apply": {
+        "model": "branched:block/ancient_branch_thin_core"
+      }
+    },
+    {
+      "when": {
+        "thickness": "1",
+        "north": "true"
+      },
+      "apply": {
+        "model": "branched:block/ancient_branch_thin_sleeve_north"
+      }
+    },
+    {
+      "when": {
+        "thickness": "1",
+        "east": "true"
+      },
+      "apply": {
+        "model": "branched:block/ancient_branch_thin_sleeve_north",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "thickness": "1",
+        "south": "true"
+      },
+      "apply": {
+        "model": "branched:block/ancient_branch_thin_sleeve_north",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "thickness": "1",
+        "west": "true"
+      },
+      "apply": {
+        "model": "branched:block/ancient_branch_thin_sleeve_north",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "thickness": "1",
+        "up": "true"
+      },
+      "apply": {
+        "model": "branched:block/ancient_branch_thin_sleeve_up"
+      }
+    },
+    {
+      "when": {
+        "thickness": "1",
+        "down": "true"
+      },
+      "apply": {
+        "model": "branched:block/ancient_branch_thin_sleeve_down"
+      }
+    },
+    {
+      "when": {
+        "thickness": "2"
+      },
+      "apply": {
+        "model": "branched:block/ancient_branch_core"
+      }
+    },
+    {
+      "when": {
+        "thickness": "2",
+        "north": "true"
+      },
+      "apply": {
+        "model": "branched:block/ancient_branch_sleeve_north"
+      }
+    },
+    {
+      "when": {
+        "thickness": "2",
+        "east": "true"
+      },
+      "apply": {
+        "model": "branched:block/ancient_branch_sleeve_north",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "thickness": "2",
+        "south": "true"
+      },
+      "apply": {
+        "model": "branched:block/ancient_branch_sleeve_north",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "thickness": "2",
+        "west": "true"
+      },
+      "apply": {
+        "model": "branched:block/ancient_branch_sleeve_north",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "thickness": "2",
+        "up": "true"
+      },
+      "apply": {
+        "model": "branched:block/ancient_branch_sleeve_up"
+      }
+    },
+    {
+      "when": {
+        "thickness": "2",
+        "down": "true"
+      },
+      "apply": {
+        "model": "branched:block/ancient_branch_sleeve_down"
+      }
+    },
+    {
+      "when": {
+        "thickness": "3"
+      },
+      "apply": {
+        "model": "branched:block/ancient_branch_thick_core"
+      }
+    },
+    {
+      "when": {
+        "thickness": "3",
+        "north": "true"
+      },
+      "apply": {
+        "model": "branched:block/ancient_branch_thick_sleeve_north"
+      }
+    },
+    {
+      "when": {
+        "thickness": "3",
+        "east": "true"
+      },
+      "apply": {
+        "model": "branched:block/ancient_branch_thick_sleeve_north",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "thickness": "3",
+        "south": "true"
+      },
+      "apply": {
+        "model": "branched:block/ancient_branch_thick_sleeve_north",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "thickness": "3",
+        "west": "true"
+      },
+      "apply": {
+        "model": "branched:block/ancient_branch_thick_sleeve_north",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "thickness": "3",
+        "up": "true"
+      },
+      "apply": {
+        "model": "branched:block/ancient_branch_thick_sleeve_up"
+      }
+    },
+    {
+      "when": {
+        "thickness": "3",
+        "down": "true"
+      },
+      "apply": {
+        "model": "branched:block/ancient_branch_thick_sleeve_down"
+      }
+    }
+  ]
+}

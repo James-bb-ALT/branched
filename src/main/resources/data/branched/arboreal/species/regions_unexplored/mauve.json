@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "species": "regions_unexplored:mauve",
+  "archetype": "broadleaf_round",
+  "logs": "regions_unexplored:mauve_log",
+  "leaves": "regions_unexplored:mauve_leaves",
+  "wood": "regions_unexplored:mauve_wood",
+  "sapling": "regions_unexplored:mauve_sapling",
+  "trunk": {
+    "height": [
+      6,
+      12
+    ],
+    "radius": [
+      0.7,
+      1.0
+    ],
+    "bend": [
+      0.03,
+      0.16
+    ]
+  },
+  "branches": {
+    "primaryCount": [
+      4,
+      8
+    ],
+    "depth": [
+      1,
+      3
+    ],
+    "angleDegrees": [
+      28,
+      58
+    ],
+    "lengthRatio": [
+      0.25,
+      0.48
+    ],
+    "asymmetry": [
+      0.15,
+      0.45
+    ],
+    "pattern": "alternate"
+  },
+  "crown": {
+    "widthRatio": [
+      1.05,
+      1.75
+    ],
+    "density": [
+      0.45,
+      0.8
+    ],
+    "clusterCount": [
+      7,
+      16
+    ]
+  },
+  "generation": {
+    "mode": "semiprocedural_once",
+    "attempts": 3,
+    "version": 2
+  },
+  "budget": {
+    "maxSegments": 144,
+    "maxLeaves": 460,
+    "maxQuads": 10500
+  },
+  "compatibility": "STATIC_NORMAL",
+  "source": {
+    "feature": "regions_unexplored:big_mauve_tree"
+  },
+  "biomes": [
+    "#minecraft:is_forest"
+  ],
+  "fruitBearing": false
+}

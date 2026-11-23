@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "species": "minecraft:poplar",
+  "archetype": "birch",
+  "logs": "minecraft:poplar_log",
+  "leaves": "minecraft:poplar_leaves",
+  "wood": "minecraft:poplar_wood",
+  "sapling": "minecraft:poplar_sapling",
+  "trunk": {
+    "height": [
+      8,
+      14
+    ],
+    "radius": [
+      0.45,
+      0.7
+    ],
+    "bend": [
+      0.0,
+      0.06
+    ]
+  },
+  "branches": {
+    "primaryCount": [
+      4,
+      7
+    ],
+    "depth": [
+      1,
+      2
+    ],
+    "angleDegrees": [
+      18,
+      36
+    ],
+    "lengthRatio": [
+      0.16,
+      0.28
+    ],
+    "asymmetry": [
+      0.05,
+      0.2
+    ],
+    "pattern": "alternate"
+  },
+  "crown": {
+    "widthRatio": [
+      0.48,
+      0.78
+    ],
+    "density": [
+      0.5,
+      0.8
+    ],
+    "clusterCount": [
+      7,
+      13
+    ]
+  },
+  "generation": {
+    "mode": "semiprocedural_once",
+    "attempts": 3,
+    "version": 3
+  },
+  "budget": {
+    "maxSegments": 120,
+    "maxLeaves": 420,
+    "maxQuads": 9000
+  },
+  "compatibility": "STATIC_NORMAL",
+  "source": {
+    "feature": "minecraft:red_poplar"
+  },
+  "biomes": [
+    "minecraft:forest"
+  ],
+  "fruitBearing": false
+}

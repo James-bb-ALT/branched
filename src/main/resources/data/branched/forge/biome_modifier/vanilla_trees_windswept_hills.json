@@ -1,0 +1,17 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": [
+    "minecraft:windswept_gravelly_hills",
+    "minecraft:windswept_hills"
+  ],
+  "add": "branched:static_trees_windswept_hills",
+  "replace": [
+    "minecraft:trees_windswept_hills"
+  ],
+  "species": [
+    "minecraft:oak",
+    "minecraft:spruce",
+    "minecraft:fancy_oak"
+  ],
+  "step": "vegetal_decoration"
+}

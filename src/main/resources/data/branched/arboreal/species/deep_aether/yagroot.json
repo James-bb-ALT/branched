@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "species": "deep_aether:yagroot",
+  "archetype": "mangrove",
+  "logs": "deep_aether:yagroot_log",
+  "leaves": "deep_aether:yagroot_leaves",
+  "wood": "deep_aether:yagroot_wood",
+  "sapling": "deep_aether:yagroot_sapling",
+  "trunk": {
+    "height": [
+      6,
+      10
+    ],
+    "radius": [
+      0.65,
+      1.0
+    ],
+    "bend": [
+      0.08,
+      0.28
+    ]
+  },
+  "branches": {
+    "primaryCount": [
+      4,
+      8
+    ],
+    "depth": [
+      2,
+      3
+    ],
+    "angleDegrees": [
+      32,
+      68
+    ],
+    "lengthRatio": [
+      0.3,
+      0.5
+    ],
+    "asymmetry": [
+      0.2,
+      0.5
+    ],
+    "pattern": "irregular"
+  },
+  "crown": {
+    "widthRatio": [
+      1.2,
+      1.9
+    ],
+    "density": [
+      0.5,
+      0.8
+    ],
+    "clusterCount": [
+      7,
+      14
+    ]
+  },
+  "generation": {
+    "mode": "semiprocedural_once",
+    "attempts": 3,
+    "version": 3
+  },
+  "budget": {
+    "maxSegments": 152,
+    "maxLeaves": 480,
+    "maxQuads": 11000
+  },
+  "compatibility": "STATIC_NORMAL",
+  "source": {
+    "feature": "deep_aether:yagroot_tree"
+  },
+  "biomes": [
+    "deep_aether:yagroot_swamp"
+  ],
+  "fruitBearing": false
+}

@@ -1,0 +1,38 @@
+# Gradle / build output
+.gradle/
+build/
+out/
+bin/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.classpath
+.project
+
+# Minecraft run directories (created by runClient/runServer)
+run/
+runs/
+logs/
+crash-reports/
+
+# ForgeGradle
+mcmodsrepo/
+
+# Audited third-party jars are NOT redistributed.
+# Only the SHA-256 records in catalogs/ are committed.
+reference-mods/**/*.jar
+
+# Extracted jar contents (reproducible with tools/audit_jars.py)
+catalogs/extracted/
+
+# Python tooling
+__pycache__/
+*.pyc
+.venv/
+venv/

@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/regions_unexplored/tall_dark_oak",
+  "add": "branched:phase3/regions_unexplored/tall_dark_oak",
+  "replace": "#branched:phase3/regions_unexplored/tall_dark_oak",
+  "species": [
+    "minecraft:dark_oak"
+  ],
+  "step": "vegetal_decoration"
+}

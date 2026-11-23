@@ -1,0 +1,234 @@
+jar,species,family,type,tapered,signal_energy,growth_logic_kit,has_fruits,has_pods,has_mega,file
+DT_Baobab_Forge_1.20.1_v015.jar,dtbaobabtree:ancient_baobab,dtbaobabtree:baobab,,,36.0,"{""name"": ""jungle"", ""properties"": {""canopy_height"": 23, ""branch_out_chance"": 2}}",True,False,False,trees/dtbaobabtree/species/ancient_baobab.json
+DT_Baobab_Forge_1.20.1_v015.jar,dtbaobabtree:baobab,dtbaobabtree:baobab,,,28.0,"""""",True,False,False,trees/dtbaobabtree/species/baobab.json
+DT_Baobab_Forge_1.20.1_v015.jar,dtbaobabtree:natural_ancient_baobab,dtbaobabtree:baobab,,,36.0,"{""name"": ""jungle"", ""properties"": {""canopy_height"": 23, ""branch_out_chance"": 2}}",True,False,False,trees/dtbaobabtree/species/natural_ancient_baobab.json
+DT_Baobab_Forge_1.20.1_v015.jar,dtbaobabtree:natural_baobab,dtbaobabtree:baobab,,,28.0,"""""",True,False,False,trees/dtbaobabtree/species/natural_baobab.json
+DynamicTrees-1.20.1-1.4.11.jar,dynamictrees:acacia,acacia,,,12.0,"""""",False,False,False,trees/dynamictrees/species/acacia.json
+DynamicTrees-1.20.1-1.4.11.jar,dynamictrees:apple_oak,oak,,,10.0,"""""",True,False,False,trees/dynamictrees/species/apple_oak.json
+DynamicTrees-1.20.1-1.4.11.jar,dynamictrees:azalea,oak,,,8.0,"""azalea""",False,False,False,trees/dynamictrees/species/azalea.json
+DynamicTrees-1.20.1-1.4.11.jar,dynamictrees:birch,birch,,,14.0,"""""",False,False,False,trees/dynamictrees/species/birch.json
+DynamicTrees-1.20.1-1.4.11.jar,dynamictrees:cherry,cherry,,,12.0,"""""",False,False,False,trees/dynamictrees/species/cherry.json
+DynamicTrees-1.20.1-1.4.11.jar,dynamictrees:cocoa,jungle,,,10.0,"""""",False,True,False,trees/dynamictrees/species/cocoa.json
+DynamicTrees-1.20.1-1.4.11.jar,dynamictrees:crimson,crimson,nether_fungus,,18.0,"""nether_fungus""",False,False,True,trees/dynamictrees/species/crimson.json
+DynamicTrees-1.20.1-1.4.11.jar,dynamictrees:dark_oak,dark_oak,,,18.0,"""dark_oak""",False,False,False,trees/dynamictrees/species/dark_oak.json
+DynamicTrees-1.20.1-1.4.11.jar,dynamictrees:jungle,jungle,,,24.0,"""jungle""",False,False,True,trees/dynamictrees/species/jungle.json
+DynamicTrees-1.20.1-1.4.11.jar,dynamictrees:jungle_undergrowth,jungle,,,1.2,"""""",False,False,False,trees/dynamictrees/species/jungle_undergrowth.json
+DynamicTrees-1.20.1-1.4.11.jar,dynamictrees:mangrove,mangrove,mangrove,,20.0,"""""",False,False,False,trees/dynamictrees/species/mangrove.json
+DynamicTrees-1.20.1-1.4.11.jar,dynamictrees:mega_crimson,crimson,nether_fungus,,30.0,"{""name"": ""nether_fungus"", ""properties"": {""min_cap_height"": 6}}",False,False,False,trees/dynamictrees/species/mega_crimson.json
+DynamicTrees-1.20.1-1.4.11.jar,dynamictrees:mega_jungle,jungle,,,35.0,"{""name"": ""jungle"", ""properties"": {""canopy_height"": 25, ""branch_out_chance"": 3}}",False,False,False,trees/dynamictrees/species/mega_jungle.json
+DynamicTrees-1.20.1-1.4.11.jar,dynamictrees:mega_spruce,spruce,,,24.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 5}}",False,False,False,trees/dynamictrees/species/mega_spruce.json
+DynamicTrees-1.20.1-1.4.11.jar,dynamictrees:mega_warped,warped,nether_fungus,,30.0,"{""name"": ""nether_fungus"", ""properties"": {""min_cap_height"": 6}}",False,False,False,trees/dynamictrees/species/mega_warped.json
+DynamicTrees-1.20.1-1.4.11.jar,dynamictrees:oak,oak,,,12.0,"""""",False,False,False,trees/dynamictrees/species/oak.json
+DynamicTrees-1.20.1-1.4.11.jar,dynamictrees:oak_undergrowth,oak,,,1.2,"""""",False,False,False,trees/dynamictrees/species/oak_undergrowth.json
+DynamicTrees-1.20.1-1.4.11.jar,dynamictrees:spruce,spruce,,,16.0,"""conifer""",False,False,True,trees/dynamictrees/species/spruce.json
+DynamicTrees-1.20.1-1.4.11.jar,dynamictrees:swamp_oak,oak,swamp_oak,,12.0,"""""",False,False,False,trees/dynamictrees/species/swamp_oak.json
+DynamicTrees-1.20.1-1.4.11.jar,dynamictrees:tall_birch,birch,,,24,"""""",False,False,False,trees/dynamictrees/species/tall_birch.json
+DynamicTrees-1.20.1-1.4.11.jar,dynamictrees:warped,warped,nether_fungus,,18.0,"""nether_fungus""",False,False,True,trees/dynamictrees/species/warped.json
+DynamicTreesAddonLib-1.20.1-0.1.0-BETA5.jar,dtaddon_lib:cypress,dtaddon_lib:big_oak,,,6.0,"""dtaddon_lib:cypress""",False,False,False,trees/dtaddon_lib/species/cypress.json
+DynamicTreesAddonLib-1.20.1-0.1.0-BETA5.jar,dtaddon_lib:fir,dtaddon_lib:fir,,,7.0,"""dtaddon_lib:small_redwood""",False,False,False,trees/dtaddon_lib/species/fir.json
+DynamicTreesAddonLib-1.20.1-0.1.0-BETA5.jar,dtaddon_lib:palm,dtaddon_lib:palm,palm,,7.0,"""""",False,False,False,trees/dtaddon_lib/species/palm.json
+DynamicTreesAddonLib-1.20.1-0.1.0-BETA5.jar,dtaddon_lib:poplar,birch,dtaddon_lib:poplar,,11.0,"""dtaddon_lib:poplar""",False,False,False,trees/dtaddon_lib/species/poplar.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:aerfin,dtaether:aerfin,,,9.0,"{""name"": ""conifer"", ""properties"": {""horizontal_limiter"": 1.5, ""height_variation"": 3, ""variate_lowest_branch"": true}}",False,False,False,trees/dtaether/species/aerfin.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:beladon,dtaether:beladon,,,8.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 5, ""height_variation"": 3}}",False,False,False,trees/dtaether/species/beladon.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:blighted_skyroot,dtaether:skyroot,,,10.0,"""""",False,False,False,trees/dtaether/species/blighted_skyroot.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:blightwillow,dtaether:blightwillow,,,14.0,"""dtaether:blightwillow""",False,False,False,trees/dtaether/species/blightwillow.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:blue_roseroot,dtaether:roseroot,,,10.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 6, ""height_variation"": 16}}",False,False,False,trees/dtaether/species/blue_roseroot.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:cloudcap,dtaether:cloudcap,dtaether:drop_logs_mushroom,,20,"""""",False,False,False,trees/dtaether/species/cloudcap.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:conberry,dtaether:conberry,,,16.0,"""dtaether:conberry""",False,False,False,trees/dtaether/species/conberry.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:cruderoot,dtaether:cruderoot,,,10.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 6, ""height_variation"": 10}}",False,False,False,trees/dtaether/species/cruderoot.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:crystal,dtaether:skyroot,dtaether:mod_dependent,,8.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 4, ""height_variation"": 3}}",True,False,False,trees/dtaether/species/crystal.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:crystal_skyroot,dtaether:skyroot,,,10.0,"""""",False,False,False,trees/dtaether/species/crystal_skyroot.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:enchanted,dtaether:enchanted,,,12.0,"""""",False,False,False,trees/dtaether/species/enchanted.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:enchanted_skyroot,dtaether:skyroot,,,10.0,"""""",False,False,False,trees/dtaether/species/enchanted_skyroot.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:fieldsproot,dtaether:fieldsproot,,,28.0,"""dtaether:fieldsproot""",False,False,False,trees/dtaether/species/fieldsproot.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:gilded_oak,dtaether:skyroot,,,20.0,"""""",True,False,False,trees/dtaether/species/gilded_oak.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:glacia,dtaether:glacia,,,18.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 6, ""height_variation"": 6}}",False,False,False,trees/dtaether/species/glacia.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:golden_oak,dtaether:skyroot,dtaether:mod_dependent,,20.0,"""""",True,False,False,trees/dtaether/species/golden_oak.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:grape_vine_skyroot,dtaether:skyroot,,,10.0,"""""",False,False,False,trees/dtaether/species/grape_vine_skyroot.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:highsproot,dtaether:highsproot,,,8.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 4, ""height_variation"": 7, ""variate_lowest_branch"": true}}",False,False,False,trees/dtaether/species/highsproot.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:holiday,dtaether:skyroot,dtaether:mod_dependent,,16.0,"""conifer""",False,False,False,trees/dtaether/species/holiday.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:jellyshroom,dtaether:jellyshroom,dtaether:drop_logs_mushroom,,9,"""""",False,False,False,trees/dtaether/species/jellyshroom.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:lightcap,dynamictreesplus:mushroom,dynamictreesplus:mushroom,,6,"""""",False,False,False,trees/dtaether/species/lightcap.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:mega_skyroot,dtaether:skyroot,,,35.0,"{""name"": ""jungle"", ""properties"": {""canopy_height"": 25, ""branch_out_chance"": 3}}",False,False,False,trees/dtaether/species/mega_skyroot.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:orange_aerfin,dtaether:aerfin,,,9.0,"{""name"": ""conifer"", ""properties"": {""horizontal_limiter"": 1.5, ""height_variation"": 3, ""variate_lowest_branch"": true}}",False,False,False,trees/dtaether/species/orange_aerfin.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:purple_glacia,dtaether:glacia,,,10.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 6, ""height_variation"": 4}}",False,False,False,trees/dtaether/species/purple_glacia.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:roseroot,dtaether:roseroot,,,10.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 6, ""height_variation"": 16}}",False,False,False,trees/dtaether/species/roseroot.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:sakura,dtaether:sakura,,,18.0,"""""",False,False,False,trees/dtaether/species/sakura.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:skyroot,dtaether:skyroot,,,10.0,"""""",False,False,True,trees/dtaether/species/skyroot.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:skyroot_bush,dtaether:skyroot,,,1.2,"""""",False,False,False,trees/dtaether/species/skyroot_bush.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:skyroot_pine,dtaether:skyroot,,,8.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 5, ""height_variation"": 3}}",False,False,False,trees/dtaether/species/skyroot_pine.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:sunroot,dtaether:sunroot,,,16.0,"""azalea""",False,False,False,trees/dtaether/species/sunroot.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:tall_skyroot,dtaether:skyroot,,,12.0,"""""",False,False,False,trees/dtaether/species/tall_skyroot.json
+DynamicTreesAether-1.20.1-1.3.3.jar,dtaether:yagroot,dtaether:yagroot,mangrove,,20.0,"""dark_oak""",False,False,False,trees/dtaether/species/yagroot.json
+DynamicTreesFishofThieves-1.20.1-1.0.4.jar,dtfish_of_thieves:banana,dtfish_of_thieves:banana,palm,,5.0,"""""",True,False,False,trees/dtfish_of_thieves/species/banana.json
+DynamicTreesFishofThieves-1.20.1-1.0.4.jar,dtfish_of_thieves:coconut,dtfish_of_thieves:coconut,palm,,12.0,"""""",False,True,False,trees/dtfish_of_thieves/species/coconut.json
+DynamicTreesFishofThieves-1.20.1-1.0.4.jar,dtfish_of_thieves:mango,oak,,,10.0,"""""",True,False,False,trees/dtfish_of_thieves/species/mango.json
+DynamicTreesPlus-1.20.1-1.2.2.jar,dynamictrees:dark_oak,dark_oak,,,18.0,"""dark_oak""",False,False,False,trees/dynamictrees/species/dark_oak.json
+DynamicTreesPlus-1.20.1-1.2.2.jar,dynamictreesplus:brown_mushroom,dynamictreesplus:mushroom,dynamictreesplus:mushroom,,8,"""""",False,False,True,trees/dynamictreesplus/species/brown_mushroom.json
+DynamicTreesPlus-1.20.1-1.2.2.jar,dynamictreesplus:mega_brown_mushroom,dynamictreesplus:mushroom,dynamictreesplus:mushroom,,16,"""""",False,False,False,trees/dynamictreesplus/species/mega_brown_mushroom.json
+DynamicTreesPlus-1.20.1-1.2.2.jar,dynamictreesplus:mega_cactus,dynamictreesplus:cactus,dynamictreesplus:cactus,,18,"{""name"": ""dynamictreesplus:mega_cactus"", ""properties"": {""mod"": 6}}",False,False,False,trees/dynamictreesplus/species/mega_cactus.json
+DynamicTreesPlus-1.20.1-1.2.2.jar,dynamictreesplus:mega_red_mushroom,dynamictreesplus:mushroom,dynamictreesplus:mushroom,,12,"""""",False,False,False,trees/dynamictreesplus/species/mega_red_mushroom.json
+DynamicTreesPlus-1.20.1-1.2.2.jar,dynamictreesplus:pillar_cactus,dynamictreesplus:cactus,dynamictreesplus:cactus,,8,"""""",False,False,True,trees/dynamictreesplus/species/pillar_cactus.json
+DynamicTreesPlus-1.20.1-1.2.2.jar,dynamictreesplus:pipe_cactus,dynamictreesplus:cactus,dynamictreesplus:cactus,,4,"{""name"": ""dynamictreesplus:straight"", ""properties"": {""height_variation"": 3}}",False,False,True,trees/dynamictreesplus/species/pipe_cactus.json
+DynamicTreesPlus-1.20.1-1.2.2.jar,dynamictreesplus:red_mushroom,dynamictreesplus:mushroom,dynamictreesplus:mushroom,,6,"""""",False,False,True,trees/dynamictreesplus/species/red_mushroom.json
+DynamicTreesPlus-1.20.1-1.2.2.jar,dynamictreesplus:saguaro_cactus,dynamictreesplus:cactus,dynamictreesplus:cactus,,4,"{""name"": ""dynamictreesplus:saguaro_cactus"", ""properties"": {""height_variation"": 3}}",True,False,True,trees/dynamictreesplus/species/saguaro_cactus.json
+DynamicTreesQuark-1.20.1-2.5.3.jar,dtquark:ancient,dtquark:ancient,,,24.0,"""dtquark:ancient""",True,False,False,trees/dtquark/species/ancient.json
+DynamicTreesQuark-1.20.1-2.5.3.jar,dtquark:fiery_blossom,dtquark:blossom,,,22.0,"""""",False,False,False,trees/dtquark/species/fiery_blossom.json
+DynamicTreesQuark-1.20.1-2.5.3.jar,dtquark:frosty_blossom,dtquark:blossom,,,22.0,"""""",False,False,False,trees/dtquark/species/frosty_blossom.json
+DynamicTreesQuark-1.20.1-2.5.3.jar,dtquark:glow_shroom,dtquark:glow_shroom,dtquark:glow_shroom,,4,"{""name"": ""dynamictreesplus:straight"", ""properties"": {""height_variation"": 4}}",False,False,False,trees/dtquark/species/glow_shroom.json
+DynamicTreesQuark-1.20.1-2.5.3.jar,dtquark:serene_blossom,dtquark:blossom,,,22.0,"""""",False,False,False,trees/dtquark/species/serene_blossom.json
+DynamicTreesQuark-1.20.1-2.5.3.jar,dtquark:sunny_blossom,dtquark:blossom,,,22.0,"""""",False,False,False,trees/dtquark/species/sunny_blossom.json
+DynamicTreesQuark-1.20.1-2.5.3.jar,dtquark:warm_blossom,dtquark:blossom,,,22.0,"""""",False,False,False,trees/dtquark/species/warm_blossom.json
+DynamicTreesQuark-1.20.1-2.5.3.jar,dynamictrees:azalea,dtquark:azalea,,,8.0,"""azalea""",False,False,False,trees/dynamictrees/species/azalea.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:acacia_twiglet,oak,,,3.5,"""""",False,False,False,trees/dtru/species/acacia_twiglet.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:ashen,dtru:ashen,,,20.0,"""""",False,False,False,trees/dtru/species/ashen.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:ashen_pine,dtru:ashen,,,20.0,"""""",False,False,False,trees/dtru/species/ashen_pine.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:bamboo,dtru:bamboo,,,20.0,"""dtru:bamboo""",False,False,False,trees/dtru/species/bamboo.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:baobab,dtru:baobab,,,28.0,"""""",False,False,False,trees/dtru/species/baobab.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:big_apple_oak,oak,,,18.0,"""""",True,False,False,trees/dtru/species/big_apple_oak.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:blackwood,dtru:blackwood,,,32.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 5, ""height_variation"": 4, ""variate_lowest_branch"": true}}",False,False,False,trees/dtru/species/blackwood.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:blue_bioshroom,dtru:blue_bioshroom,dtru:bioshroom,,8,"{""name"": ""dtru:variate_height"", ""properties"": {""height_variation"": 6}}",False,False,False,trees/dtru/species/blue_bioshroom.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:blue_magnolia,dtru:magnolia,,,12.0,"""""",False,False,False,trees/dtru/species/blue_magnolia.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:brimwood,dtru:brimwood,,,18.0,"""dtru:variate_height""",False,False,True,trees/dtru/species/brimwood.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:cobalt,dtru:cobalt,,,1.0,"{""name"": ""dtru:diagonal_palm"", ""properties"": {""height_variation"": 8, ""chance_to_split"": 0.5}}",False,False,False,trees/dtru/species/cobalt.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:cypress,dtru:cypress,dtru:cypress,,32.0,"""dtru:cypress""",False,False,True,trees/dtru/species/cypress.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:dead,dtru:dead,,,12.0,"""""",False,False,False,trees/dtru/species/dead.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:dead_pine,dtru:pine,,,20.0,"""""",False,False,False,trees/dtru/species/dead_pine.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:dead_tall_pine,dtru:pine,,,28.0,"""""",False,False,False,trees/dtru/species/dead_tall_pine.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:enchanted_birch,dtru:silver_birch,,,16.0,"{""name"": ""dtru:twisting_tree"", ""properties"": {""split_ends_energy"": 2}}",False,False,False,trees/dtru/species/enchanted_birch.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:eucalyptus,dtru:eucalyptus,,,24.0,"{""name"": ""jungle"", ""properties"": {""canopy_height"": 18}}",False,False,True,trees/dtru/species/eucalyptus.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:flowering_undergrowth,oak,,,1.2,"""""",False,False,False,trees/dtru/species/flowering_undergrowth.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:golden_larch,dtru:larch,,,32.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 5, ""height_variation"": 4, ""variate_lowest_branch"": true}}",False,False,False,trees/dtru/species/golden_larch.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:green_bioshroom,dtru:green_bioshroom,dtru:bioshroom,,10,"{""name"": ""dtru:variate_height"", ""properties"": {""height_variation"": 4}}",False,False,False,trees/dtru/species/green_bioshroom.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:joshua,dtru:joshua,palm,,8.0,"{""name"": ""dtru:canopy"", ""properties"": {""height_variation"": 3, ""lowest_branch_variation"": 3}}",False,False,False,trees/dtru/species/joshua.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:kapok,dtru:kapok,,,27.0,"{""name"": ""dtru:canopy"", ""properties"": {""lowest_branch_variation"": 3}}",False,False,False,trees/dtru/species/kapok.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:larch,dtru:larch,,,32.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 5, ""height_variation"": 4, ""variate_lowest_branch"": true}}",False,False,False,trees/dtru/species/larch.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:magnolia,dtru:magnolia,,,12.0,"""""",False,False,False,trees/dtru/species/magnolia.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:maple,dtru:maple,,,22.0,"""dtru:variate_height""",False,False,False,trees/dtru/species/maple.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:mauve,dtru:mauve,,,12.0,"""""",False,False,True,trees/dtru/species/mauve.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:mega_cypress,dtru:cypress,dtru:cypress,,36.0,"{""name"": ""dtru:cypress"", ""properties"": {""canopy_energy"": 18.5, ""height_variation"": 5, ""bottom_branch_side_energy"": 6.5}}",False,False,False,trees/dtru/species/mega_cypress.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:mega_eucalyptus,dtru:eucalyptus,,,32.0,"{""name"": ""jungle"", ""properties"": {""canopy_height"": 24}}",False,False,False,trees/dtru/species/mega_eucalyptus.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:mega_mauve,dtru:mauve,,,32.0,"{""name"": ""dtru:mauve"", ""properties"": {""canopy_energy"": 18.5, ""height_variation"": 5, ""bottom_branch_side_energy"": 6.5}}",False,False,False,trees/dtru/species/mega_mauve.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:oak_poplar,oak,dtru:poplar,,11.0,"""dtru:poplar""",False,False,False,trees/dtru/species/oak_poplar.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:oak_twiglet,oak,,,2.5,"""""",False,False,False,trees/dtru/species/oak_twiglet.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:orange_maple,dtru:maple,,,22.0,"""dtru:variate_height""",False,False,False,trees/dtru/species/orange_maple.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:palm,dtru:palm,palm,,10.0,"""dtru:variate_height""",False,False,False,trees/dtru/species/palm.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:pine,dtru:pine,,,20.0,"""dtru:thin_conifer""",False,False,True,trees/dtru/species/pine.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:pine_twiglet,dtru:pine,,,3.5,"""""",False,False,False,trees/dtru/species/pine_twiglet.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:pink_bioshroom,dtru:pink_bioshroom,dtru:bioshroom,,10,"{""name"": ""dtru:variate_height"", ""properties"": {""height_variation"": 8}}",False,False,False,trees/dtru/species/pink_bioshroom.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:pink_magnolia,dtru:magnolia,,,12.0,"""""",False,False,False,trees/dtru/species/pink_magnolia.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:red_maple,dtru:maple,,,22.0,"""dtru:variate_height""",False,False,False,trees/dtru/species/red_maple.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:redwood,dtru:redwood,,,38.0,"""dtru:redwood""",False,False,False,trees/dtru/species/redwood.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:reef_jungle,jungle,,,12.0,"""""",False,False,False,trees/dtru/species/reef_jungle.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:short_jungle,jungle,,,12.0,"""""",False,False,True,trees/dtru/species/short_jungle.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:short_palm,dtru:palm,palm,,4.0,"{""name"": ""dtru:variate_height"", ""properties"": {""height_variation"": 3}}",False,False,False,trees/dtru/species/short_palm.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:silver_birch,dtru:silver_birch,,,16.0,"{""name"": ""dtru:twisting_tree"", ""properties"": {""split_ends_energy"": 2}}",False,False,False,trees/dtru/species/silver_birch.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:small_blue_bioshroom,dynamictreesplus:mushroom,dtru:small_bioshroom,,3,"{""name"": ""dtru:variate_height"", ""properties"": {""height_variation"": 3}}",False,False,False,trees/dtru/species/small_blue_bioshroom.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:small_pink_bioshroom,dynamictreesplus:mushroom,dtru:small_bioshroom,,3,"{""name"": ""dtru:variate_height"", ""properties"": {""height_variation"": 3}}",False,False,False,trees/dtru/species/small_pink_bioshroom.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:small_redwood,dtru:redwood,,,17.0,"""dtru:small_redwood""",False,False,True,trees/dtru/species/small_redwood.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:socotra,dtru:socotra,,,14.0,"{""name"": ""dtru:canopy"", ""properties"": {""zigzag_up_chance"": 0}}",False,False,False,trees/dtru/species/socotra.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:spruce_twiglet,spruce,,,3.5,"""""",False,False,False,trees/dtru/species/spruce_twiglet.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:tall_pine,dtru:pine,,,28.0,"""dtru:thin_conifer""",False,False,True,trees/dtru/species/tall_pine.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:tall_spruce,spruce,,,20.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 5, ""horizontal_limiter"": 5}}",False,False,True,trees/dtru/species/tall_spruce.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:twisting_birch,birch,,,16.0,"{""name"": ""dtru:twisting_tree"", ""properties"": {""split_ends_energy"": 2}}",False,False,False,trees/dtru/species/twisting_birch.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:white_magnolia,dtru:magnolia,,,12.0,"""""",False,False,False,trees/dtru/species/white_magnolia.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:willow,dtru:willow,dtru:generates_underwater,,16.0,"""dtru:willow""",False,False,False,trees/dtru/species/willow.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dtru:yellow_bioshroom,dtru:yellow_bioshroom,dtru:bioshroom,,3,"{""name"": ""dtru:variate_height"", ""properties"": {""height_variation"": 7}}",False,False,False,trees/dtru/species/yellow_bioshroom.json
+DynamicTreesRU-1.20.1-1.0.1.jar,dynamictrees:dark_oak,dark_oak,,,18.0,"""dark_oak""",False,False,True,trees/dynamictrees/species/dark_oak.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:acacia_bush,acacia,,,1.0,"""""",False,False,False,trees/dtterralith/species/acacia_bush.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:acacia_twiglet,acacia,,,1.5,"""""",False,False,False,trees/dtterralith/species/acacia_twiglet.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:amethyst,acacia,,,24.0,"""""",False,False,True,trees/dtterralith/species/amethyst.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:amethyst_mahogany,acacia,,,35.0,"{""name"": ""jungle"", ""properties"": {""canopy_height"": 25, ""branch_out_chance"": 3}}",False,False,False,trees/dtterralith/species/amethyst_mahogany.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:ancient,dark_oak,,,12.0,"{""name"": ""dtterralith:twisting_tree"", ""properties"": {""split_ends_energy"": 2}}",False,False,True,trees/dtterralith/species/ancient.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:azalea_bush,oak,,,1.0,"""""",False,False,False,trees/dtterralith/species/azalea_bush.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:big_spruce,spruce,,,25.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 6}}",False,False,True,trees/dtterralith/species/big_spruce.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:birch_pine,birch,,,16.0,"""conifer""",False,False,False,trees/dtterralith/species/birch_pine.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:black_poplar,spruce,dtterralith:poplar,,11.0,"""dtterralith:poplar""",False,False,True,trees/dtterralith/species/black_poplar.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:blue_pine,dark_oak,,,16.0,"""conifer""",False,False,True,trees/dtterralith/species/blue_pine.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:canopy_acacia,acacia,,,22.0,"{""name"": ""dtterralith:twisting_tree"", ""properties"": {""split_ends_energy"": 2}}",False,False,False,trees/dtterralith/species/canopy_acacia.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:canopy_spruce,spruce,,,16.0,"{""name"": ""dtterralith:twisting_tree"", ""properties"": {""split_ends_energy"": 2}}",False,False,False,trees/dtterralith/species/canopy_spruce.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:cedar,oak,,,16.0,"""conifer""",False,False,True,trees/dtterralith/species/cedar.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:cherry_bush,cherry,,,1.0,"""""",False,False,False,trees/dtterralith/species/cherry_bush.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:creeping_juniper,spruce,,,1.0,"""""",False,False,False,trees/dtterralith/species/creeping_juniper.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:dead_mangrove,mangrove,,,,"""""",False,False,False,trees/dtterralith/species/dead_mangrove.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:dead_oak,oak,,,,"""""",False,False,False,trees/dtterralith/species/dead_oak.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:dwarf_pine,birch,,,7.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 4}}",False,False,False,trees/dtterralith/species/dwarf_pine.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:dwarf_spruce,spruce,,,7.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 4}}",False,False,False,trees/dtterralith/species/dwarf_spruce.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:ebony,dark_oak,,,12.0,"""azalea""",False,False,False,trees/dtterralith/species/ebony.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:giga_spruce,spruce,,,50.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 5}}",False,False,False,trees/dtterralith/species/giga_spruce.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:jacaranda,dark_oak,,,18.0,"{""name"": ""dtterralith:twisting_tree"", ""properties"": {""split_ends_energy"": 2}}",False,False,False,trees/dtterralith/species/jacaranda.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:kapok,acacia,,,14.0,"""""",False,False,False,trees/dtterralith/species/kapok.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:larch,oak,,,25.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 6}}",False,False,True,trees/dtterralith/species/larch.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:large_swamp_oak,oak,swamp_oak,,16.0,"""""",False,False,False,trees/dtterralith/species/large_swamp_oak.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:lush_acacia,acacia,,,12.0,"""""",False,False,True,trees/dtterralith/species/lush_acacia.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:lush_mahogany,acacia,,,24.0,"""jungle""",False,False,False,trees/dtterralith/species/lush_mahogany.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:lush_mangrove,mangrove,,,12.0,"""""",False,False,False,trees/dtterralith/species/lush_mangrove.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:lush_tall_acacia,acacia,,,24.0,"""dtterralith:tall_deciduous""",False,False,False,trees/dtterralith/species/lush_tall_acacia.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:lush_tree,oak,,,12.0,"""""",False,False,False,trees/dtterralith/species/lush_tree.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:maple,dark_oak,,,12.0,"""""",False,False,False,trees/dtterralith/species/maple.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:mega_ancient,dark_oak,,,40.0,"""""",False,False,False,trees/dtterralith/species/mega_ancient.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:mega_big_spruce,spruce,,,35.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 5}}",False,False,True,trees/dtterralith/species/mega_big_spruce.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:mega_blue_pine,dark_oak,,,35.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 5}}",False,False,False,trees/dtterralith/species/mega_blue_pine.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:mega_larch,oak,,,35.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 5}}",False,False,False,trees/dtterralith/species/mega_larch.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:mega_mirage,dtterralith:mirage,,,40.0,"""""",False,False,False,trees/dtterralith/species/mega_mirage.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:mega_oasis,jungle,,,16.0,"""azalea""",False,False,False,trees/dtterralith/species/mega_oasis.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:mega_orange_pine,dark_oak,,,35.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 5}}",False,False,False,trees/dtterralith/species/mega_orange_pine.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:mega_red_pine,dark_oak,,,35.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 5}}",False,False,False,trees/dtterralith/species/mega_red_pine.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:mirage,dtterralith:mirage,,,12.0,"{""name"": ""dtterralith:twisting_tree"", ""properties"": {""split_ends_energy"": 2}}",False,False,False,trees/dtterralith/species/mirage.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:moonlight_pine,acacia,,,16.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 2, ""variate_lowest_branch"": true}}",False,False,False,trees/dtterralith/species/moonlight_pine.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:moonlight_spruce,dtterralith:moonlight,,,16.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 2, ""variate_lowest_branch"": true}}",False,False,False,trees/dtterralith/species/moonlight_spruce.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:northern_spruce,spruce,,,25.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 10, ""horizontal_limiter"": 2}}",False,False,True,trees/dtterralith/species/northern_spruce.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:oak_twiglet,oak,,,1.5,"""""",False,False,False,trees/dtterralith/species/oak_twiglet.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:oasis,jungle,,,12.0,"""azalea""",False,False,True,trees/dtterralith/species/oasis.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:orange_pine,dark_oak,,,25.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 6}}",False,False,True,trees/dtterralith/species/orange_pine.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:ponderosa_pine,oak,,,25.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 10, ""horizontal_limiter"": 2}}",False,False,False,trees/dtterralith/species/ponderosa_pine.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:poplar,birch,dtterralith:poplar,,11.0,"""dtterralith:poplar""",False,False,False,trees/dtterralith/species/poplar.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:red_pine,dark_oak,,,25.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 6}}",False,False,True,trees/dtterralith/species/red_pine.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:red_shrub,dark_oak,,,8.0,"""azalea""",False,False,False,trees/dtterralith/species/red_shrub.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:sakura,dark_oak,,,24.0,"""""",False,False,False,trees/dtterralith/species/sakura.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:sakura_undergrowth,dark_oak,,,1.2,"""""",False,False,False,trees/dtterralith/species/sakura_undergrowth.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:scruffy_birch_pine,birch,,,16.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 10, ""horizontal_limiter"": 2}}",False,False,False,trees/dtterralith/species/scruffy_birch_pine.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:scruffy_oak,oak,,,12.0,"{""name"": ""dtterralith:twisting_tree"", ""properties"": {""split_ends_energy"": 2}}",False,False,False,trees/dtterralith/species/scruffy_oak.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:scruffy_pine,oak,,,16.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 10, ""horizontal_limiter"": 2}}",False,False,False,trees/dtterralith/species/scruffy_pine.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:scruffy_swamp_mangrove,mangrove,,,12.0,"{""name"": ""dtterralith:twisting_tree"", ""properties"": {""split_ends_energy"": 2}}",False,False,False,trees/dtterralith/species/scruffy_swamp_mangrove.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:scruffy_swamp_oak,oak,,,12.0,"{""name"": ""dtterralith:twisting_tree"", ""properties"": {""split_ends_energy"": 2}}",False,False,False,trees/dtterralith/species/scruffy_swamp_oak.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:silverleaf_poplar,acacia,dtterralith:poplar,,11.0,"""dtterralith:poplar""",False,False,False,trees/dtterralith/species/silverleaf_poplar.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:small_acacia,acacia,,,6.0,"""""",False,False,True,trees/dtterralith/species/small_acacia.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:sparse_acacia,acacia,,,12.0,"""""",False,False,False,trees/dtterralith/species/sparse_acacia.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:sparse_jungle,jungle,,,12.0,"""""",False,False,False,trees/dtterralith/species/sparse_jungle.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:sparse_oak,oak,,,12.0,"""""",False,False,False,trees/dtterralith/species/sparse_oak.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:sparse_spruce,spruce,,,12.0,"""""",False,False,False,trees/dtterralith/species/sparse_spruce.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:sparse_swamp_birch,birch,swamp_oak,,16.0,"""""",False,False,False,trees/dtterralith/species/sparse_swamp_birch.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:sparse_swamp_mangrove,mangrove,,,16.0,"""""",False,False,False,trees/dtterralith/species/sparse_swamp_mangrove.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:sparse_swamp_oak,oak,swamp_oak,,16.0,"""""",False,False,False,trees/dtterralith/species/sparse_swamp_oak.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:spruce_twiglet,spruce,,,1.5,"{""name"": ""dtterralith:variate_height"", ""properties"": {""height_variation"": 3}}",False,False,False,trees/dtterralith/species/spruce_twiglet.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:swamp_birch,birch,swamp_oak,,16.0,"""""",False,False,False,trees/dtterralith/species/swamp_birch.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:taiga_birch,birch,,,12.0,"{""name"": ""dtterralith:twisting_tree"", ""properties"": {""split_ends_energy"": 2}}",False,False,False,trees/dtterralith/species/taiga_birch.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:tall_acacia,acacia,,,24.0,"""dtterralith:tall_deciduous""",False,False,False,trees/dtterralith/species/tall_acacia.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:tall_dark_oak,dark_oak,,,26.0,"""dark_oak""",False,False,False,trees/dtterralith/species/tall_dark_oak.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:tall_spruce,spruce,,,16.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 2, ""horizontal_limiter"": 1.5, ""variate_lowest_branch"": true}}",False,False,False,trees/dtterralith/species/tall_spruce.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:twilight_birch,birch,,,12.0,"{""name"": ""dtterralith:twisting_tree"", ""properties"": {""split_ends_energy"": 2}}",False,False,False,trees/dtterralith/species/twilight_birch.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:twilight_oak,oak,,,15.0,"{""name"": ""dtterralith:twisting_tree"", ""properties"": {""split_ends_energy"": 2}}",False,False,False,trees/dtterralith/species/twilight_oak.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:windswept_acacia,acacia,,,16.0,"""azalea""",False,False,False,trees/dtterralith/species/windswept_acacia.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:windswept_jungle,jungle,,,16.0,"""azalea""",False,False,False,trees/dtterralith/species/windswept_jungle.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dtterralith:windswept_spruce,spruce,,,16.0,"""azalea""",False,False,False,trees/dtterralith/species/windswept_spruce.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dynamictrees:cherry,cherry,,,12.0,"""""",False,False,False,trees/dynamictrees/species/cherry.json
+DynamicTreesTerralith-1.20.1-1.2.6.jar,dynamictrees:mega_spruce,spruce,,,24.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 5}}",False,False,True,trees/dynamictrees/species/mega_spruce.json
+DynamicTreesTheTwilightForest-1.20.1-2.2.0.jar,dttwilightforest:canopy,dttwilightforest:canopy,,,30.0,"""dttwilightforest:canopy""",False,False,False,trees/dttwilightforest/species/canopy.json
+DynamicTreesTheTwilightForest-1.20.1-2.2.0.jar,dttwilightforest:canopy_brown_mushroom,dynamictreesplus:mushroom,dynamictreesplus:mushroom,,22,"""""",False,False,False,trees/dttwilightforest/species/canopy_brown_mushroom.json
+DynamicTreesTheTwilightForest-1.20.1-2.2.0.jar,dttwilightforest:canopy_red_mushroom,dynamictreesplus:mushroom,dynamictreesplus:mushroom,,24,"""""",False,False,False,trees/dttwilightforest/species/canopy_red_mushroom.json
+DynamicTreesTheTwilightForest-1.20.1-2.2.0.jar,dttwilightforest:dark_forest_birch,birch,,,14.0,"""""",False,False,False,trees/dttwilightforest/species/dark_forest_birch.json
+DynamicTreesTheTwilightForest-1.20.1-2.2.0.jar,dttwilightforest:dark_forest_oak,oak,,,12.0,"""""",False,False,False,trees/dttwilightforest/species/dark_forest_oak.json
+DynamicTreesTheTwilightForest-1.20.1-2.2.0.jar,dttwilightforest:darkwood,dttwilightforest:darkwood,,,24.0,"{""name"": ""dttwilightforest:canopy"", ""properties"": {""height_variation"": 2, ""canopy_height"": 8}}",False,False,False,trees/dttwilightforest/species/darkwood.json
+DynamicTreesTheTwilightForest-1.20.1-2.2.0.jar,dttwilightforest:giga_spruce,spruce,dttwilightforest:giga_spruce,,50.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 5}}",False,False,False,trees/dttwilightforest/species/giga_spruce.json
+DynamicTreesTheTwilightForest-1.20.1-2.2.0.jar,dttwilightforest:mangrove,dttwilightforest:mangrove,mangrove,,20.0,"""""",False,False,False,trees/dttwilightforest/species/mangrove.json
+DynamicTreesTheTwilightForest-1.20.1-2.2.0.jar,dttwilightforest:mining,dttwilightforest:mining,,,16.0,"""dttwilightforest:mining""",False,False,False,trees/dttwilightforest/species/mining.json
+DynamicTreesTheTwilightForest-1.20.1-2.2.0.jar,dttwilightforest:mushgloom,dttwilightforest:mushgloom,dttwilightforest:mushgloom,,4,"{""name"": ""dynamictreesplus:straight"", ""properties"": {""height_variation"": 2}}",False,False,False,trees/dttwilightforest/species/mushgloom.json
+DynamicTreesTheTwilightForest-1.20.1-2.2.0.jar,dttwilightforest:rainbow_oak,dttwilightforest:twilight_oak,,,12.0,"""""",False,False,False,trees/dttwilightforest/species/rainbow_oak.json
+DynamicTreesTheTwilightForest-1.20.1-2.2.0.jar,dttwilightforest:robust_twilight_oak,dttwilightforest:twilight_oak,,,40.0,"""""",False,False,False,trees/dttwilightforest/species/robust_twilight_oak.json
+DynamicTreesTheTwilightForest-1.20.1-2.2.0.jar,dttwilightforest:sorting,dttwilightforest:sorting,,,6.0,"""""",False,False,False,trees/dttwilightforest/species/sorting.json
+DynamicTreesTheTwilightForest-1.20.1-2.2.0.jar,dttwilightforest:spooky_canopy,dttwilightforest:canopy,,,30.0,"""dttwilightforest:canopy""",False,False,False,trees/dttwilightforest/species/spooky_canopy.json
+DynamicTreesTheTwilightForest-1.20.1-2.2.0.jar,dttwilightforest:time,dttwilightforest:time,,,,"""""",False,False,False,trees/dttwilightforest/species/time.json
+DynamicTreesTheTwilightForest-1.20.1-2.2.0.jar,dttwilightforest:transformation,dttwilightforest:transformation,,,16.0,"""""",False,False,False,trees/dttwilightforest/species/transformation.json
+DynamicTreesTheTwilightForest-1.20.1-2.2.0.jar,dttwilightforest:twilight_oak,dttwilightforest:twilight_oak,,,12.0,"""""",False,False,False,trees/dttwilightforest/species/twilight_oak.json
+DynamicTreesTheTwilightForest-1.20.1-2.2.0.jar,dynamictrees:mega_spruce,spruce,,,24.0,"{""name"": ""conifer"", ""properties"": {""energy_divisor"": 5}}",False,False,True,trees/dynamictrees/species/mega_spruce.json

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "branched:static_oak_checked",
+    "features": [
+      {
+        "chance": 0.8,
+        "feature": "branched:static_acacia_checked"
+      }
+    ]
+  }
+}

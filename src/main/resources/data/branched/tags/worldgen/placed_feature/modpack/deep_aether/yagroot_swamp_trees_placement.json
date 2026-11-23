@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "deep_aether:yagroot_swamp_trees_placement",
+      "required": false
+    }
+  ]
+}

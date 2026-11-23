@@ -1,0 +1,14 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": [
+    "minecraft:swamp"
+  ],
+  "add": "branched:static_trees_swamp",
+  "replace": [
+    "minecraft:trees_swamp"
+  ],
+  "species": [
+    "minecraft:oak"
+  ],
+  "step": "vegetal_decoration"
+}

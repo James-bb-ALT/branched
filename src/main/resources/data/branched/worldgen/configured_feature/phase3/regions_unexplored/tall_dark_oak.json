@@ -1,0 +1,7 @@
+{
+  "type": "branched:static_tree",
+  "config": {
+    "species": "minecraft:dark_oak",
+    "attempts": 3
+  }
+}

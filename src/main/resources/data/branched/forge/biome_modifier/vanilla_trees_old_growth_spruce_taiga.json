@@ -1,0 +1,15 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": [
+    "minecraft:old_growth_spruce_taiga"
+  ],
+  "add": "branched:static_trees_old_growth_spruce_taiga",
+  "replace": [
+    "minecraft:trees_old_growth_spruce_taiga"
+  ],
+  "species": [
+    "minecraft:spruce",
+    "minecraft:pine"
+  ],
+  "step": "vegetal_decoration"
+}

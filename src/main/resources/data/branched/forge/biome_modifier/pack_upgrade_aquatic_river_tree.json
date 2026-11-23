@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:modpack/upgrade_aquatic/river_tree",
+  "add": "branched:modpack/upgrade_aquatic/river_tree",
+  "replace": "#branched:modpack/upgrade_aquatic/river_tree",
+  "species": [
+    "upgrade_aquatic:river"
+  ],
+  "step": "vegetal_decoration"
+}

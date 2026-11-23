@@ -1,0 +1,14 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": [
+    "minecraft:cherry_grove"
+  ],
+  "add": "branched:static_trees_cherry",
+  "replace": [
+    "minecraft:trees_cherry"
+  ],
+  "species": [
+    "minecraft:cherry"
+  ],
+  "step": "vegetal_decoration"
+}

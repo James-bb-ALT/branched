@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "species": "ecologics:coconut",
+  "archetype": "palm",
+  "logs": "ecologics:coconut_log",
+  "leaves": "ecologics:coconut_leaves",
+  "wood": "ecologics:coconut_wood",
+  "sapling": "ecologics:coconut_seedling",
+  "trunk": {
+    "height": [
+      7,
+      11
+    ],
+    "radius": [
+      0.45,
+      0.7
+    ],
+    "bend": [
+      0.12,
+      0.3
+    ]
+  },
+  "branches": {
+    "primaryCount": [
+      4,
+      6
+    ],
+    "depth": [
+      1,
+      1
+    ],
+    "angleDegrees": [
+      55,
+      78
+    ],
+    "lengthRatio": [
+      0.22,
+      0.36
+    ],
+    "asymmetry": [
+      0.1,
+      0.3
+    ],
+    "pattern": "terminal"
+  },
+  "crown": {
+    "widthRatio": [
+      0.9,
+      1.4
+    ],
+    "density": [
+      0.45,
+      0.75
+    ],
+    "clusterCount": [
+      5,
+      8
+    ]
+  },
+  "generation": {
+    "mode": "semiprocedural_once",
+    "attempts": 3,
+    "version": 3
+  },
+  "budget": {
+    "maxSegments": 96,
+    "maxLeaves": 320,
+    "maxQuads": 7500
+  },
+  "compatibility": "SPECIAL_PRESERVE",
+  "source": {
+    "feature": "ecologics:coconut"
+  },
+  "biomes": [
+    "minecraft:beach"
+  ],
+  "fruitBearing": false
+}

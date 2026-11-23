@@ -1,0 +1,16 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": [
+    "minecraft:savanna",
+    "minecraft:savanna_plateau"
+  ],
+  "add": "branched:static_trees_savanna",
+  "replace": [
+    "minecraft:trees_savanna"
+  ],
+  "species": [
+    "minecraft:oak",
+    "minecraft:acacia"
+  ],
+  "step": "vegetal_decoration"
+}

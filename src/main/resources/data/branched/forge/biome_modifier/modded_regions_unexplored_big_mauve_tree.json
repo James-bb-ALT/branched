@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/regions_unexplored/big_mauve_tree",
+  "add": "branched:phase3/regions_unexplored/big_mauve_tree",
+  "replace": "#branched:phase3/regions_unexplored/big_mauve_tree",
+  "species": [
+    "regions_unexplored:mauve"
+  ],
+  "step": "vegetal_decoration"
+}

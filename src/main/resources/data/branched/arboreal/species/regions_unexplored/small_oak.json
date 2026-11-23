@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "species": "regions_unexplored:small_oak",
+  "archetype": "broadleaf_round",
+  "logs": "regions_unexplored:small_oak_log",
+  "leaves": "regions_unexplored:small_oak_leaves",
+  "sapling": "regions_unexplored:small_oak_sapling",
+  "trunk": {
+    "height": [
+      3,
+      6
+    ],
+    "radius": [
+      0.45,
+      0.65
+    ],
+    "bend": [
+      0.03,
+      0.15
+    ]
+  },
+  "branches": {
+    "primaryCount": [
+      3,
+      5
+    ],
+    "depth": [
+      1,
+      2
+    ],
+    "angleDegrees": [
+      28,
+      55
+    ],
+    "lengthRatio": [
+      0.28,
+      0.5
+    ],
+    "asymmetry": [
+      0.1,
+      0.35
+    ],
+    "pattern": "alternate"
+  },
+  "crown": {
+    "widthRatio": [
+      0.7,
+      1.15
+    ],
+    "density": [
+      0.4,
+      0.7
+    ],
+    "clusterCount": [
+      4,
+      9
+    ]
+  },
+  "generation": {
+    "mode": "semiprocedural_once",
+    "attempts": 3,
+    "version": 2
+  },
+  "budget": {
+    "maxSegments": 72,
+    "maxLeaves": 200,
+    "maxQuads": 5000
+  },
+  "compatibility": "STATIC_NORMAL",
+  "source": {
+    "feature": "regions_unexplored:small_oak_tree"
+  },
+  "biomes": [
+    "#minecraft:is_forest"
+  ],
+  "fruitBearing": false
+}

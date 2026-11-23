@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:modpack/deeperdarker/echo_tree",
+  "add": "branched:modpack/deeperdarker/echo_tree",
+  "replace": "#branched:modpack/deeperdarker/echo_tree",
+  "species": [
+    "deeperdarker:echo"
+  ],
+  "step": "vegetal_decoration"
+}

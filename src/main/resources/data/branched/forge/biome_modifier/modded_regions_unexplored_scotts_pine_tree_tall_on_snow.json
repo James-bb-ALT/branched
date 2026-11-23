@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/regions_unexplored/scotts_pine_tree_tall_on_snow",
+  "add": "branched:phase3/regions_unexplored/scotts_pine_tree_tall_on_snow",
+  "replace": "#branched:phase3/regions_unexplored/scotts_pine_tree_tall_on_snow",
+  "species": [
+    "regions_unexplored:pine"
+  ],
+  "step": "vegetal_decoration"
+}

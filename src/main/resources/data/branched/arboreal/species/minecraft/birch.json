@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "species": "minecraft:birch",
+  "archetype": "birch",
+  "logs": "minecraft:birch_log",
+  "leaves": "minecraft:birch_leaves",
+  "wood": "minecraft:birch_wood",
+  "sapling": "minecraft:birch_sapling",
+  "trunk": {
+    "height": [
+      6,
+      11
+    ],
+    "radius": [
+      0.5,
+      0.7
+    ],
+    "bend": [
+      0.0,
+      0.08
+    ]
+  },
+  "branches": {
+    "primaryCount": [
+      3,
+      6
+    ],
+    "depth": [
+      1,
+      2
+    ],
+    "angleDegrees": [
+      20,
+      40
+    ],
+    "lengthRatio": [
+      0.18,
+      0.32
+    ],
+    "asymmetry": [
+      0.05,
+      0.25
+    ],
+    "pattern": "alternate"
+  },
+  "crown": {
+    "widthRatio": [
+      0.55,
+      0.9
+    ],
+    "density": [
+      0.35,
+      0.6
+    ],
+    "clusterCount": [
+      5,
+      10
+    ]
+  },
+  "generation": {
+    "mode": "semiprocedural_once",
+    "attempts": 3,
+    "version": 2
+  },
+  "budget": {
+    "maxSegments": 96,
+    "maxLeaves": 320,
+    "maxQuads": 7000
+  },
+  "compatibility": "STATIC_NORMAL",
+  "source": {
+    "feature": "minecraft:birch"
+  },
+  "biomes": [
+    "#minecraft:is_forest",
+    "#minecraft:is_taiga"
+  ],
+  "fruitBearing": false
+}

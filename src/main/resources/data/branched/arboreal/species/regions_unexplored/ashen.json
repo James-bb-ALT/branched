@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "species": "regions_unexplored:ashen",
+  "archetype": "conifer",
+  "logs": "regions_unexplored:ashen_log",
+  "leaves": "regions_unexplored:ashen_leaves",
+  "wood": "regions_unexplored:ashen_wood",
+  "sapling": "regions_unexplored:ashen_sapling",
+  "trunk": {
+    "height": [
+      9,
+      18
+    ],
+    "radius": [
+      0.6,
+      0.95
+    ],
+    "bend": [
+      0.0,
+      0.06
+    ]
+  },
+  "branches": {
+    "primaryCount": [
+      6,
+      12
+    ],
+    "depth": [
+      1,
+      2
+    ],
+    "angleDegrees": [
+      8,
+      30
+    ],
+    "lengthRatio": [
+      0.2,
+      0.4
+    ],
+    "asymmetry": [
+      0.05,
+      0.2
+    ],
+    "pattern": "whorled"
+  },
+  "crown": {
+    "widthRatio": [
+      0.45,
+      0.8
+    ],
+    "density": [
+      0.55,
+      0.9
+    ],
+    "clusterCount": [
+      8,
+      18
+    ]
+  },
+  "generation": {
+    "mode": "semiprocedural_once",
+    "attempts": 3,
+    "version": 2
+  },
+  "budget": {
+    "maxSegments": 160,
+    "maxLeaves": 480,
+    "maxQuads": 10000
+  },
+  "compatibility": "STATIC_NORMAL",
+  "source": {
+    "feature": "regions_unexplored:ashen_pine_tree"
+  },
+  "biomes": [
+    "#minecraft:is_taiga"
+  ],
+  "fruitBearing": false
+}

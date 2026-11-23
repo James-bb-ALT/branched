@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "species": "regions_unexplored:alpha",
+  "archetype": "broadleaf_irregular",
+  "logs": "regions_unexplored:alpha_log",
+  "leaves": "regions_unexplored:alpha_leaves",
+  "sapling": "regions_unexplored:alpha_sapling",
+  "trunk": {
+    "height": [
+      9,
+      18
+    ],
+    "radius": [
+      0.85,
+      1.3
+    ],
+    "bend": [
+      0.03,
+      0.16
+    ]
+  },
+  "branches": {
+    "primaryCount": [
+      5,
+      10
+    ],
+    "depth": [
+      2,
+      3
+    ],
+    "angleDegrees": [
+      28,
+      58
+    ],
+    "lengthRatio": [
+      0.28,
+      0.5
+    ],
+    "asymmetry": [
+      0.15,
+      0.45
+    ],
+    "pattern": "alternate"
+  },
+  "crown": {
+    "widthRatio": [
+      1.1,
+      1.8
+    ],
+    "density": [
+      0.4,
+      0.7
+    ],
+    "clusterCount": [
+      8,
+      18
+    ]
+  },
+  "generation": {
+    "mode": "semiprocedural_once",
+    "attempts": 3,
+    "version": 2
+  },
+  "budget": {
+    "maxSegments": 192,
+    "maxLeaves": 540,
+    "maxQuads": 12000
+  },
+  "compatibility": "SPECIAL_PRESERVE",
+  "source": {
+    "feature": "regions_unexplored:alpha_tree"
+  },
+  "biomes": [
+    "#minecraft:is_forest"
+  ],
+  "fruitBearing": false,
+  "notes": "Alpha wood behaviour still under audit; never replaced in Phase 0."
+}

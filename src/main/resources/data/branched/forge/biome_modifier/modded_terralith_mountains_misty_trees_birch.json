@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/terralith/mountains/misty/trees_birch",
+  "add": "branched:phase3/terralith/mountains/misty/trees_birch",
+  "replace": "#branched:phase3/terralith/mountains/misty/trees_birch",
+  "species": [
+    "minecraft:birch"
+  ],
+  "step": "vegetal_decoration"
+}

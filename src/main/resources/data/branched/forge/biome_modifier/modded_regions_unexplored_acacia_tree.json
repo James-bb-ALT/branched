@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/regions_unexplored/acacia_tree",
+  "add": "branched:phase3/regions_unexplored/acacia_tree",
+  "replace": "#branched:phase3/regions_unexplored/acacia_tree",
+  "species": [
+    "minecraft:acacia"
+  ],
+  "step": "vegetal_decoration"
+}

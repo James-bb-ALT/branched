@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/regions_unexplored/tall_blackwood_tree",
+  "add": "branched:phase3/regions_unexplored/tall_blackwood_tree",
+  "replace": "#branched:phase3/regions_unexplored/tall_blackwood_tree",
+  "species": [
+    "regions_unexplored:blackwood"
+  ],
+  "step": "vegetal_decoration"
+}

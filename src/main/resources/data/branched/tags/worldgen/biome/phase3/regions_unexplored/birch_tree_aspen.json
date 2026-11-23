@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "regions_unexplored:boreal_taiga",
+    "regions_unexplored:cold_boreal_taiga",
+    "regions_unexplored:golden_boreal_taiga",
+    "regions_unexplored:temperate_grove"
+  ]
+}

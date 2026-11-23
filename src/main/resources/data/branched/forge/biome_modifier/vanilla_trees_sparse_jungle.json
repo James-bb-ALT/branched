@@ -1,0 +1,15 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": [
+    "minecraft:sparse_jungle"
+  ],
+  "add": "branched:static_trees_sparse_jungle",
+  "replace": [
+    "minecraft:trees_sparse_jungle"
+  ],
+  "species": [
+    "minecraft:jungle",
+    "minecraft:fancy_oak"
+  ],
+  "step": "vegetal_decoration"
+}

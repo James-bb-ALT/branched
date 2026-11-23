@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/regions_unexplored/dead_bog_tree",
+  "add": "branched:phase3/regions_unexplored/dead_bog_tree",
+  "replace": "#branched:phase3/regions_unexplored/dead_bog_tree",
+  "species": [
+    "regions_unexplored:dead"
+  ],
+  "step": "vegetal_decoration"
+}

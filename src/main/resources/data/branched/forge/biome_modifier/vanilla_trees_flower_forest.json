@@ -1,0 +1,16 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": [
+    "minecraft:flower_forest"
+  ],
+  "add": "branched:static_trees_flower_forest",
+  "replace": [
+    "minecraft:trees_flower_forest"
+  ],
+  "species": [
+    "minecraft:oak",
+    "minecraft:birch",
+    "minecraft:fancy_oak"
+  ],
+  "step": "vegetal_decoration"
+}

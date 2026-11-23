@@ -1,0 +1,7 @@
+{
+  "type": "branched:static_tree",
+  "config": {
+    "species": "deep_aether:conberry",
+    "attempts": 3
+  }
+}

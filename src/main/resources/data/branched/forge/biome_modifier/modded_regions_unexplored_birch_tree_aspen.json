@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/regions_unexplored/birch_tree_aspen",
+  "add": "branched:phase3/regions_unexplored/birch_tree_aspen",
+  "replace": "#branched:phase3/regions_unexplored/birch_tree_aspen",
+  "species": [
+    "minecraft:birch"
+  ],
+  "step": "vegetal_decoration"
+}

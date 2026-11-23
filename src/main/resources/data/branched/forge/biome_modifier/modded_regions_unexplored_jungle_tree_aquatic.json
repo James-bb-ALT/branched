@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/regions_unexplored/jungle_tree_aquatic",
+  "add": "branched:phase3/regions_unexplored/jungle_tree_aquatic",
+  "replace": "#branched:phase3/regions_unexplored/jungle_tree_aquatic",
+  "species": [
+    "minecraft:jungle"
+  ],
+  "step": "vegetal_decoration"
+}

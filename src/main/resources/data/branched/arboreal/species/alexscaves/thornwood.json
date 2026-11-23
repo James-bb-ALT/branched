@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "species": "alexscaves:thornwood",
+  "archetype": "acacia",
+  "logs": "alexscaves:thornwood_log",
+  "leaves": "alexscaves:pewen_pines",
+  "wood": "alexscaves:thornwood_wood",
+  "sapling": "alexscaves:thornwood_sapling",
+  "trunk": {
+    "height": [
+      6,
+      12
+    ],
+    "radius": [
+      0.6,
+      0.9
+    ],
+    "bend": [
+      0.08,
+      0.26
+    ]
+  },
+  "branches": {
+    "primaryCount": [
+      3,
+      6
+    ],
+    "depth": [
+      1,
+      2
+    ],
+    "angleDegrees": [
+      32,
+      65
+    ],
+    "lengthRatio": [
+      0.3,
+      0.5
+    ],
+    "asymmetry": [
+      0.2,
+      0.5
+    ],
+    "pattern": "irregular"
+  },
+  "crown": {
+    "widthRatio": [
+      0.95,
+      1.5
+    ],
+    "density": [
+      0.4,
+      0.65
+    ],
+    "clusterCount": [
+      5,
+      10
+    ]
+  },
+  "generation": {
+    "mode": "semiprocedural_once",
+    "attempts": 3,
+    "version": 3
+  },
+  "budget": {
+    "maxSegments": 128,
+    "maxLeaves": 360,
+    "maxQuads": 8500
+  },
+  "compatibility": "SPECIAL_PRESERVE",
+  "source": {
+    "feature": "alexscaves:thornwood_tree"
+  },
+  "biomes": [
+    "alexscaves:primordial_caves"
+  ],
+  "fruitBearing": false
+}

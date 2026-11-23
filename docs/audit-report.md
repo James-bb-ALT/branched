@@ -1,0 +1,128 @@
+# Jar audit report (Phase 0)
+
+Everything below was measured by reading the actual jars with
+`tools/audit_jars.py` and `tools/analyze_tree_features.py`. No content is
+inferred from wiki pages or mod descriptions. Raw data:
+
+- `catalogs/jar-inventory.csv` — size, SHA-256, metadata, license, counts
+- `catalogs/block-families.csv` — audited log/wood/stem/leaves/sapling ids
+- `catalogs/configured-features.csv` — feature id, types, blocks, refs
+- `catalogs/placed-features.csv` — placed → configured resolution
+- `catalogs/tree-features.csv` — tree features only, with wood families and biomes
+- `catalogs/biome-tree-mapping.csv` — biome → step → placed feature
+- `catalogs/dt-species.csv` — 233 Dynamic Trees species (reference only)
+- `catalogs/jar-audit.json` — full dump, including every JSON payload read
+
+## Inventory
+
+19 archives, all valid ZIPs, 101,695,089 bytes total.
+
+| Jar | Mod id | Version | Loader | License |
+| --- | --- | --- | --- | --- |
+| `RegionsUnexploredForge-0.5.6+1.20.1.jar` | regions_unexplored | 0.5.6 | javafml | All rights reserved |
+| `Terralith_1.20.x_v2.5.4.jar` | terralith | 2.5.4 | lowcodefml | Stardust Labs License |
+| `aether-1.20.1-1.5.2-neoforge.jar` | aether | 1.20.1-1.5.2 | javafml | Assets ARR / Code LGPL-3.0 |
+| `twilightforest-1.20.1-4.3.2508-universal.jar` | twilightforest | 4.3.2508 | javafml | LGPL-2.1 |
+| `Quark-4.0-462.jar` | quark | 4.0-462 | javafml | Quark license |
+| `Zeta-1.0-31.jar` | zeta | 1.0-31 | javafml | Zeta license |
+| `fish_of_thieves-mc1.20.1-v3.1.7-forge.jar` | fishofthieves | 3.1.7 | javafml | MIT |
+| `fish_of_thieves-mc1.20.1-v3.4.0-forge.jar` | fishofthieves | 3.4.0 | javafml | MIT |
+| `TerraBlender-forge-1.20.1-3.0.1.10.jar` | terrablender | 3.0.1.10 | javafml | LGPLv3 |
+| `DynamicTrees-1.20.1-1.4.11.jar` | dynamictrees | 1.4.11 | javafml | MIT |
+| `DynamicTreesRU-1.20.1-1.0.1.jar` | dtru | 1.0.1 | javafml | MIT |
+| `DynamicTreesTerralith-1.20.1-1.2.6.jar` | dtterralith | 1.2.6 | javafml | MIT |
+| `DynamicTreesAether-1.20.1-1.3.3.jar` | dtaether | 1.3.3 | javafml | MIT |
+| `DynamicTreesTheTwilightForest-1.20.1-2.2.0.jar` | dttwilightforest | 2.2.0 | javafml | MIT |
+| `DynamicTreesQuark-1.20.1-2.5.3.jar` | dtquark | 2.5.3 | javafml | MIT |
+| `DynamicTreesFishofThieves-1.20.1-1.0.4.jar` | dtfish_of_thieves | 1.0.4 | javafml | MIT |
+| `DynamicTreesPlus-1.20.1-1.2.2.jar` | dynamictreesplus | 1.2.2 | javafml | MIT |
+| `DynamicTreesAddonLib-1.20.1-0.1.0-BETA5.jar` | dtaddon_lib | 0.1.0-BETA5 | javafml | MIT |
+| `DT_Baobab_Forge_1.20.1_v015.jar` | dtbaobabtree | 0.1.5 | javafml | MIT |
+
+Notes verified from the jars themselves:
+
+- `aether-1.20.1-1.5.2-neoforge.jar` is named "neoforge" but declares
+  `modLoader="javafml"` and `forge [47.1.0,)`; it loads on Forge 47.x.
+- `Quark-4.0-462.jar` requires `zeta [1.0-28,2.0)` (declared mandatory) and
+  `forge [43.0.8,)`.
+- `RegionsUnexploredForge-0.5.6+1.20.1.jar` requires TerraBlender `>=3.0.0.163`.
+- `Terralith_1.20.x_v2.5.4.jar` declares `modLoader="lowcodefml"`: it is a
+  data-only datapack-style jar and adds **no blocks**.
+- `DT_Baobab_Forge_1.20.1_v015.jar` was recovered locally; no verified public
+  download exists. It is catalogued but never activates an adapter.
+- `DynamicTreesRU-1.20.1-1.0.1.jar` uses `modId="dtru"` (not `dynamictreesru`).
+
+## Tree features per mod
+
+| Mod | Tree placed features | Wood families | Biomes the features are wired into |
+| --- | ---: | ---: | ---: |
+| Regions Unexplored | 192 | 29 | 307 links |
+| Terralith | 342 | 10 | 426 links |
+| The Aether | 9 | 2 | 20 links |
+| Twilight Forest | 28 | 8 | 93 links |
+| Quark | 5 (+ glow shrooms) | 1 | 0 links (biome injection by code) |
+| Fish of Thieves 3.1.7 | 12 | 7 | 5 links |
+| Fish of Thieves 3.4.0 | 13 | 7 | 5 links |
+
+Totals across all 19 jars: 977 configured features, 1073 placed features,
+233 Dynamic Trees species.
+
+## Findings that changed the design
+
+### 1. Terralith owns no wood
+
+0 blockstates with a `_log` family. Its 342 tree features place vanilla logs.
+Consequence: Terralith coverage is **shape/biome-based**, not a new wood family.
+`TerralithAdapter` therefore maps features to `terralith:*` shape identities while
+logs/leaves stay vanilla.
+
+### 2. Regions Unexplored mixes its own wood with vanilla
+
+Of its 29 tree families, 7 are vanilla blocks (`acacia`, `birch`, `cherry`,
+`dark_oak`, `jungle`, `oak`, `spruce`) and 21 are RU-native. The other 7 RU
+families detected in blockstates (`blue_bioshroom`, `green_bioshroom`,
+`pink_bioshroom`, `yellow_bioshroom`, `brimwood`, `cobalt`, `mushroom`) have no
+tree placed feature in 0.5.6 — they are decoration/structure sets.
+
+### 3. Twilight Forest magic trees are configured-only
+
+`twilightforest:tree/mining_tree`, `sorting_tree`, `time_tree` and
+`transformation_tree` exist as **configured** features (with custom feature
+types `twilightforest:miners_tree`, `twilightforest:tree_of_time`, …) but have
+**no placed feature**. They are generated by code/structures. They are
+`SPECIAL_PRESERVE` and can never be replaced automatically.
+
+Twilight's `tree/selector/*` features are `minecraft:random_selector` chains:
+attributing them to a single family is wrong, which is why the matrix marks them
+as multi-family and the adapter only maps the concrete tree features.
+
+### 4. Fish of Thieves has grown between versions
+
+3.1.7: 20 configured / 22 placed. 3.4.0: 21 configured / 23 placed. Family storage
+blocks are duplicated (`medium_coconut_log`, `small_coconut_log`,
+`small_top_coconut_log`, `banana_cluster_growable_stem`,
+`coconut_fruit_growable_log`), so naive family detection over-counts. Those are
+marked `TREE_PART`, not species. `fishofthieves:mango_tree` places
+`minecraft:oak_log` with `fishofthieves:mango_leaves`; banana has no sapling.
+
+### 5. Quark blossom trees are five variants of one wood family
+
+`blue/lavender/orange/red/yellow_blossom_placed` all use `quark:blossom_log`.
+`quark:glow_shrooms` is a custom feature type (`quark:glow_shroom`) and stays
+preserved. `quark:ancient` has a sapling and wood but **no placed feature**.
+
+### 6. The Aether is small but special
+
+Only `skyroot` and `golden_oak` are wood families (`berry_bush_stem` is not a
+tree). `gold_dungeon_island_foliage` uses `aether:golden_oak_trunk_placer` and
+drops golden apples; it is `STATIC_FRUIT`, not a plain tree.
+
+## What the audit does not prove
+
+- Biome wiring was resolved for data-driven biomes; biome injection performed in
+  code (notably Quark's blossom trees) cannot be seen from JSON alone. Those
+  remain `0 links` above and are handled as `UNRESOLVED` placement in Phase 0.
+- Feature *behaviour* (loot tables, decorators, block predicates) was read from
+  the JSON but not executed. Runtime verification is Phase 1+.
+- Dynamic Trees species were parsed for comparison only. Their growth logic is
+  irrelevant to a static pipeline and none of their code is used.

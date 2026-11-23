@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "species": "minecraft:acacia",
+  "archetype": "acacia",
+  "logs": "minecraft:acacia_log",
+  "leaves": "minecraft:acacia_leaves",
+  "wood": "minecraft:acacia_wood",
+  "sapling": "minecraft:acacia_sapling",
+  "trunk": {
+    "height": [
+      5,
+      9
+    ],
+    "radius": [
+      0.5,
+      0.75
+    ],
+    "bend": [
+      0.05,
+      0.25
+    ]
+  },
+  "branches": {
+    "primaryCount": [
+      3,
+      6
+    ],
+    "depth": [
+      1,
+      3
+    ],
+    "angleDegrees": [
+      30,
+      70
+    ],
+    "lengthRatio": [
+      0.35,
+      0.6
+    ],
+    "asymmetry": [
+      0.25,
+      0.6
+    ],
+    "pattern": "irregular"
+  },
+  "crown": {
+    "widthRatio": [
+      1.1,
+      1.8
+    ],
+    "density": [
+      0.35,
+      0.65
+    ],
+    "clusterCount": [
+      5,
+      12
+    ]
+  },
+  "generation": {
+    "mode": "semiprocedural_once",
+    "attempts": 3,
+    "version": 2
+  },
+  "budget": {
+    "maxSegments": 112,
+    "maxLeaves": 340,
+    "maxQuads": 8000
+  },
+  "compatibility": "STATIC_NORMAL",
+  "source": {
+    "feature": "minecraft:acacia"
+  },
+  "biomes": [
+    "#minecraft:is_savanna"
+  ],
+  "fruitBearing": false
+}

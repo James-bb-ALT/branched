@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_thin_core_template",
+  "textures": {
+    "particle": "regions_unexplored:block/palm_log",
+    "side": "regions_unexplored:block/palm_log",
+    "end": "regions_unexplored:block/palm_log_top"
+  }
+}

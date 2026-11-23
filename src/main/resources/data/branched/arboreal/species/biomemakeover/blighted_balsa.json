@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "species": "biomemakeover:blighted_balsa",
+  "archetype": "broadleaf_irregular",
+  "logs": "biomemakeover:blighted_balsa_log",
+  "leaves": "biomemakeover:blighted_balsa_leaves",
+  "wood": "biomemakeover:blighted_balsa_wood",
+  "sapling": "biomemakeover:blighted_balsa_sapling",
+  "trunk": {
+    "height": [
+      6,
+      12
+    ],
+    "radius": [
+      0.65,
+      1.0
+    ],
+    "bend": [
+      0.06,
+      0.22
+    ]
+  },
+  "branches": {
+    "primaryCount": [
+      4,
+      8
+    ],
+    "depth": [
+      2,
+      3
+    ],
+    "angleDegrees": [
+      32,
+      68
+    ],
+    "lengthRatio": [
+      0.32,
+      0.52
+    ],
+    "asymmetry": [
+      0.25,
+      0.55
+    ],
+    "pattern": "irregular"
+  },
+  "crown": {
+    "widthRatio": [
+      1.2,
+      1.85
+    ],
+    "density": [
+      0.5,
+      0.8
+    ],
+    "clusterCount": [
+      7,
+      15
+    ]
+  },
+  "generation": {
+    "mode": "semiprocedural_once",
+    "attempts": 3,
+    "version": 2
+  },
+  "budget": {
+    "maxSegments": 160,
+    "maxLeaves": 480,
+    "maxQuads": 11000
+  },
+  "compatibility": "STATIC_NORMAL",
+  "source": {
+    "feature": "biomemakeover:mushroom_fields/blighted_balsa"
+  },
+  "biomes": [
+    "#biomemakeover:mushroom_fields"
+  ],
+  "fruitBearing": false
+}

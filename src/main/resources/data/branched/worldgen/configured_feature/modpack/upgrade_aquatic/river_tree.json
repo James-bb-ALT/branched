@@ -1,0 +1,7 @@
+{
+  "type": "branched:static_tree",
+  "config": {
+    "species": "upgrade_aquatic:river",
+    "attempts": 3
+  }
+}

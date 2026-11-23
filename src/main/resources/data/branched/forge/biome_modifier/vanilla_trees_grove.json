@@ -1,0 +1,15 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": [
+    "minecraft:grove"
+  ],
+  "add": "branched:static_trees_grove",
+  "replace": [
+    "minecraft:trees_grove"
+  ],
+  "species": [
+    "minecraft:spruce",
+    "minecraft:pine"
+  ],
+  "step": "vegetal_decoration"
+}

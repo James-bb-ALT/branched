@@ -1,0 +1,24 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.branched.mixin",
+  "plugin": "dev.branched.mixin.BranchedMixinPlugin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "worldgen.TreeFeatureMixin",
+    "worldgen.WaterTreeFeatureMixin",
+    "worldgen.BaobabTreeGenerationStateMixin",
+    "immersivetreechop.ImmersiveTreeScannerMixin",
+    "immersivetreechop.ImmersiveChoppingMixin",
+    "immersivetreechop.ImmersiveFallingTreeEntityMixin",
+    "immersivetreechop.ImmersiveLooseLogEntityMixin",
+    "fallingtrees.PandaGenericTreeMixin",
+    "treechop.TreeChopLazyTreeDataMixin"
+  ],
+  "client": [
+    "immersivetreechop.ImmersiveWoodMeshMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

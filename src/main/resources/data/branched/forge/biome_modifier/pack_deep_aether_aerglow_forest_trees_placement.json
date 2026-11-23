@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:modpack/deep_aether/aerglow_forest_trees_placement",
+  "add": "branched:modpack/deep_aether/aerglow_forest_trees_placement",
+  "replace": "#branched:modpack/deep_aether/aerglow_forest_trees_placement",
+  "species": [
+    "deep_aether:roseroot"
+  ],
+  "step": "vegetal_decoration"
+}

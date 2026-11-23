@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_thin_sleeve_up_template",
+  "textures": {
+    "particle": "deeperdarker:block/echo_log",
+    "side": "deeperdarker:block/echo_log",
+    "end": "deeperdarker:block/echo_log_top"
+  }
+}

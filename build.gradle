@@ -1,0 +1,157 @@
+plugins {
+    id 'eclipse'
+    id 'idea'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+}
+
+version = mod_version
+group = mod_group_id
+base {
+    archivesName = 'branched'
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(17)
+    withSourcesJar()
+}
+
+minecraft {
+    mappings channel: mapping_channel, version: mapping_version
+    copyIdeResources = true
+
+    runs {
+        configureEach {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            args '--mixin.config=branched.mixins.json'
+            mods {
+                "${mod_id}" {
+                    source sourceSets.main
+                }
+            }
+        }
+        client {
+            property 'forge.enabledGameTestNamespaces', mod_id
+        }
+        server {
+            property 'forge.enabledGameTestNamespaces', mod_id
+            // Opt-in headless worldgen proof: gradlew runServer -Pbranched.selftest=true
+            property 'branched.selftest',
+                    project.findProperty('branched.selftest')?.toString() ?: 'false'
+            args '--nogui'
+        }
+        data {
+            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+        }
+    }
+}
+
+sourceSets {
+    main.resources { srcDir 'src/generated/resources' }
+    treePhysicsStubs {
+        java.srcDir 'src/treePhysicsStubs/java'
+    }
+}
+
+configurations {
+    treePhysicsStubsCompileClasspath.extendsFrom(implementation, minecraft)
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+
+    compileOnly sourceSets.treePhysicsStubs.output
+    testImplementation sourceSets.treePhysicsStubs.output
+
+    compileOnly 'com.google.code.gson:gson:2.10.1'
+    testImplementation 'com.google.code.gson:gson:2.10.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'
+}
+
+tasks.named('processResources', ProcessResources).configure {
+    var replaceProperties = [
+            minecraft_version      : minecraft_version,
+            minecraft_version_range: '[1.20.1,1.21)',
+            forge_version          : forge_version,
+            forge_version_range    : '[47,)',
+            loader_version_range   : '[47,)',
+            mod_id                 : mod_id,
+            mod_name               : mod_name,
+            mod_license            : mod_license,
+            mod_version            : mod_version,
+            mod_authors            : mod_authors,
+            mod_description        : mod_description,
+    ]
+    inputs.properties replaceProperties
+    filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
+        expand replaceProperties
+    }
+}
+
+tasks.named('jar', Jar).configure {
+    manifest {
+        attributes([
+                'Specification-Title'     : 'branched',
+                'Specification-Vendor'    : 'Branched Team',
+                'Specification-Version'   : '1',
+                'Implementation-Title'    : 'Branched',
+                'Implementation-Version'  : project.jar.archiveVersion,
+                'Implementation-Vendor'   : 'Branched Team',
+                'MixinConfigs'            : 'branched.mixins.json'
+        ])
+    }
+    finalizedBy 'reobfJar'
+}
+
+tasks.named('test', Test).configure {
+    useJUnitPlatform()
+    testLogging {
+        events 'passed', 'skipped', 'failed'
+        exceptionFormat 'full'
+    }
+}
+
+tasks.register('phase5Report', JavaExec) {
+    group = 'verification'
+    description = 'Generates docs/phase5-diversity.json and catalogs/phase5-diversity.csv.'
+    javaLauncher = javaToolchains.launcherFor {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'dev.branched.diagnostics.Phase5Report'
+    args = ['src/main/resources/data/branched/arboreal/species', 'docs']
+}
+
+tasks.register('migrateWorld', JavaExec) {
+    group = 'application'
+    description = 'Opt-in offline Dynamic Trees world migration tool (Phase 7).'
+    javaLauncher = javaToolchains.launcherFor {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'dev.branched.migration.WorldMigrationTool'
+}
+
+publishing {
+    publications {
+        register('mavenJava', MavenPublication) {
+            artifact jar
+        }
+    }
+    repositories {
+        maven {
+            url "file://${project.projectDir}/mcmodsrepo"
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}

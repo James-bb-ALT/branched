@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "species": "regions_unexplored:bamboo",
+  "archetype": "columnar",
+  "logs": "regions_unexplored:bamboo_log",
+  "leaves": "regions_unexplored:bamboo_leaves",
+  "sapling": "regions_unexplored:bamboo_sapling",
+  "trunk": {
+    "height": [
+      8,
+      16
+    ],
+    "radius": [
+      0.35,
+      0.55
+    ],
+    "bend": [
+      0.0,
+      0.05
+    ]
+  },
+  "branches": {
+    "primaryCount": [
+      3,
+      6
+    ],
+    "depth": [
+      1,
+      2
+    ],
+    "angleDegrees": [
+      15,
+      35
+    ],
+    "lengthRatio": [
+      0.15,
+      0.3
+    ],
+    "asymmetry": [
+      0.05,
+      0.2
+    ],
+    "pattern": "alternate"
+  },
+  "crown": {
+    "widthRatio": [
+      0.5,
+      0.85
+    ],
+    "density": [
+      0.3,
+      0.55
+    ],
+    "clusterCount": [
+      4,
+      10
+    ]
+  },
+  "generation": {
+    "mode": "semiprocedural_once",
+    "attempts": 3,
+    "version": 2
+  },
+  "budget": {
+    "maxSegments": 96,
+    "maxLeaves": 260,
+    "maxQuads": 6500
+  },
+  "compatibility": "SPECIAL_PRESERVE",
+  "source": {
+    "feature": "regions_unexplored:bamboo_tree"
+  },
+  "biomes": [
+    "#minecraft:is_jungle"
+  ],
+  "fruitBearing": false,
+  "notes": "Bamboo-shaped wood; growth behaviour differs from a standard tree."
+}

@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/regions_unexplored/palm_tree_dense_tall",
+  "add": "branched:phase3/regions_unexplored/palm_tree_dense_tall",
+  "replace": "#branched:phase3/regions_unexplored/palm_tree_dense_tall",
+  "species": [
+    "regions_unexplored:palm"
+  ],
+  "step": "vegetal_decoration"
+}

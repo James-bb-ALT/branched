@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_thin_sleeve_up_template",
+  "textures": {
+    "particle": "alexscaves:block/pewen/pewen_log",
+    "side": "alexscaves:block/pewen/pewen_log",
+    "end": "alexscaves:block/pewen/pewen_log_top"
+  }
+}

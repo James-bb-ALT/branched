@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#upgrade_aquatic:has_feature/river_tree",
+      "required": false
+    }
+  ]
+}

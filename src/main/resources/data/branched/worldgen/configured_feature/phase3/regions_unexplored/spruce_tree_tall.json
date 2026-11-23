@@ -1,0 +1,7 @@
+{
+  "type": "branched:static_tree",
+  "config": {
+    "species": "minecraft:spruce",
+    "attempts": 3
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:modpack/ecologics/trees_walnut",
+  "add": "branched:modpack/ecologics/trees_walnut",
+  "replace": "#branched:modpack/ecologics/trees_walnut",
+  "species": [
+    "ecologics:walnut"
+  ],
+  "step": "vegetal_decoration"
+}

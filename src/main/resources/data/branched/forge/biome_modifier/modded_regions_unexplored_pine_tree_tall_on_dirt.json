@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/regions_unexplored/pine_tree_tall_on_dirt",
+  "add": "branched:phase3/regions_unexplored/pine_tree_tall_on_dirt",
+  "replace": "#branched:phase3/regions_unexplored/pine_tree_tall_on_dirt",
+  "species": [
+    "regions_unexplored:pine"
+  ],
+  "step": "vegetal_decoration"
+}

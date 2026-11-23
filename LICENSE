@@ -1,0 +1,22 @@
+Copyright (c) 2026 Branched Team. All rights reserved.
+
+This repository and the compiled Branched mod jar are proprietary until a
+final license is chosen by the project owner. No permission is granted to use,
+copy, modify, merge, publish, distribute, sublicense, or sell copies of this
+software or its source code without prior written permission.
+
+Reference materials
+-------------------
+
+Branched contains no code, assets, textures, models, lang files, loot
+tables or data files copied from the third-party mods it interoperates with.
+It references their block, item and feature ids by name at runtime only.
+
+Block, item, texture and feature identifiers named in this project remain the
+property of their respective authors and are governed by their own licenses.
+The audited upstream jars are not redistributed; see
+docs/dependency-license-register.md for versions, SHA-256 digests and the
+license declared by each archive.
+
+Minecraft is a trademark of Mojang Synergies AB. This project is not affiliated
+with or endorsed by Mojang or Microsoft.

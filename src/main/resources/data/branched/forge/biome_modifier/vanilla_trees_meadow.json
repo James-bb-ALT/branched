@@ -1,0 +1,15 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": [
+    "minecraft:meadow"
+  ],
+  "add": "branched:static_trees_meadow",
+  "replace": [
+    "minecraft:trees_meadow"
+  ],
+  "species": [
+    "minecraft:birch",
+    "minecraft:fancy_oak"
+  ],
+  "step": "vegetal_decoration"
+}

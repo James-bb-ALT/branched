@@ -1,0 +1,16 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": [
+    "minecraft:windswept_forest"
+  ],
+  "add": "branched:static_trees_windswept_forest",
+  "replace": [
+    "minecraft:trees_windswept_forest"
+  ],
+  "species": [
+    "minecraft:oak",
+    "minecraft:spruce",
+    "minecraft:fancy_oak"
+  ],
+  "step": "vegetal_decoration"
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_sleeve_north_template",
+  "textures": {
+    "particle": "twilightforest:block/mangrove_log",
+    "side": "twilightforest:block/mangrove_log",
+    "end": "twilightforest:block/mangrove_log_top"
+  }
+}

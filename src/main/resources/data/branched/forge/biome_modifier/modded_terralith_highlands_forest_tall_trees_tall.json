@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/terralith/highlands/forest/tall/trees_tall",
+  "add": "branched:phase3/terralith/highlands/forest/tall/trees_tall",
+  "replace": "#branched:phase3/terralith/highlands/forest/tall/trees_tall",
+  "species": [
+    "minecraft:spruce"
+  ],
+  "step": "vegetal_decoration"
+}

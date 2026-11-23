@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_thin_core_template",
+  "textures": {
+    "particle": "aether:block/natural/golden_oak_log",
+    "side": "aether:block/natural/golden_oak_log",
+    "end": "aether:block/natural/skyroot_log_top"
+  }
+}

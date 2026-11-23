@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:modpack/deep_aether/yagroot_swamp_trees_placement",
+  "add": "branched:modpack/deep_aether/yagroot_swamp_trees_placement",
+  "replace": "#branched:modpack/deep_aether/yagroot_swamp_trees_placement",
+  "species": [
+    "deep_aether:yagroot"
+  ],
+  "step": "vegetal_decoration"
+}

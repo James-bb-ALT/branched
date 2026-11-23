@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/regions_unexplored/dead_scotts_pine_tree_mountain",
+  "add": "branched:phase3/regions_unexplored/dead_scotts_pine_tree_mountain",
+  "replace": "#branched:phase3/regions_unexplored/dead_scotts_pine_tree_mountain",
+  "species": [
+    "regions_unexplored:dead_pine"
+  ],
+  "step": "vegetal_decoration"
+}

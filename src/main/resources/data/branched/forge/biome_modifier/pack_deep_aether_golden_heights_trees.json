@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:modpack/deep_aether/golden_heights_trees",
+  "add": "branched:modpack/deep_aether/golden_heights_trees",
+  "replace": "#branched:modpack/deep_aether/golden_heights_trees",
+  "species": [
+    "deep_aether:conberry"
+  ],
+  "step": "vegetal_decoration"
+}

@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "species": "upgrade_aquatic:river",
+  "archetype": "broadleaf_irregular",
+  "logs": "upgrade_aquatic:river_log",
+  "leaves": "upgrade_aquatic:river_leaves",
+  "wood": "upgrade_aquatic:river_wood",
+  "sapling": "upgrade_aquatic:river_sapling",
+  "trunk": {
+    "height": [
+      6,
+      10
+    ],
+    "radius": [
+      0.6,
+      0.9
+    ],
+    "bend": [
+      0.05,
+      0.2
+    ]
+  },
+  "branches": {
+    "primaryCount": [
+      4,
+      7
+    ],
+    "depth": [
+      1,
+      3
+    ],
+    "angleDegrees": [
+      28,
+      55
+    ],
+    "lengthRatio": [
+      0.28,
+      0.48
+    ],
+    "asymmetry": [
+      0.15,
+      0.4
+    ],
+    "pattern": "alternate"
+  },
+  "crown": {
+    "widthRatio": [
+      0.95,
+      1.45
+    ],
+    "density": [
+      0.5,
+      0.8
+    ],
+    "clusterCount": [
+      6,
+      12
+    ]
+  },
+  "generation": {
+    "mode": "semiprocedural_once",
+    "attempts": 3,
+    "version": 3
+  },
+  "budget": {
+    "maxSegments": 136,
+    "maxLeaves": 440,
+    "maxQuads": 9500
+  },
+  "compatibility": "STATIC_NORMAL",
+  "source": {
+    "feature": "upgrade_aquatic:river_tree"
+  },
+  "biomes": [
+    "#upgrade_aquatic:has_feature/river_tree"
+  ],
+  "fruitBearing": false
+}

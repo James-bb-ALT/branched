@@ -1,0 +1,90 @@
+modLoader = "javafml"
+loaderVersion = "${loader_version_range}"
+license = "${mod_license}"
+issueTrackerURL = "https://example.invalid/branched/issues"
+
+[[mods]]
+modId = "${mod_id}"
+version = "${mod_version}"
+displayName = "${mod_name}"
+authors = "${mod_authors}"
+description = '''${mod_description}'''
+
+[[dependencies.${mod_id}]]
+    modId = "forge"
+    mandatory = true
+    versionRange = "${forge_version_range}"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies.${mod_id}]]
+    modId = "minecraft"
+    mandatory = true
+    versionRange = "${minecraft_version_range}"
+    ordering = "NONE"
+    side = "BOTH"
+
+# Optional integrations. None of these are runtime requirements and none of
+# them is Dynamic Trees: Dynamic Trees is a development-only reference.
+[[dependencies.${mod_id}]]
+    modId = "regions_unexplored"
+    mandatory = false
+    versionRange = "[0.5.6,1.0)"
+    ordering = "AFTER"
+    side = "BOTH"
+
+[[dependencies.${mod_id}]]
+    modId = "terralith"
+    mandatory = false
+    versionRange = "[2.5.4,3.0)"
+    ordering = "AFTER"
+    side = "BOTH"
+
+[[dependencies.${mod_id}]]
+    modId = "aether"
+    mandatory = false
+    versionRange = "[1.5.2,2.0)"
+    ordering = "AFTER"
+    side = "BOTH"
+
+[[dependencies.${mod_id}]]
+    modId = "twilightforest"
+    mandatory = false
+    versionRange = "[4.3.2508,5.0)"
+    ordering = "AFTER"
+    side = "BOTH"
+
+[[dependencies.${mod_id}]]
+    modId = "quark"
+    mandatory = false
+    versionRange = "[4.0,5.0)"
+    ordering = "AFTER"
+    side = "BOTH"
+
+[[dependencies.${mod_id}]]
+    modId = "fishofthieves"
+    mandatory = false
+    versionRange = "[3.1.7,4.0)"
+    ordering = "AFTER"
+    side = "BOTH"
+
+[[dependencies.${mod_id}]]
+    modId = "timberfall"
+    mandatory = false
+    versionRange = "[0.0.0,)"
+    ordering = "AFTER"
+    side = "BOTH"
+
+[[dependencies.${mod_id}]]
+    modId = "fallingtrees"
+    mandatory = false
+    versionRange = "[0.0.0,)"
+    ordering = "AFTER"
+    side = "BOTH"
+
+[[dependencies.${mod_id}]]
+    modId = "treechop"
+    mandatory = false
+    versionRange = "[0.0.0,)"
+    ordering = "AFTER"
+    side = "BOTH"

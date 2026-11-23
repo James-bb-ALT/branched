@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_thick_core_template",
+  "textures": {
+    "particle": "ecologics:block/coconut_log",
+    "side": "ecologics:block/coconut_log",
+    "end": "ecologics:block/coconut_log_top"
+  }
+}

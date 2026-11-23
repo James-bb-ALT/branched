@@ -1,0 +1,14 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": [
+    "minecraft:wooded_badlands"
+  ],
+  "add": "branched:static_trees_badlands",
+  "replace": [
+    "minecraft:trees_badlands"
+  ],
+  "species": [
+    "minecraft:oak"
+  ],
+  "step": "vegetal_decoration"
+}

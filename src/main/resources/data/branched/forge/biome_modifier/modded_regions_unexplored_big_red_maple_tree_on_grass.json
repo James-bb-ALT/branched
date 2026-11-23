@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/regions_unexplored/big_red_maple_tree_on_grass",
+  "add": "branched:phase3/regions_unexplored/big_red_maple_tree_on_grass",
+  "replace": "#branched:phase3/regions_unexplored/big_red_maple_tree_on_grass",
+  "species": [
+    "regions_unexplored:red_maple"
+  ],
+  "step": "vegetal_decoration"
+}

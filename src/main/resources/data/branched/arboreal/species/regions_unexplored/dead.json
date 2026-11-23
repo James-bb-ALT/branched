@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "species": "regions_unexplored:dead",
+  "archetype": "fantastic",
+  "logs": "regions_unexplored:dead_log",
+  "leaves": "regions_unexplored:dead_leaves",
+  "wood": "regions_unexplored:dead_wood",
+  "sapling": "regions_unexplored:dead_sapling",
+  "trunk": {
+    "height": [
+      4,
+      9
+    ],
+    "radius": [
+      0.4,
+      0.7
+    ],
+    "bend": [
+      0.1,
+      0.35
+    ]
+  },
+  "branches": {
+    "primaryCount": [
+      2,
+      5
+    ],
+    "depth": [
+      1,
+      2
+    ],
+    "angleDegrees": [
+      35,
+      80
+    ],
+    "lengthRatio": [
+      0.25,
+      0.55
+    ],
+    "asymmetry": [
+      0.25,
+      0.6
+    ],
+    "pattern": "irregular"
+  },
+  "crown": {
+    "widthRatio": [
+      0.6,
+      1.1
+    ],
+    "density": [
+      0.15,
+      0.4
+    ],
+    "clusterCount": [
+      3,
+      8
+    ]
+  },
+  "generation": {
+    "mode": "semiprocedural_once",
+    "attempts": 3,
+    "version": 2
+  },
+  "budget": {
+    "maxSegments": 80,
+    "maxLeaves": 180,
+    "maxQuads": 5000
+  },
+  "compatibility": "STATIC_NORMAL",
+  "source": {
+    "feature": "regions_unexplored:dead_bog_tree"
+  },
+  "biomes": [
+    "#forge:is_swamp"
+  ],
+  "fruitBearing": false,
+  "notes": "Dead trees are sparse; low crown budget is intentional."
+}

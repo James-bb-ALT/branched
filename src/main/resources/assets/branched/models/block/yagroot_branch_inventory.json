@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_inventory_template",
+  "textures": {
+    "particle": "deep_aether:block/yagroot_log",
+    "side": "deep_aether:block/yagroot_log",
+    "end": "deep_aether:block/yagroot_log_top"
+  }
+}

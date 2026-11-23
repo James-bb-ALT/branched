@@ -1,0 +1,7 @@
+{
+  "type": "branched:static_tree",
+  "config": {
+    "species": "regions_unexplored:redwood",
+    "attempts": 3
+  }
+}

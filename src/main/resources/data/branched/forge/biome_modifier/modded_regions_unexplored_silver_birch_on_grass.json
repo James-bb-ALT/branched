@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/regions_unexplored/silver_birch_on_grass",
+  "add": "branched:phase3/regions_unexplored/silver_birch_on_grass",
+  "replace": "#branched:phase3/regions_unexplored/silver_birch_on_grass",
+  "species": [
+    "regions_unexplored:silver_birch"
+  ],
+  "step": "vegetal_decoration"
+}

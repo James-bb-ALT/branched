@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/terralith/highlands/temperate/cloud_trees",
+  "add": "branched:phase3/terralith/highlands/temperate/cloud_trees",
+  "replace": "#branched:phase3/terralith/highlands/temperate/cloud_trees",
+  "species": [
+    "minecraft:birch"
+  ],
+  "step": "vegetal_decoration"
+}

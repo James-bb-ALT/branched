@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "species": "regions_unexplored:redwood",
+  "archetype": "conifer",
+  "logs": "regions_unexplored:redwood_log",
+  "leaves": "regions_unexplored:redwood_leaves",
+  "wood": "regions_unexplored:redwood_wood",
+  "sapling": "regions_unexplored:redwood_sapling",
+  "trunk": {
+    "height": [
+      18,
+      34
+    ],
+    "radius": [
+      1.4,
+      2.2
+    ],
+    "bend": [
+      0.0,
+      0.05
+    ]
+  },
+  "branches": {
+    "primaryCount": [
+      7,
+      13
+    ],
+    "depth": [
+      2,
+      3
+    ],
+    "angleDegrees": [
+      8,
+      25
+    ],
+    "lengthRatio": [
+      0.15,
+      0.32
+    ],
+    "asymmetry": [
+      0.05,
+      0.18
+    ],
+    "pattern": "whorled"
+  },
+  "crown": {
+    "widthRatio": [
+      0.5,
+      0.85
+    ],
+    "density": [
+      0.55,
+      0.9
+    ],
+    "clusterCount": [
+      10,
+      22
+    ]
+  },
+  "generation": {
+    "mode": "semiprocedural_once",
+    "attempts": 3,
+    "version": 2
+  },
+  "budget": {
+    "maxSegments": 288,
+    "maxLeaves": 760,
+    "maxQuads": 18000
+  },
+  "compatibility": "STATIC_NORMAL",
+  "source": {
+    "feature": "regions_unexplored:giant_redwood_tree_dense"
+  },
+  "biomes": [
+    "#minecraft:is_taiga"
+  ],
+  "fruitBearing": false
+}

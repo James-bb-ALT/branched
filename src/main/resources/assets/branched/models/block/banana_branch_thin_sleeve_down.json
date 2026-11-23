@@ -1,0 +1,8 @@
+{
+  "parent": "branched:block/branch_thin_sleeve_down_template",
+  "textures": {
+    "particle": "fishofthieves:block/banana_stem_side",
+    "side": "fishofthieves:block/banana_stem_side",
+    "end": "fishofthieves:block/banana_stem_top"
+  }
+}

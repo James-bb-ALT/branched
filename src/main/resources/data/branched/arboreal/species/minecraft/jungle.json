@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "species": "minecraft:jungle",
+  "archetype": "broadleaf_irregular",
+  "logs": "minecraft:jungle_log",
+  "leaves": "minecraft:jungle_leaves",
+  "wood": "minecraft:jungle_wood",
+  "sapling": "minecraft:jungle_sapling",
+  "trunk": {
+    "height": [
+      10,
+      19
+    ],
+    "radius": [
+      1.0,
+      1.5
+    ],
+    "bend": [
+      0.03,
+      0.14
+    ]
+  },
+  "branches": {
+    "primaryCount": [
+      7,
+      13
+    ],
+    "depth": [
+      2,
+      3
+    ],
+    "angleDegrees": [
+      25,
+      55
+    ],
+    "lengthRatio": [
+      0.3,
+      0.55
+    ],
+    "asymmetry": [
+      0.15,
+      0.45
+    ],
+    "pattern": "alternate"
+  },
+  "crown": {
+    "widthRatio": [
+      1.2,
+      2.0
+    ],
+    "density": [
+      0.6,
+      0.9
+    ],
+    "clusterCount": [
+      10,
+      22
+    ]
+  },
+  "generation": {
+    "mode": "semiprocedural_once",
+    "attempts": 3,
+    "version": 2
+  },
+  "budget": {
+    "maxSegments": 240,
+    "maxLeaves": 720,
+    "maxQuads": 17000
+  },
+  "compatibility": "STATIC_NORMAL",
+  "source": {
+    "feature": "minecraft:jungle_tree"
+  },
+  "biomes": [
+    "#minecraft:is_jungle"
+  ],
+  "fruitBearing": false
+}

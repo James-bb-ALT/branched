@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/regions_unexplored/spruce_tree_tall_sparse",
+  "add": "branched:phase3/regions_unexplored/spruce_tree_tall_sparse",
+  "replace": "#branched:phase3/regions_unexplored/spruce_tree_tall_sparse",
+  "species": [
+    "minecraft:spruce"
+  ],
+  "step": "vegetal_decoration"
+}

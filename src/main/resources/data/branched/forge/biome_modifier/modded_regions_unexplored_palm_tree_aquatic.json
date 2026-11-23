@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/regions_unexplored/palm_tree_aquatic",
+  "add": "branched:phase3/regions_unexplored/palm_tree_aquatic",
+  "replace": "#branched:phase3/regions_unexplored/palm_tree_aquatic",
+  "species": [
+    "regions_unexplored:palm"
+  ],
+  "step": "vegetal_decoration"
+}

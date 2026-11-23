@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/terralith/spires/oak_tree",
+  "add": "branched:phase3/terralith/spires/oak_tree",
+  "replace": "#branched:phase3/terralith/spires/oak_tree",
+  "species": [
+    "minecraft:oak"
+  ],
+  "step": "vegetal_decoration"
+}

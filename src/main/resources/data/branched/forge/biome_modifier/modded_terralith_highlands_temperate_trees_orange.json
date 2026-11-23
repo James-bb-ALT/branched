@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/terralith/highlands/temperate/trees_orange",
+  "add": "branched:phase3/terralith/highlands/temperate/trees_orange",
+  "replace": "#branched:phase3/terralith/highlands/temperate/trees_orange",
+  "species": [
+    "minecraft:oak"
+  ],
+  "step": "vegetal_decoration"
+}

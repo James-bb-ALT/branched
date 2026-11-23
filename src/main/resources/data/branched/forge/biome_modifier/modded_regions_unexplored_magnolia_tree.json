@@ -1,0 +1,10 @@
+{
+  "type": "branched:replace_trees",
+  "biomes": "#branched:phase3/regions_unexplored/magnolia_tree",
+  "add": "branched:phase3/regions_unexplored/magnolia_tree",
+  "replace": "#branched:phase3/regions_unexplored/magnolia_tree",
+  "species": [
+    "regions_unexplored:magnolia"
+  ],
+  "step": "vegetal_decoration"
+}
