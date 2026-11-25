@@ -20,6 +20,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -105,44 +106,36 @@ public final class NativeTreeBranchConverter {
             return emptyPlan(rawTrunkLogs);
         }
 
-        int baseY = findMainColumnBaseY(rawTrunkLogs, minY, maxY);
         Set<BlockPos> horizontalLogs = horizontalAxisLogs == null ? Set.of() : horizontalAxisLogs;
-        Set<Long> baseColumns = detectBaseColumns(origin, rawTrunkLogs, baseY);
+        Map<Long, VerticalColumnRun> columnRuns = computeGroundedColumnRuns(
+                origin, rawTrunkLogs, horizontalLogs, minY, maxY, height);
+        Set<Long> baseColumns = selectMainFootprintColumns(origin, columnRuns);
         if (baseColumns.isEmpty()) {
             return emptyPlan(rawTrunkLogs);
         }
 
-        // Trace each grounded base column strictly vertically upward
-        Map<Long, List<BlockPos>> columnLogs = new LinkedHashMap<>();
-        int columnTopY = baseY;
-        for (Long colKey : baseColumns) {
-            int cx = unpackColX(colKey);
-            int cz = unpackColZ(colKey);
-            List<BlockPos> vertical = new ArrayList<>();
-            for (int y = baseY; y <= maxY; y++) {
-                BlockPos p = new BlockPos(cx, y, cz);
-                if (!rawTrunkLogs.contains(p)) {
-                    break;
-                }
-                if (y >= baseY + 3 && horizontalLogs.contains(p)) {
-                    break;
-                }
-                vertical.add(p);
-                columnTopY = Math.max(columnTopY, y);
-            }
-            columnLogs.put(colKey, vertical);
-        }
-
+        int baseY = Integer.MAX_VALUE;
         Set<BlockPos> verticalUnion = new LinkedHashSet<>();
-        for (List<BlockPos> list : columnLogs.values()) {
-            verticalUnion.addAll(list);
+        for (Long colKey : baseColumns) {
+            VerticalColumnRun run = columnRuns.get(colKey);
+            if (run != null) {
+                baseY = Math.min(baseY, run.startY());
+                verticalUnion.addAll(run.logs());
+            }
+        }
+        if (baseY == Integer.MAX_VALUE) {
+            baseY = minY;
+        }
+        for (VerticalColumnRun run : columnRuns.values()) {
+            if (!baseColumns.contains(run.colKey()) && run.logs().size() >= 5) {
+                verticalUnion.addAll(run.logs());
+            }
         }
         for (BlockPos pos : rawTrunkLogs) {
             if (isLowerRootLog(pos, baseY, origin.getY(), height, rawLeaves)) {
                 verticalUnion.add(pos.immutable());
             }
         }
-        boolean hasOffColumnLogs = verticalUnion.size() < rawTrunkLogs.size();
 
         Set<BlockPos> keptTrunkLogs = new LinkedHashSet<>(verticalUnion);
         if (keptTrunkLogs.isEmpty()) {
@@ -153,6 +146,21 @@ public final class NativeTreeBranchConverter {
         for (BlockPos pos : rawTrunkLogs) {
             if (!keptTrunkLogs.contains(pos)) {
                 branchCandidates.add(pos.immutable());
+            }
+        }
+
+        if (!branchCandidates.isEmpty()) {
+            List<BlockPos> isolatedBareStubs = new ArrayList<>();
+            for (BlockPos cand : branchCandidates) {
+                if (hasNeighborIn(cand, keptTrunkLogs)
+                        && !has26NeighborIn(cand, branchCandidates)
+                        && !hasNeighborIn(cand, rawLeaves)) {
+                    isolatedBareStubs.add(cand);
+                }
+            }
+            for (BlockPos stub : isolatedBareStubs) {
+                branchCandidates.remove(stub);
+                keptTrunkLogs.add(stub);
             }
         }
 
@@ -653,17 +661,175 @@ public final class NativeTreeBranchConverter {
         return fallback;
     }
 
-    private static int findMainColumnBaseY(Set<BlockPos> rawTrunkLogs, int minY, int maxY) {
-        for (int y = minY; y <= maxY - 2; y++) {
-            for (BlockPos pos : rawTrunkLogs) {
-                if (pos.getY() == y
-                        && rawTrunkLogs.contains(pos.above())
-                        && rawTrunkLogs.contains(pos.above(2))) {
-                    return y;
+    private record VerticalColumnRun(long colKey, int x, int z, int startY, List<BlockPos> logs) {
+    }
+
+    private static Map<Long, VerticalColumnRun> computeGroundedColumnRuns(BlockPos origin,
+                                                                          Set<BlockPos> rawTrunkLogs,
+                                                                          Set<BlockPos> horizontalLogs,
+                                                                          int minY,
+                                                                          int maxY,
+                                                                          int height) {
+        Map<Long, List<Integer>> ysByCol = new LinkedHashMap<>();
+        for (BlockPos pos : rawTrunkLogs) {
+            long colKey = packCol(pos.getX(), pos.getZ());
+            ysByCol.computeIfAbsent(colKey, k -> new ArrayList<>()).add(pos.getY());
+        }
+
+        int maxAllowedStartY = height >= 6
+                ? Math.max(origin.getY() + 3, minY + 5)
+                : Math.max(origin.getY() + 2, minY + 2);
+
+        Map<Long, VerticalColumnRun> result = new LinkedHashMap<>();
+        for (Map.Entry<Long, List<Integer>> entry : ysByCol.entrySet()) {
+            long colKey = entry.getKey();
+            int cx = unpackColX(colKey);
+            int cz = unpackColZ(colKey);
+            List<Integer> ys = entry.getValue();
+            Collections.sort(ys);
+
+            VerticalColumnRun best = null;
+            int idx = 0;
+            while (idx < ys.size()) {
+                int startY = ys.get(idx);
+                if (startY > maxAllowedStartY) {
+                    break;
+                }
+                List<BlockPos> run = new ArrayList<>();
+                int y = startY;
+                while (y <= maxY) {
+                    BlockPos p = new BlockPos(cx, y, cz);
+                    if (!rawTrunkLogs.contains(p)) {
+                        break;
+                    }
+                    if (y >= startY + 3 && horizontalLogs.contains(p) && !rawTrunkLogs.contains(p.above())) {
+                        break;
+                    }
+                    run.add(p);
+                    y++;
+                }
+                if (best == null || run.size() > best.logs().size()) {
+                    best = new VerticalColumnRun(colKey, cx, cz, startY, List.copyOf(run));
+                }
+                while (idx < ys.size() && ys.get(idx) < y) {
+                    idx++;
+                }
+                if (run.isEmpty()) {
+                    idx++;
+                }
+            }
+            if (best != null && !best.logs().isEmpty()) {
+                result.put(colKey, best);
+            }
+        }
+        return result;
+    }
+
+    private static Set<Long> selectMainFootprintColumns(BlockPos origin,
+                                                        Map<Long, VerticalColumnRun> columnRuns) {
+        if (columnRuns.isEmpty()) {
+            return Set.of();
+        }
+        List<VerticalColumnRun> nearOrigin = new ArrayList<>();
+        for (VerticalColumnRun run : columnRuns.values()) {
+            if (Math.abs(run.x() - origin.getX()) <= 2 && Math.abs(run.z() - origin.getZ()) <= 2) {
+                nearOrigin.add(run);
+            }
+        }
+        Collection<VerticalColumnRun> pool = nearOrigin.isEmpty() ? columnRuns.values() : nearOrigin;
+        VerticalColumnRun anchor = pickBestAnchorRun(origin, pool, 3);
+        if (anchor == null) {
+            anchor = pickBestAnchorRun(origin, pool, 2);
+        }
+        if (anchor == null && !nearOrigin.isEmpty()) {
+            anchor = pickBestAnchorRun(origin, columnRuns.values(), 3);
+            if (anchor == null) {
+                anchor = pickBestAnchorRun(origin, columnRuns.values(), 2);
+            }
+        }
+        if (anchor == null) {
+            anchor = pool.stream()
+                    .max(Comparator.comparingInt((VerticalColumnRun r) -> r.logs().size())
+                            .thenComparingInt(r -> -distSq2D(new BlockPos(r.x(), 0, r.z()), origin)))
+                    .orElse(null);
+        }
+        if (anchor == null) {
+            return Set.of();
+        }
+
+        int minFootprintHeight = anchor.logs().size() >= 3 ? 3 : Math.min(2, anchor.logs().size());
+        Set<Long> selected = new LinkedHashSet<>();
+        ArrayDeque<VerticalColumnRun> queue = new ArrayDeque<>();
+        selected.add(anchor.colKey());
+        queue.add(anchor);
+
+        while (!queue.isEmpty()) {
+            VerticalColumnRun cur = queue.poll();
+            for (int dx = -1; dx <= 1; dx++) {
+                for (int dz = -1; dz <= 1; dz++) {
+                    if (dx == 0 && dz == 0) {
+                        continue;
+                    }
+                    int nx = cur.x() + dx;
+                    int nz = cur.z() + dz;
+                    if (Math.abs(nx - anchor.x()) > 4 || Math.abs(nz - anchor.z()) > 4) {
+                        continue;
+                    }
+                    long nKey = packCol(nx, nz);
+                    if (selected.contains(nKey)) {
+                        continue;
+                    }
+                    VerticalColumnRun next = columnRuns.get(nKey);
+                    if (next != null && next.logs().size() >= minFootprintHeight) {
+                        selected.add(nKey);
+                        queue.add(next);
+                    }
                 }
             }
         }
-        return minY;
+        return selected;
+    }
+
+    private static VerticalColumnRun pickBestAnchorRun(BlockPos origin,
+                                                       Iterable<VerticalColumnRun> runs,
+                                                       int minHeight) {
+        VerticalColumnRun best = null;
+        for (VerticalColumnRun run : runs) {
+            if (run.logs().size() < minHeight) {
+                continue;
+            }
+            if (best == null) {
+                best = run;
+                continue;
+            }
+            int sizeCmp = Integer.compare(run.logs().size(), best.logs().size());
+            if (sizeCmp > 0) {
+                best = run;
+            } else if (sizeCmp == 0) {
+                int dRun = distSq2D(new BlockPos(run.x(), 0, run.z()), origin);
+                int dBest = distSq2D(new BlockPos(best.x(), 0, best.z()), origin);
+                if (dRun < dBest || (dRun == dBest && run.startY() < best.startY())) {
+                    best = run;
+                }
+            }
+        }
+        return best;
+    }
+
+    private static boolean has26NeighborIn(BlockPos pos, Set<BlockPos> set) {
+        for (int dx = -1; dx <= 1; dx++) {
+            for (int dy = -1; dy <= 1; dy++) {
+                for (int dz = -1; dz <= 1; dz++) {
+                    if (dx == 0 && dy == 0 && dz == 0) {
+                        continue;
+                    }
+                    if (set.contains(pos.offset(dx, dy, dz))) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 
     private static boolean isLowerRootLog(BlockPos pos,
@@ -691,85 +857,6 @@ public final class NativeTreeBranchConverter {
             }
         }
         return false;
-    }
-
-    private static Set<Long> detectBaseColumns(BlockPos origin, Set<BlockPos> rawTrunkLogs, int minY) {
-        List<BlockPos> minLayer = new ArrayList<>();
-        for (BlockPos pos : rawTrunkLogs) {
-            if (pos.getY() == minY) {
-                minLayer.add(pos);
-            }
-        }
-        if (minLayer.isEmpty()) {
-            return Set.of();
-        }
-
-        List<BlockPos> nearOrigin = new ArrayList<>();
-        for (BlockPos pos : minLayer) {
-            if (Math.abs(pos.getX() - origin.getX()) <= 1 && Math.abs(pos.getZ() - origin.getZ()) <= 1) {
-                nearOrigin.add(pos);
-            }
-        }
-        List<BlockPos> seedGroup = nearOrigin.isEmpty() ? minLayer : nearOrigin;
-        BlockPos anchor = seedGroup.stream()
-                .min(Comparator.comparingInt(p -> distSq2D(p, origin)))
-                .orElse(seedGroup.get(0));
-
-        Set<BlockPos> minLayerSet = new LinkedHashSet<>(minLayer.size() * 2);
-        for (BlockPos pos : minLayer) {
-            minLayerSet.add(pos.immutable());
-        }
-        BlockPos anchorImmutable = anchor.immutable();
-        List<BlockPos> footprint = new ArrayList<>();
-        Set<BlockPos> visited = new LinkedHashSet<>();
-        ArrayDeque<BlockPos> queue = new ArrayDeque<>();
-        visited.add(anchorImmutable);
-        queue.add(anchorImmutable);
-        while (!queue.isEmpty()) {
-            BlockPos cur = queue.poll();
-            footprint.add(cur);
-            for (int dx = -1; dx <= 1; dx++) {
-                for (int dz = -1; dz <= 1; dz++) {
-                    if (dx == 0 && dz == 0) {
-                        continue;
-                    }
-                    BlockPos next = cur.offset(dx, 0, dz);
-                    if (Math.abs(next.getX() - anchorImmutable.getX()) <= 4
-                            && Math.abs(next.getZ() - anchorImmutable.getZ()) <= 4
-                            && minLayerSet.contains(next)
-                            && visited.add(next)) {
-                        queue.add(next);
-                    }
-                }
-            }
-        }
-        if (footprint.size() > 1) {
-            List<BlockPos> tallColumns = new ArrayList<>();
-            for (BlockPos base : footprint) {
-                boolean hasColHeight = rawTrunkLogs.contains(base.above())
-                        && rawTrunkLogs.contains(base.above(2));
-                if (hasColHeight) {
-                    tallColumns.add(base);
-                }
-            }
-            if (!tallColumns.isEmpty()) {
-                footprint = tallColumns;
-            } else {
-                List<BlockPos> twoTallColumns = new ArrayList<>();
-                for (BlockPos base : footprint) {
-                    if (rawTrunkLogs.contains(base.above())) {
-                        twoTallColumns.add(base);
-                    }
-                }
-                footprint = twoTallColumns.isEmpty() ? List.of(anchorImmutable) : twoTallColumns;
-            }
-        }
-
-        Set<Long> cols = new LinkedHashSet<>();
-        for (BlockPos base : footprint) {
-            cols.add(packCol(base.getX(), base.getZ()));
-        }
-        return cols;
     }
 
     private static void bridgeAndAbsorbCandidates(Set<BlockPos> rawLeaves,

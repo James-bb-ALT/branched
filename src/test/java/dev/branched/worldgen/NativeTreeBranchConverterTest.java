@@ -484,6 +484,56 @@ class NativeTreeBranchConverterTest {
         assertSixConnected(plan.keptTrunkLogs(), plan.branchPositions());
     }
 
+    @Test
+    void redwoodSlopedRootsAndAdjacentTrunksStayIntact() {
+        BlockPos origin = new BlockPos(0, 64, 0);
+        Set<BlockPos> rawLogs = new LinkedHashSet<>();
+        Set<BlockPos> horizontalLogs = new LinkedHashSet<>();
+
+        // Downhill 3-tall root buttress starting 3 blocks below origin (y=61..63)
+        for (int y = 61; y <= 63; y++) {
+            rawLogs.add(new BlockPos(1, y, 0));
+        }
+        // Main 1x1 central trunk starting at origin (y=64..82)
+        for (int y = 64; y <= 82; y++) {
+            rawLogs.add(new BlockPos(0, y, 0));
+        }
+        // Bare-trunk 1-block horizontal stub at y=68 (below canopy)
+        BlockPos bareStub = new BlockPos(-1, 68, 0);
+        rawLogs.add(bareStub);
+        horizontalLogs.add(bareStub);
+
+        // Adjacent secondary vertical trunk >= 5 blocks tall swept into component
+        for (int y = 64; y <= 76; y++) {
+            rawLogs.add(new BlockPos(4, y, 0));
+        }
+        // Canopy limb connecting to leaves at y=79..80
+        rawLogs.add(new BlockPos(1, 79, 0));
+        rawLogs.add(new BlockPos(2, 80, 0));
+        horizontalLogs.add(new BlockPos(1, 79, 0));
+        horizontalLogs.add(new BlockPos(2, 80, 0));
+
+        Set<BlockPos> leaves = fillSphereLeaves(0, 80, 0, 4);
+        leaves.removeAll(rawLogs);
+
+        NativeTreeBranchConverter.ConversionPlan plan = NativeTreeBranchConverter.planConversion(
+                origin, rawLogs, leaves, horizontalLogs, 777L);
+
+        for (int y = 64; y <= 82; y++) {
+            assertTrue(plan.keptTrunkLogs().contains(new BlockPos(0, y, 0)),
+                    "main redwood trunk log must stay intact at y=" + y);
+        }
+        for (int y = 64; y <= 76; y++) {
+            assertTrue(plan.keptTrunkLogs().contains(new BlockPos(4, y, 0)),
+                    "adjacent vertical trunk log must stay intact at y=" + y);
+        }
+        assertTrue(plan.keptTrunkLogs().contains(bareStub),
+                "isolated 1-block leafless trunk stub should not become a branch nub");
+        assertTrue(plan.branchPositions().contains(new BlockPos(1, 79, 0)));
+        assertTrue(plan.branchPositions().contains(new BlockPos(2, 80, 0)));
+        assertSixConnected(plan.keptTrunkLogs(), plan.branchPositions());
+    }
+
     private static Set<BlockPos> fillSphereLeaves(int cx, int cy, int cz, int radius) {
         Set<BlockPos> leaves = new LinkedHashSet<>();
         for (int dx = -radius; dx <= radius; dx++) {
